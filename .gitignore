@@ -1,0 +1,26 @@
+# Build results at different stages
+a.out
+main
+*.bin
+*.exe
+*.o
+*.s
+*.bc
+*.ll
+*.i
+# GDB
+.gdbinit
+.gdb_history
+# Coverage
+*.covmapping
+*.proftext
+*.profdata
+*.profraw
+*.gcov
+*.gcno
+*.gcda
+# clangd
+compile_commands.json
+**/.cache/clangd
+# Let VS code Python plugin know where to find LLVM source code
+.env
