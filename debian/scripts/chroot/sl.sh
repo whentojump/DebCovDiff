@@ -17,5 +17,5 @@ echo
 ################################################################################
 
 echo
-BINARY=$EXECUTABLE $THIS_DIR/common/get_coverage.sh
+BINARY=$EXECUTABLE $THIS_DIR/common/get-coverage.sh
 echo

@@ -29,5 +29,5 @@ echo
 ################################################################################
 
 echo
-BINARY=$LIBRARY $THIS_DIR/common/get_coverage.sh
+BINARY=$LIBRARY $THIS_DIR/common/get-coverage.sh
 echo

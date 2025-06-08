@@ -1,0 +1,26 @@
+package,old gcc no instr,gcc no instr,clang no instr,gcc gcov,clang scc,gcc mcdc,clang mcdc
+apt,pass,build fail,pass,build fail,pass,build fail,pass(pass)
+bash,pass,pass,pass,pass,pass,pass(cov:cannot open source file),pass(cov:crash;"(anonymous namespace)::MCDCDecisionRecorder::processBranch(llvm::coverage::CounterMappingRegion const&) CoverageMapping.cpp")
+bind9,pass,pass,pass,pass,pass,pass(cov:cannot open source file),pass(cov:pass)
+cpio,pass,pass,build fail,pass,build fail,pass(cov:pass),build fail
+dash,pass,pass,pass,pass,pass,pass(cov:no gcda files),pass(cov:empty profile due to exitshell)
+diffutils,pass,pass,pass,pass,pass,pass(cov:pass),pass(cov:crash;"(anonymous namespace)::MCDCDecisionRecorder::processBranch(llvm::coverage::CounterMappingRegion const&) CoverageMapping.cpp:0:0")
+dpkg,pass,pass,pass,pass,pass,pass(cov:cannot open source file),pass(cov:pass)
+findutils,pass,pass,pass,pass,pass,pass(cov:pass),pass(cov:crash;"(anonymous namespace)::MCDCDecisionRecorder::processBranch(llvm::coverage::CounterMappingRegion const&) CoverageMapping.cpp")
+gettext,pass,build fail,build fail,build fail,build fail,build fail,build fail
+glibc,pass,pass,pass,pass,pass,pass(no gcda or gcno file),pass(cov:toolchain hardwired to x86_64-linux-gnu-gcc-12)
+gnupg2,pass,build fail,build fail,build fail,build fail,build fail,build fail
+groff,pass(deps),pass,pass,pass,build fail,pass(cov:cannot open source file),pass(cov:pass)
+iputils,pass,pass,pass,pass,pass,pass(cov: no gcda files),pass(cov:empty profile due to capability issues)
+isc-dhcp,pass,pass,pass,pass,pass,pass(cov:stamp mismatch with notes file),pass(cov:pass)
+kmod,pass,pass,pass,pass,pass,pass(cov:cannot open source file),pass(cov:pass)
+logrotate,pass,pass,pass,pass,pass,pass(cov:pass),build fail(MC/DC limit -Werror)
+ncurses,pass,build fail,pass,build fail,build fail(checking for C compiler default output... configure: error: C compiler cannot create executables),build fail,build fail
+netcat,pass,build fail,build fail,build fail,build fail,build fail,build fail
+nftables,pass(run separately as others introduce conflicting deps),pass,pass,pass,pass,pass(cov:cannot open source file),pass(cov:pass)
+openssh,pass,pass,pass,pass,pass,pass(cov:no gcda files),pass(cov:cleanup_exit)
+readline,pass,build fail,build fail,build fail,build fail,build fail,build fail
+sed,pass,pass,pass,pass,pass,pass(cov:pass),pass(cov:crash;"(anonymous namespace)::MCDCDecisionRecorder::processBranch(llvm::coverage::CounterMappingRegion const&) CoverageMapping.cpp")
+systemd,pass,build fail,build fail,build fail,build fail,build fail,build fail
+tar,pass,pass,pass,pass,pass,pass(cov:pass),pass(cov:crash;"(anonymous namespace)::MCDCDecisionRecorder::processBranch(llvm::coverage::CounterMappingRegion const&) CoverageMapping.cpp")
+vim,pass(run separately as others introduce conflicting deps),pass,pass,pass,pass,pass(cov:cannot open source file),pass(cov:pass)

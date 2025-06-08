@@ -1,0 +1,24 @@
+id,description in latex,inconsistencies,triggering conditions,comment
+mcdc ternary,"\mcdc ternary",mcdc_num,ternary,GCC and LLVM split the whole expression in different ways
+mcdc integer compared with type min max,"Constant condition",mcdc_num,constant,GCC ignores the const condition;MERGE
+branch coverage integer compared with type min max,"Constant condition",branch_num,constant,GCC ignores the const condition;MERGE
+mcdc empty then clause,"\mcdc empty ``then'' clause",mcdc_num,"no code,if",GCC reports one condition fewer
+mcdc definition,"Masking vs. unique-cause \mcdc",mcdc_val,mixed conjunctive and disjunctive,masking vs. unique-cause
+mcdc constant condition,"Constant condition",mcdc_num,constant,MERGE
+mcdc inline and const,"\mcdc inline function",mcdc_num,"const keyword,inline function",for inline functions GCC generally multiplies the number of conditions by how many times this function is invoked. but when there is const variable in expression. the ratio becomes a total mess
+line coverage meta programming craziness,"Complex control flow in macros",line,"macro,if,goto,loop",a monstrous macro containing complex control flow like goto; it's so unclear what a correct answer should be and probably unfair to report it as a bug; on the other hand with the same triggering condition LLVM exhibits self-inconsistency thus we are more confident to report LineCoverageBug.MAN_DB_1;MERGE
+branch coverage decision in macro,"Decisions in macros",branch_num,macro,
+branch coverage macro in decision,"Macros in decisions",branch_num,macro,
+branch coverage constant condition,"Constant condition",branch_num,constant,
+branch coverage multiline misalignment,"Multiline statements","branch_num,branch_val",multiline,MERGE
+branch coverage switch-case,"\CodeIn{switch}-\CodeIn{case} statements","branch_num,branch_val",switch-case,GCC and LLVM present it in different ways; GCC puts all cases at the beginning while LLVM puts each case in-place. In addition if there's no explicit default case LLVM puts that at the beginning which often contradicts with GCC reports. GCC also merges fall-through case labels;MERGE
+line coverage do-while,"\CodeIn{do}-\CodeIn{while} statements",line,loop,GCC reports how many times this predicate is checked; LLVM reports how many times the loop body is entered; see C_LZMA_1; MERGE
+LineCoverageConventionDifference.C_GZIP_1,"\CodeIn{do}-\CodeIn{while} statements",line,"loop,if",see Python comment;MERGE
+LineCoverageConventionDifference.C_XZ_UTILS_1,"\CodeIn{else if}",line,if, see Python comment
+LineCoverageConventionDifference.C_IPROUTE2_1,"\CodeIn{switch}-\CodeIn{case} statements",line,"switch-case,no code", see Python comment;MERGE
+line coverage multi-line logical expression that still makes sense,"Multiline statements",line,multiline,originally messed up with bugs using the same name LineCoverageBug.DISTRO_INFO_1;MERGE
+line coverage multi-line ternary,"Multiline statements",line,"multiline,ternary",
+line coverage loop in macro,"Complex control flow in macros",line,"macro,loop",previously LineCoverageBug.LZMA_3
+branch coverage GCC inline,"Branches in inline functions",branch_num,"inline function",GCC is M times LLVM
+C_ASSERT,"Branches for assertions",branch_num,"assertion",it's in fact a combination of multiple factors: 0-1 ternary etc
+system header,"System header files",branch_num,"header",

@@ -114,6 +114,7 @@ lzma)
         sed -i 's|CFLAGS =|CFLAGS +=|' $PROJECT_ROOT/C/Util/7z/makefile.gcc
         sed -i 's|CFLAGS =|CFLAGS +=|' $PROJECT_ROOT/C/Util/Lzma/makefile.gcc
         sed -i 's|CFLAGS =|CFLAGS +=|' $PROJECT_ROOT/CPP/7zip/Bundles/LzmaCon/makefile.gcc
+        $STARTING_BUILD_HOOK
     "
     EXECUTABLE="$PROJECT_ROOT/CPP/7zip/Bundles/LzmaCon/lzmp"
     ;;

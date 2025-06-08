@@ -1,14 +1,25 @@
 # DebCovDiff
 
+The experiments are mainly run on a CloudLab c6420 physical server (amd64, see
+detailed specs in [CloudLab documentation](https://docs.cloudlab.us/hardware.html)),
+with an Ubuntu 22.04 image.
+
+Other Debian-based distributions and virtual machines should also work but less
+tested.
+Containers, other Linux distributions or operating systems or other architectures
+are never guaranteed to work.
+
+Caution: `sudo` are used in setup and test scripts. It is recommended to use
+one-off machines like CloudLab or virtual machines.
+
 ## Setup
 
 ```shell
-wget 'https://github.com/shock-hamburger/ase25/blob/master/diff/scripts/setup.sh?raw=true' -O /tmp/setup.sh
-chmod +x /tmp/setup.sh
-/tmp/setup.sh
+wget 'https://github.com/shock-hamburger/ase25/blob/main/diff/scripts/setup.sh?raw=true' -O- | bash
 ```
 
-As prompted, log out the current shell and log back in again.
+As prompted, log out the current shell and log back in again, to make sure
+you are correctly in `sbuild` group.
 
 ## Test with Debian packages
 
@@ -17,12 +28,12 @@ ALL_METRICS=1 \
 LOG_LEVEL=warning \
 SHOW_SOURCE=1 \
 START_WITH="download_source" \
-$DIFF_WORKDIR/ase25/diff/scripts/debian-diff.sh distro-info
+$DIFF_WORKDIR/ase25/diff/scripts/debian-diff.sh grep
 ```
 
 Options:
 
-- `distro-info`: Debian package name
+- `grep`: Debian package name
 - `LOG_LEVEL=<level>`: one of `error`, `warning`, `info`, `debug`
 - `SHOW_SOURCE=1`: show problematic source code snippet
 - `ALL_METRICS=1`: warn of inconsistency for all metrics. Otherwise this is
@@ -41,6 +52,13 @@ Options:
 Run all packages
 
 ```shell
-$DIFF_WORKDIR/enhanced-gcov/diff/scripts/debian-batch.sh
-$DIFF_WORKDIR/enhanced-gcov/diff/scripts/debian-post-batchrun.sh
+$DIFF_WORKDIR/ase25/diff/scripts/debian-batch.sh
+$DIFF_WORKDIR/ase25/diff/scripts/debian-post-batchrun.sh
+```
+
+## Generate figures and tables in the paper
+
+```shell
+cd $DIFF_WORKDIR/ase25/tables-and-figures/scripts
+python run.py
 ```

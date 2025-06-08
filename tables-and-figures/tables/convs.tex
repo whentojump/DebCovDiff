@@ -1,0 +1,15 @@
+1 & Complex control flow in macros & L & 4 (\package{gzip}) & 16 & \CodeIn{goto},\CodeIn{if},loop,macro \\ \hline
+2 & \CodeIn{do}-\CodeIn{while} statements & L & 6 (\package{gzip,hostname}) & 8 & \CodeIn{if},loop \\ \hline
+3 & \CodeIn{else if} & L & 2 (\package{gzip}) & 5 & \CodeIn{if} \\ \hline
+4 & Multiline statements & L/BN/BV & 19 (\package{iproute2}) & 289 & multiline,ternary \\ \hline
+5 & \CodeIn{switch}-\CodeIn{case} statements & L/BN/BV & 12 (\package{mawk}) & 144 & no code,\CodeIn{switch}-\CodeIn{case} \\ \hline
+6 & Macros in decisions & BN & 11 (\package{apache2}) & 150 & macro \\ \hline
+7 & Decisions in macros & BN & 12 (\package{lz4}) & 141 & macro \\ \hline
+8 & Branches in inline functions & BN & 1 (\package{lz4}) & 118 & inline function \\ \hline
+9 & Branches for assertions & BN & 6 (\package{lz4}) & 52 & assertion \\ \hline
+10 & System header files & BN & 7 (\package{iproute2}) & 44 & header \\ \hline
+11 & Constant condition & BN/MN & 11 (\package{iproute2}) & 58 & constant \\ \hline
+12 & \mcdc ternary & MN & 8 (\package{inetutils}) & 12 & ternary \\ \hline
+13 & \mcdc empty ``then'' clause & MN & 3 (\package{gzip}) & 6 & \CodeIn{if},no code \\ \hline
+14 & \mcdc inline function & MN & 1 (\package{lz4}) & 1 & \CodeIn{const} keyword,inline function \\ \hline
+15 & Masking vs. unique-cause \mcdc & MV & 1 (\package{distro-info}) & 1 & mixed conjunctive and disjunctive \\ \hline

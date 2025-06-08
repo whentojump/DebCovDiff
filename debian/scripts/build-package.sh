@@ -39,7 +39,7 @@ fi
 
 get_project_root() {
     local pkg="$1"
-    num_records=$( grep "^Package: $pkg\$" $THIS_DIR/../Sources | wc -l )
+    num_records=$(grep "^Package: $pkg\$" $THIS_DIR/../Sources | wc -l)
     if [[ $num_records != 1 ]]; then
         echo "$num_records records for $pkg found in Sources.gz"
         exit 1
@@ -56,7 +56,7 @@ get_project_root() {
     echo "$pkg-$version_string"
 }
 
-PROJECT_ROOT=$( get_project_root $1 )
+PROJECT_ROOT=$(get_project_root $1)
 source $THIS_DIR/test-plan-diff.sh
 
 if [[ -f $THIS_DIR/chroot/$1.$INSTR_OPTION.mk ]]; then
@@ -116,7 +116,7 @@ elif [[ "$INSTR_OPTION" == "gcc-mcdc" || "$INSTR_OPTION" == "gcc-gcov" ]]; then
             PACKAGE_SPECIFIC_SCRIPT=common/default.sh
         fi
         FINISHED_BUILD_HOOK="
-            $CHROOT_HOOK_PREFIX/bin/common/gcov-common.sh;
+            $CHROOT_HOOK_PREFIX/bin/common/gcov-pre-tests.sh;
             PROJECT_ROOT=$PROJECT_ROOT       \\
             EXECUTABLE=$EXECUTABLE           \\
             EXECUTABLE2=$EXECUTABLE2         \\
@@ -179,7 +179,7 @@ fi
 
 if [[ $START_WITH == "download_source" ]]; then
 
-    NEW_ID=$(( PREV_ID + 1 ))
+    NEW_ID=$((PREV_ID + 1))
     BUILD_PATH="/build/$1-$CC-$NEW_ID"
     HOST_BUILD_PATH="/var/lib/sbuild/$BUILD_PATH"
 
@@ -214,9 +214,9 @@ if [[ $START_WITH == "download_source" ]]; then
         `# invocation of sbuild`                                               \
         --purge-session=always
 
-    ret=$?
-    if [[ $ret -ne 0 ]]; then
-        echo "sbuild: $ret"
+    RET=$?
+    if [[ $RET -ne 0 ]]; then
+        echo "sbuild: $RET"
         exit 1
     fi
 

@@ -1,0 +1,10 @@
+apache2
+curl
+distro-info
+lz4
+lzma
+lzo2
+net-tools
+psmisc
+sl
+zsh

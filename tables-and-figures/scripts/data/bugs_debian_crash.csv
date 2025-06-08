@@ -1,0 +1,3 @@
+id,comment,link,gcc or llvm,affected metrics,triggering conditions,affected projects
+llvm95739,user defined macros that use macros from system headers; triggered with MC/DC,https://github.com/llvm/llvm-project/issues/95739,LLVM,M,"header,macro","bash,diffutils,findutils,sed,tar"
+llvm95831, ,https://github.com/llvm/llvm-project/issues/95831,LLVM,all,header,zsh

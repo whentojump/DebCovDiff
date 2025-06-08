@@ -15,7 +15,7 @@ if ! grep '### DebCovDiff' ~/.bashrc >& /dev/null; then
 
 ### DebCovDiff
 
-export DIFF_WORKDIR="$HOME/DevCovDiff"
+export DIFF_WORKDIR="$HOME/DebCovDiff"
 
 export PATH="$DIFF_WORKDIR/.build-gcc/install/bin:$PATH"
 export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
@@ -24,23 +24,7 @@ export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
 EOF
 fi
 
-if [[ -f ~/.zshrc ]]; then
-    if ! grep '### DebCovDiff' ~/.zshrc >& /dev/null; then
-        cat >> ~/.zshrc << 'EOF'
-
-### DebCovDiff
-
-export DIFF_WORKDIR="$HOME/DevCovDiff"
-
-export PATH="$DIFF_WORKDIR/.build-gcc/install/bin:$PATH"
-export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
-
-export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
-EOF
-    fi
-fi
-
-export DIFF_WORKDIR="$HOME/DevCovDiff"
+export DIFF_WORKDIR="$HOME/DebCovDiff"
 
 export PATH="$DIFF_WORKDIR/.build-gcc/install/bin:$PATH"
 export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
@@ -61,15 +45,9 @@ ssh -T git@github.com || echo "Expected"
 # apt
 
 sudo apt -yq update
-
-sudo apt -yq install cmake ninja-build mold git bc libncurses-dev wget busybox \
-    libssl-dev libelf-dev dwarves flex bison build-essential qemu-system-x86
-sudo apt -yq install python3-pip
-sudo apt -yq install bear
-sudo apt -yq install unzip python-is-python3 jq
-
-sudo apt -yq install creduce
-sudo apt -yq install libxml2-utils
+sudo apt -yq install cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild
+# for figures
+sudo apt -yq install texlive dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 
 # pip
 
@@ -77,10 +55,9 @@ if lsb_release -a | grep 'Distributor ID:	Debian' >& /dev/null; then
     PIP_OPTS="--break-system-packages $PIP_OPTS"
 fi
 
-pip install $PIP_OPTS colorama
-pip install $PIP_OPTS pygments
-pip install $PIP_OPTS numpy
-pip install $PIP_OPTS editdistance
+pip install $PIP_OPTS pygments numpy
+# for figures and tables
+pip install $PIP_OPTS matplotlib==3.10.3 numpy==2.2.4
 
 ### Create workdir
 
@@ -88,7 +65,7 @@ mkdir -p $DIFF_WORKDIR
 
 ### Get LLVM and GCC (build both with stable GCC from the distro)
 
-mkdir -p /tmp/DevCovDiff-toolchains/
+mkdir -p /tmp/DebCovDiff-toolchains/
 
 # LLVM
 
@@ -101,9 +78,9 @@ if [[ ! -d $DIFF_WORKDIR/.build-llvm/install/ ]]; then
 
     cd $DIFF_WORKDIR/.build-llvm/src/
     git init
-    git checkout -b DevCovDiff
-    git remote add origin https://github.com/shock-hamburger/llvm-project.git
-    git pull origin DevCovDiff --depth=10
+    git checkout -b DebCovDiff
+    git remote add origin https://github.com/shock-hamburger/llvm-project
+    git pull origin DebCovDiff --depth=10
 
     cd $DIFF_WORKDIR/.build-llvm/build/
 
@@ -131,8 +108,6 @@ fi
 
 if [[ ! -d $DIFF_WORKDIR/.build-gcc/install/ ]]; then
 
-    sudo apt -yq install libmpc-dev
-
     rm -rf $DIFF_WORKDIR/.build-gcc/
 
     mkdir -p $DIFF_WORKDIR/.build-gcc/src/
@@ -140,9 +115,9 @@ if [[ ! -d $DIFF_WORKDIR/.build-gcc/install/ ]]; then
 
     cd $DIFF_WORKDIR/.build-gcc/src/
     git init
-    git checkout -b DevCovDiff
-    git remote add origin https://github.com/shock-hamburger/gcc.git
-    git pull origin DevCovDiff --depth=10
+    git checkout -b DebCovDiff
+    git remote add origin https://github.com/shock-hamburger/gcc
+    git pull origin DebCovDiff --depth=10
     cd $DIFF_WORKDIR/.build-gcc/build/
     # Always use GCC under /usr/bin/
     ../src/configure CC=/usr/bin/gcc CXX=/usr/bin/g++                          \
@@ -164,12 +139,10 @@ fi
 ### Pull scripts
 
 if [[ ! -d $DIFF_WORKDIR/$REPO_NAME ]]; then
-    git clone https://github.com/shock-hamburger/ase25.git $DIFF_WORKDIR/$REPO_NAME
+    git clone https://github.com/shock-hamburger/ase25 $DIFF_WORKDIR/$REPO_NAME
 fi
 
 ### Debian
-
-sudo apt -yq install sbuild
 
 $DIFF_WORKDIR/$REPO_NAME/debian/scripts/setup-all-init-chroot.sh
 sudo sbuild-adduser $USER
@@ -182,7 +155,8 @@ cat << EOF
 ===========================================================================
 
 Setup has finished. Be sure to log out of the current shell and log back in
-before starting your experiments.
+before starting your experiments, to make sure you are correctly in the
+"sbuild" group.
 
 ===========================================================================
 
