@@ -31,15 +31,6 @@ export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
 
 export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
 
-### Eliminate interaction
-
-cat > ~/.ssh/config << EOF
-Host github.com
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
-EOF
-ssh -T git@github.com || echo "Expected"
-
 ### Dependency
 
 # apt
