@@ -70,7 +70,7 @@ abort() {
 
 mapfile -t PACKAGE_LIST < $DIFF_WORKDIR/ase25/tables-and-figures/scripts/data/select/selection_7_success.txt
 
-REPEAT=$(jq -r .repeat config.json)
+REPEAT=$(jq -r .repeat $THIS_DIR/../config.json)
 
 # For developing and testing this script itself
 if [[ $DEV == "1" ]]; then
@@ -129,7 +129,7 @@ for p in "${PACKAGE_LIST[@]}"; do
     if [[ $p == "sl" ]]; then
         continue
     fi
-    START_WITH="download_source" $DIFF_WORKDIR/enhanced-gcov/diff/scripts/debian-diff.sh $p
+    START_WITH="download_source" $DIFF_WORKDIR/$REPO_NAME/diff/scripts/debian-diff.sh $p
     ret=$?
     if [[ $ret -ne 0 ]]; then
         echo "debian-diff.sh: $ret"
@@ -148,7 +148,7 @@ trap 'abort' SIGINT
 
 for i in `seq 1 $REPEAT`; do
     for p in "${PACKAGE_LIST[@]}"; do
-        START_WITH="test" $DIFF_WORKDIR/enhanced-gcov/diff/scripts/debian-diff.sh $p
+        START_WITH="test" $DIFF_WORKDIR/$REPO_NAME/diff/scripts/debian-diff.sh $p
         ret=$?
         if [[ $ret -ne 0 ]]; then
             echo "debian-diff.sh: $ret"

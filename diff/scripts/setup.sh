@@ -21,6 +21,8 @@ export PATH="$DIFF_WORKDIR/.build-gcc/install/bin:$PATH"
 export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
 
 export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
+
+export REPO_NAME="ase25"
 EOF
 fi
 
@@ -36,7 +38,7 @@ export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
 # apt
 
 sudo apt -yq update
-sudo apt -yq install cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild
+sudo apt -yq install flex cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild
 # for figures
 sudo apt -yq install texlive dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 
