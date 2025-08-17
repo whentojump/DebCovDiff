@@ -12,6 +12,7 @@ LLVM_UNDER_TEST_VERSION=20
 
 HOST_GCC_PREFIX=$DIFF_WORKDIR/.build-gcc/install
 HOST_LLVM_PREFIX=$DIFF_WORKDIR/.build-llvm/install
+HOST_LLVM_PREFIX_ASSERTIONS=$DIFF_WORKDIR/.build-llvm/install-assertions
 
 if ! id -nG | grep -q sbuild; then
     say "User is not in sbuild group (you probably need to log out and back in, or run newgrp)"
@@ -42,7 +43,9 @@ for INSTR_OPTION in "${INSTR_OPTION_LIST[@]}"; do
     case "${INSTR_OPTION}" in
     clang*)
         sudo rm -rf /srv/chroot/$CHROOT_NAME/usr/lib/llvm-$LLVM_UNDER_TEST_VERSION
-        sudo cp -r $HOST_LLVM_PREFIX /srv/chroot/$CHROOT_NAME/usr/lib/llvm-$LLVM_UNDER_TEST_VERSION
+        sudo cp -r $HOST_LLVM_PREFIX /srv/chroot/$CHROOT_NAME/usr/lib/llvm-$LLVM_UNDER_TEST_VERSION-no-assertions
+        sudo cp -r $HOST_LLVM_PREFIX_ASSERTIONS /srv/chroot/$CHROOT_NAME/usr/lib/llvm-$LLVM_UNDER_TEST_VERSION-assertions
+        sudo ln -sf ./llvm-$LLVM_UNDER_TEST_VERSION-no-assertions /srv/chroot/$CHROOT_NAME/usr/lib/llvm-$LLVM_UNDER_TEST_VERSION
         say "LLVM (re)installed to the chroot for [$INSTR_OPTION]"
         ;;
     gcc*)
@@ -130,6 +133,13 @@ for var in "$@"; do
             exit 1
             ;;
     esac
+    # case "$var" in
+    #     *.c|*.cc|*.cpp|*.cxx|*.C)
+    #         if [ -f "$var" ]; then
+    #             var=$(realpath "$var")
+    #         fi
+    #         ;;
+    # esac
     CC_ARGS[${#CC_ARGS[@]}]="$var"
 done
 
@@ -157,6 +167,13 @@ for var in "$@"; do
             exit 1
             ;;
     esac
+    # case "$var" in
+    #     *.c|*.cc|*.cpp|*.cxx|*.C)
+    #         if [ -f "$var" ]; then
+    #             var=$(realpath "$var")
+    #         fi
+    #         ;;
+    # esac
     CC_ARGS[${#CC_ARGS[@]}]="$var"
 done
 
@@ -246,6 +263,11 @@ EOF
     echo "  # (Within the chroot)"
     echo "  dpkg-buildflags"
 
+    # Essential but we should not take it for granted...
+
+    say "install python3 to the chroot for [$INSTR_OPTION]"
+    sbuild-apt $CHROOT_NAME apt-get install python3 > /dev/null
+
     # Generate unique profile filename for each invocation (LLVM-specific)
 
     say "install uuid-gen to the chroot for [$INSTR_OPTION]"
@@ -256,19 +278,22 @@ EOF
     say "install jq to the chroot for [$INSTR_OPTION]"
     sbuild-apt $CHROOT_NAME apt-get install jq > /dev/null
 
+    say "install time to the chroot for [$INSTR_OPTION]"
+    sbuild-apt $CHROOT_NAME apt-get install time > /dev/null
+
     # For development only
 
-    say "install vim, fzf and strace to the chroot for [$INSTR_OPTION]"
-    sbuild-apt $CHROOT_NAME apt-get install vim fzf strace > /dev/null
+    say "install less, vim, fzf and strace to the chroot for [$INSTR_OPTION]"
+    sbuild-apt $CHROOT_NAME apt-get install less vim fzf strace > /dev/null
 
     say "configure Bash PS1 in the chroot for [$INSTR_OPTION]"
     printf "export PS1='\\[\\\e[34;1m\\]\${debian_chroot:+(\$debian_chroot)}\\\u@\\h:\\w\\[\\\e[0m\\]\\\n\\$ '\n" |\
-        sudo tee -a /srv/chroot/$CHROOT_NAME/root/.bashrc > /dev/null
+        sudo tee -a /srv/chroot/$CHROOT_NAME/etc/bash.bashrc > /dev/null
 
     # So that we can run "clear" in chroot
     say "configure Bash TERM in the chroot for [$INSTR_OPTION]"
     printf "export TERM=xterm-256color\n" |\
-        sudo tee -a /srv/chroot/$CHROOT_NAME/root/.bashrc > /dev/null
+        sudo tee -a /srv/chroot/$CHROOT_NAME/etc/bash.bashrc > /dev/null
 
     say "finish configuring the chroot for [$INSTR_OPTION]"
     sudo touch /srv/chroot/$CHROOT_NAME/etc/CONFIGURED

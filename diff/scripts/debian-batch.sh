@@ -72,6 +72,21 @@ mapfile -t PACKAGE_LIST < $DIFF_WORKDIR/ase25/tables-and-figures/scripts/data/se
 
 REPEAT=$(jq -r .repeat $THIS_DIR/../config.json)
 
+if [[ $AUTO_TESTS == "1" ]]; then
+    PACKAGE_LIST=(
+        "bzip2"
+        "debianutils"
+        "distro-info"
+        "file"
+        "ifupdown"
+        "lsof"
+        "lzo2"
+        "mawk"
+        "procps"
+        "psmisc"
+    )
+fi
+
 # For developing and testing this script itself
 if [[ $DEV == "1" ]]; then
     PACKAGE_LIST=( "hostname" )

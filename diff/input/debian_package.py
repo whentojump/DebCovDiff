@@ -218,72 +218,34 @@ def run(package_name, show_source=False) -> tuple[int, int, int]:
 
             info_section(logger, f"Comparing {file_name}", divider='=')
 
-            if (len(gcc_filename_to_json_index_map[file_name]) != 2):
-                if file_name == 'lz4-1.9.4/programs/util.h':
-                    gcc_json_filename = gcc_filename_to_json_index_map[file_name][4]
-                    gcc_i = gcc_filename_to_json_index_map[file_name][5]
-                elif file_name in [
-                    'grep-3.8/src/system.h',
-                    'iproute2-6.1.0/include/json_print.h',
-                    'iproute2-6.1.0/include/libnetlink.h',
-                    'iproute2-6.1.0/include/list.h',
-                    'iproute2-6.1.0/include/utils.h',
-                    'iproute2-6.1.0/ip/ila_common.h',
-                    'iproute2-6.1.0/ip/ip_common.h',
-                    'lz4-1.9.4/lib/lz4.c',
-                    'lzma-9.22/CPP/7zip/Common/FileStreams.h',
-                    'lzma-9.22/CPP/Common/C_FileIO.h',
-                    'lzma-9.22/CPP/Common/MyCom.h',
-                    'lzma-9.22/CPP/Common/MyGuidDef.h',
-                    'lzma-9.22/CPP/Common/MyWindows.h',
-                    'lzo2-2.10/src/compr1b.h',
-                    'lzo2-2.10/src/compr1c.h',
-                    'lzo2-2.10/src/lzo1a_cm.ch',
-                    'lzo2-2.10/src/lzo1b_c.ch',
-                    'lzo2-2.10/src/lzo1b_cm.ch',
-                    'lzo2-2.10/src/lzo1b_cr.ch',
-                    'lzo2-2.10/src/lzo1b_d.ch',
-                    'lzo2-2.10/src/lzo1b_r.ch',
-                    'lzo2-2.10/src/lzo1b_sm.ch',
-                    'lzo2-2.10/src/lzo1b_tm.ch',
-                    'lzo2-2.10/src/lzo1f_d.ch',
-                    'lzo2-2.10/src/lzo1x_9x.c',
-                    'lzo2-2.10/src/lzo1x_c.ch',
-                    'lzo2-2.10/src/lzo1x_d.ch',
-                    'lzo2-2.10/src/lzo1x_d3.c',
-                    'lzo2-2.10/src/lzo1x_oo.ch',
-                    'lzo2-2.10/src/lzo2a_d.ch',
-                    'lzo2-2.10/src/lzo_func.h',
-                    'lzo2-2.10/src/lzo_mchw.ch',
-                    'lzo2-2.10/src/lzo_swd.ch',
-                    'util-linux-2.38.1/include/strutils.h',
-                    'e2fsprogs-1.47.0/lib/ext2fs/ext2_fs.h',
-                    'e2fsprogs-1.47.0/lib/ext2fs/ext2fs.h',
-                    'e2fsprogs-1.47.0/lib/support/quotaio.h',
-                    'wget-1.21.3/src/wget.h',
-                    'pam-1.5.2/libpam/include/pam_inline.h',
-                    'pam-1.5.2/modules/pam_unix/md5.c',
-                    'pam-1.5.2/modules/pam_unix/md5_crypt.c',
-                ]:
-                    gcc_json_filename = gcc_filename_to_json_index_map[file_name][0]
-                    gcc_i = gcc_filename_to_json_index_map[file_name][1]
-                else:
-                    print(file_name)
-                    print(gcc_filename_to_json_index_map[file_name])
-                    exit()
-            else:
+            if (len(gcc_filename_to_json_index_map[file_name]) == 2):
+                # Coverage for "file_name" is in a single JSON file
                 gcc_json_filename, gcc_i = gcc_filename_to_json_index_map[file_name]
+                with open(gcc_json_filename) as f:
+                    gcc_json = json.load(f)
+                    # Because we are reading JSON files on disk once again, update them
+                    # with the canonicalized paths.
+                    myjson.set_nth_file_name_from_gcc_json(gcc_json, gcc_i, file_name)
+                gcc_file_json = myjson.get_nth_file_from_gcc_json(gcc_json, gcc_i)
+            else:
+                # Coverage for "file_name" is contained in multiple JSON files.
+                # This can happen because some actual code gets included by multiple
+                # files.
+                gcc_file_json = {}
+                for i in range(0, len(gcc_filename_to_json_index_map[file_name]), 2):
+                    gcc_json_filename = gcc_filename_to_json_index_map[file_name][i]
+                    gcc_i = gcc_filename_to_json_index_map[file_name][i+1]
+                    with open(gcc_json_filename) as f:
+                        gcc_json = json.load(f)
+                        # Because we are reading JSON files on disk once again, update them
+                        # with the canonicalized paths.
+                        myjson.set_nth_file_name_from_gcc_json(gcc_json, gcc_i, file_name)
+                    partial_gcc_file_json = myjson.get_nth_file_from_gcc_json(gcc_json, gcc_i)
+                    gcc_file_json = myjson.merge_partial_gcc_file_json(gcc_file_json, partial_gcc_file_json)
+
             llvm_i = llvm_filename_to_json_index_map[file_name]
 
-            with open(gcc_json_filename) as f:
-                gcc_json = json.load(f)
-
-            gcc_file_json = myjson.get_nth_file_from_gcc_json(gcc_json, gcc_i)
             llvm_file_json = myjson.get_nth_file_from_llvm_json(llvm_json, llvm_i)
-
-            # Because we are reading JSON files on disk once again, update them
-            # with the canonicalized paths.
-            myjson.set_nth_file_name_from_gcc_json(gcc_json, gcc_i, file_name)
 
             mcdc_site_cnt += mcdc.compare_gcc_llvm(
                 source_dir=gcc_host_build_dir,

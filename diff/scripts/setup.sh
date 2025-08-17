@@ -4,6 +4,50 @@ set -ex
 
 REPO_NAME="ase25"
 
+if [[ $DEV == "1" ]]; then
+    cat << 'EOF'
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+You are in development mode which is for the insiders only. If
+you are not the authors please unset your DEV variable and rerun.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+EOF
+    if [[ ! -f $HOME/.ssh/id_ecdsa_ase25 ]]; then
+        cat << 'EOF'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Please prepare the SSH key for anonymous identity to $HOME/.ssh/id_ecdsa_ase25
+following the below steps.
+
+mkdir -p $HOME/.ssh
+touch $HOME/.ssh/id_ecdsa_ase25
+chmod 600 $HOME/.ssh/id_ecdsa_ase25
+vim $HOME/.ssh/id_ecdsa_ase25 # Populate the file content
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+EOF
+        exit 1
+    fi
+
+    if ! grep 'github.com-anonymous' $HOME/.ssh/config >& /dev/null; then
+        cat << EOF >> $HOME/.ssh/config
+Host github.com-anonymous
+    HostName github.com
+    User git
+    IdentityFile $HOME/.ssh/id_ecdsa_ase25
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+EOF
+    fi
+
+fi
+
 #
 # Script to set up everything for differential testing
 #
@@ -68,12 +112,29 @@ if [[ ! -d $DIFF_WORKDIR/.build-llvm/install/ ]]; then
 
     mkdir -p $DIFF_WORKDIR/.build-llvm/src/
     mkdir -p $DIFF_WORKDIR/.build-llvm/build/
+    mkdir -p $DIFF_WORKDIR/.build-llvm/build-assertions/
 
     cd $DIFF_WORKDIR/.build-llvm/src/
     git init
-    git checkout -b DebCovDiff
-    git remote add origin https://github.com/shock-hamburger/llvm-project
-    git pull origin DebCovDiff --depth=10
+    if [[ $DEV == "1" ]]; then
+        git checkout -b DebCovDiff-next
+    else
+        git checkout -b DebCovDiff
+    fi
+
+    if [[ $DEV == "1" ]]; then
+        git remote add origin git@github.com-anonymous:shock-hamburger/llvm-project.git
+    else
+        git remote add origin https://github.com/shock-hamburger/llvm-project
+    fi
+
+    if [[ $DEV == "1" ]]; then
+        git pull origin DebCovDiff-next --depth=10
+        git config user.name shock-hamburger
+        git config user.email shock.hamburger@gmail.com
+    else
+        git pull origin DebCovDiff --depth=10
+    fi
 
     cd $DIFF_WORKDIR/.build-llvm/build/
 
@@ -92,6 +153,26 @@ if [[ ! -d $DIFF_WORKDIR/.build-llvm/install/ ]]; then
                   -DLLVM_PARALLEL_LINK_JOBS="2"                                \
                   -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"                         \
                   -DCMAKE_INSTALL_PREFIX="$DIFF_WORKDIR/.build-llvm/install/"  \
+                  $DIFF_WORKDIR/.build-llvm/src/llvm
+    ninja -j$(nproc) install
+
+    cd $DIFF_WORKDIR/.build-llvm/build-assertions/
+
+    # Or RelWithDebInfo
+    # Always use GCC under /usr/bin/
+    cmake -GNinja -DCMAKE_BUILD_TYPE="Release"                                 \
+                  -DCMAKE_C_FLAGS="-pipe"                                      \
+                  -DCMAKE_CXX_FLAGS="-pipe"                                    \
+                  -DCMAKE_C_COMPILER="/usr/bin/gcc"                            \
+                  -DCMAKE_CXX_COMPILER="/usr/bin/g++"                          \
+                  -DLLVM_TARGETS_TO_BUILD="X86"                                \
+                  -DLLVM_ENABLE_ASSERTIONS="ON"                                \
+                  -DLLVM_ENABLE_PROJECTS="clang;lld"                           \
+                  -DLLVM_USE_LINKER="mold"                                     \
+                  -DLLVM_ENABLE_RUNTIMES="compiler-rt"                         \
+                  -DLLVM_PARALLEL_LINK_JOBS="2"                                \
+                  -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"                         \
+                  -DCMAKE_INSTALL_PREFIX="$DIFF_WORKDIR/.build-llvm/install-assertions/" \
                   $DIFF_WORKDIR/.build-llvm/src/llvm
     ninja -j$(nproc) install
 
@@ -132,7 +213,15 @@ fi
 ### Pull scripts
 
 if [[ ! -d $DIFF_WORKDIR/$REPO_NAME ]]; then
-    git clone https://github.com/shock-hamburger/ase25 $DIFF_WORKDIR/$REPO_NAME
+    if [[ $DEV == "1" ]]; then
+        git clone git@github.com-anonymous:shock-hamburger/ase25-next.git $DIFF_WORKDIR/$REPO_NAME
+        pushd $DIFF_WORKDIR/$REPO_NAME
+        git config user.name shock-hamburger
+        git config user.email shock.hamburger@gmail.com
+        popd
+    else
+        git clone https://github.com/shock-hamburger/ase25 $DIFF_WORKDIR/$REPO_NAME
+    fi
 fi
 
 ### Debian

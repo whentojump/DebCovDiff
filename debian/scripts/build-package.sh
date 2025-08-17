@@ -24,12 +24,18 @@ sudo rm -rf /srv/chroot/${CHROOT_NAME}${CHROOT_HOOK_PREFIX}
 sudo mkdir -p /srv/chroot/${CHROOT_NAME}${CHROOT_HOOK_PREFIX}/bin
 sudo cp -r $THIS_DIR/chroot/* /srv/chroot/${CHROOT_NAME}${CHROOT_HOOK_PREFIX}/bin
 
+if [[ "$AUTO_TESTS" == "1" ]]; then
+    DEB_BUILD_PROFILES=$(echo ${DEB_BUILD_PROFILES//nocheck/})
+    DEB_BUILD_OPTIONS=$(echo ${DEB_BUILD_OPTIONS//nocheck/})
+else
 if ! grep nocheck <<< "$DEB_BUILD_PROFILES" > /dev/null; then
     DEB_BUILD_PROFILES="nocheck $DEB_BUILD_PROFILES"
 fi
 if ! grep nocheck <<< "$DEB_BUILD_OPTIONS" > /dev/null; then
     DEB_BUILD_OPTIONS="nocheck $DEB_BUILD_OPTIONS"
 fi
+fi
+
 if ! grep nostrip <<< "$DEB_BUILD_PROFILES" > /dev/null; then
     DEB_BUILD_PROFILES="nostrip $DEB_BUILD_PROFILES"
 fi
@@ -70,6 +76,55 @@ if [[ -f $THIS_DIR/chroot/$1.$INSTR_OPTION.mk ]]; then
     "
 fi
 
+if [[ $1 == "bzip2" ]]; then
+    # Using this debugging Makefile, repeatedly build and measure coverage using
+    # gcov with bzip2. "Stamp mismatch" error can be nondeterministically observed.
+    # Once that happens, examine the order of compiling *.sho and *.o files.
+    # E.g. the error:
+    #
+    # ./compress.gcda:stamp mismatch with notes file
+    # ./decompress.gcda:stamp mismatch with notes file
+    #
+    # the order:
+    #
+    # START:  2025-08-26 06:25:31.464577520 --- compress.o
+    # START:  2025-08-26 06:25:31.466173052 --- decompress.o
+    # START:  2025-08-26 06:25:31.470273946 --- decompress.sho
+    # START:  2025-08-26 06:25:31.471239541 --- compress.sho
+    # FINISH: 2025-08-26 06:25:31.626672677 --- compress.sho (elapsed 0.155 s)
+    # FINISH: 2025-08-26 06:25:31.691298961 --- decompress.sho (elapsed 0.220 s)
+    # FINISH: 2025-08-26 06:25:31.698095788 --- compress.o (elapsed 0.231 s)
+    # FINISH: 2025-08-26 06:25:31.759491313 --- decompress.o (elapsed 0.292 s)
+
+    # STARTING_BUILD_HOOK="
+    #     $STARTING_BUILD_HOOK
+    #     mv $PROJECT_ROOT/Makefile $PROJECT_ROOT/Makefile.original
+    #     cp $CHROOT_HOOK_PREFIX/bin/bzip2.debug.mk $PROJECT_ROOT/Makefile
+    # "
+
+    # Using this Makefile, we enforce the order of compiling *.sho and *.o files.
+    STARTING_BUILD_HOOK="
+        $STARTING_BUILD_HOOK
+        mv $PROJECT_ROOT/Makefile $PROJECT_ROOT/Makefile.original
+        cp $CHROOT_HOOK_PREFIX/bin/bzip2.enforce-order.mk $PROJECT_ROOT/Makefile
+    "
+fi
+
+if [[ $1 == "lzo2" ]]; then
+    # The original test suite has one case that is affected by the content of
+    # the build directory, which is intrinsically different between GCC and
+    # Clang/LLVM thus causing coverage difference. Skip that one test.
+    #
+    # Do not put a modified Makefile directly
+    STARTING_BUILD_HOOK="
+        $STARTING_BUILD_HOOK
+        mv $PROJECT_ROOT/Makefile.am $PROJECT_ROOT/Makefile.original.am
+        mv $PROJECT_ROOT/Makefile.in $PROJECT_ROOT/Makefile.original.in
+        cp $CHROOT_HOOK_PREFIX/bin/lzo2.skip-one-test.mk.am $PROJECT_ROOT/Makefile.am
+        cp $CHROOT_HOOK_PREFIX/bin/lzo2.skip-one-test.mk.in $PROJECT_ROOT/Makefile.in
+    "
+fi
+
 if [[ "$INSTR_OPTION" == "clang-mcdc" || "$INSTR_OPTION" == "clang-scc" ]]; then
     if [[ "$INSTR_OPTION" == "clang-mcdc" ]]; then
         LLVM_COV_FLAGS="--show-branches=count --show-mcdc --show-mcdc-summary"
@@ -83,7 +138,11 @@ if [[ "$INSTR_OPTION" == "clang-mcdc" || "$INSTR_OPTION" == "clang-scc" ]]; then
         else
             PACKAGE_SPECIFIC_SCRIPT=common/default.sh
         fi
+        if [[ "$AUTO_TESTS" == "1" ]]; then
+            PACKAGE_SPECIFIC_SCRIPT=common/auto-tests.sh
+        fi
         FINISHED_BUILD_HOOK="
+            PACKAGE_NAME=$1                  \\
             PROJECT_ROOT=$PROJECT_ROOT       \\
             EXECUTABLE=$EXECUTABLE           \\
             EXECUTABLE2=$EXECUTABLE2         \\
@@ -99,6 +158,7 @@ if [[ "$INSTR_OPTION" == "clang-mcdc" || "$INSTR_OPTION" == "clang-scc" ]]; then
             LIBRARY=$LIBRARY                 \\
             LLVM_COV_FLAGS='$LLVM_COV_FLAGS' \\
             INSTR_OPTION=$INSTR_OPTION       \\
+            AUTO_TESTS=$AUTO_TESTS           \\
             $CHROOT_HOOK_PREFIX/bin/$PACKAGE_SPECIFIC_SCRIPT
         "
     fi
@@ -115,8 +175,12 @@ elif [[ "$INSTR_OPTION" == "gcc-mcdc" || "$INSTR_OPTION" == "gcc-gcov" ]]; then
         else
             PACKAGE_SPECIFIC_SCRIPT=common/default.sh
         fi
+        if [[ "$AUTO_TESTS" == "1" ]]; then
+            PACKAGE_SPECIFIC_SCRIPT=common/auto-tests.sh
+        fi
         FINISHED_BUILD_HOOK="
             $CHROOT_HOOK_PREFIX/bin/common/gcov-pre-tests.sh;
+            PACKAGE_NAME=$1                  \\
             PROJECT_ROOT=$PROJECT_ROOT       \\
             EXECUTABLE=$EXECUTABLE           \\
             EXECUTABLE2=$EXECUTABLE2         \\
@@ -132,6 +196,7 @@ elif [[ "$INSTR_OPTION" == "gcc-mcdc" || "$INSTR_OPTION" == "gcc-gcov" ]]; then
             LIBRARY=$LIBRARY                 \\
             GCOV_FLAGS='$GCOV_FLAGS'         \\
             INSTR_OPTION=$INSTR_OPTION       \\
+            AUTO_TESTS=$AUTO_TESTS           \\
             $CHROOT_HOOK_PREFIX/bin/$PACKAGE_SPECIFIC_SCRIPT
         "
     fi

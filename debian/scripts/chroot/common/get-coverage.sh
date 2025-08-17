@@ -2,23 +2,70 @@
 
 if [[ $INSTR_OPTION == clang* ]]; then
 
+    if [[ "$AUTO_TESTS" == "1" ]]; then
+        PROFRAW_DIR="$( realpath $PROJECT_ROOT )/llvm-cov-profraw"
+    else
+        PROFRAW_DIR=.
+    fi
+
+    mkdir -p /tmp/llvm-cov
+
     echo "=========================== llvm-profdata ==========================="
 
-    if [[ ! -s $(ls *.profraw | head -n 1) ]]; then
-        echo "Raw profiles should not be empty"
+    # Avoid ls'ing *.profraw files when running automatic tests which may produce
+    # too large output and exceed the ARG_MAX limit.
+
+    find $PROFRAW_DIR -name "*.profraw" -type f | sort > /tmp/llvm-cov/profraw-list.txt
+
+    # It is observed in "psmisc" dh_auto_test that some *.profraw files are
+    # empty. Tolerate such cases.
+    for f in $(cat /tmp/llvm-cov/profraw-list.txt); do
+        if [[ ! -s $f ]]; then
+            echo "Raw profile $f is empty, removing it"
+            rm -rf $f
+        fi
+    done
+
+    find $PROFRAW_DIR -name "*.profraw" -type f | sort > /tmp/llvm-cov/profraw-list.txt
+
+    NUM_PROFRAW_FILES=$(wc -l < /tmp/llvm-cov/profraw-list.txt)
+
+    if [[ $NUM_PROFRAW_FILES -eq 0 ]]; then
+        echo "0 *.profraw file(s) found"
+        rm -rf /tmp/llvm-cov
         exit 1
     fi
 
-    llvm-profdata merge *.profraw -o default.profdata
+    echo "Number of *.profraw file(s): $NUM_PROFRAW_FILES"
+
+    if [[ ! -s $(cat /tmp/llvm-cov/profraw-list.txt | head -n 1) ]]; then
+        echo "Raw profiles should not be empty"
+        rm -rf /tmp/llvm-cov
+        exit 1
+    fi
+
+    llvm-profdata merge --input-files /tmp/llvm-cov/profraw-list.txt -o default.profdata
+
+    rm -rf /tmp/llvm-cov
 
     echo OK
 
+    echo "=========== Finding all executables with coverage mapping ==========="
+    for exe in $(find $PROJECT_ROOT -type f -executable); do
+        if llvm-readelf --sections "$exe" 2>/dev/null | grep -q '__llvm_covmap'; then
+            echo "$exe"
+        fi
+    done | tee llvm-cov-executables.txt
+    if [[ "$AUTO_TESTS" == "1" ]]; then
+        BINARY="$(/opt/DebCovDiff/bin/common/llvm-cov-args.py < llvm-cov-executables.txt)"
+        echo "llvm-cov $BINARY"
+    fi
     echo "========================== llvm-cov (text) =========================="
 
     llvm-cov show $LLVM_COV_FLAGS                                              \
                   -use-color=false                                             \
                   -instr-profile default.profdata                              \
-                  ./$BINARY                                                    \
+                  $BINARY                                                      \
                   > text-coverage-report.txt
 
     head -n 50 text-coverage-report.txt
@@ -30,7 +77,7 @@ if [[ $INSTR_OPTION == clang* ]]; then
                   -use-color=false                                             \
                   -output-dir=text-coverage-report                             \
                   -instr-profile default.profdata                              \
-                  ./$BINARY
+                  $BINARY
 
     # # Only print function coverage to terminal otherwise the table is too wide
     # col=$(head text-coverage-report/index.txt -n1 | awk -v s="Lines" '{print index($0, s)}')
@@ -40,6 +87,10 @@ if [[ $INSTR_OPTION == clang* ]]; then
     # In this version of LLVM there's no final new line in the generated text
     # index file
     echo
+
+    echo "Line coverage: $(tail -3 text-coverage-report/index.txt | head -1 | awk '{print $7}')"
+    echo "Function coverage: $(tail -3 text-coverage-report/index.txt | head -1 | awk '{print $10}')"
+    echo "MC/DC: $(tail -3 text-coverage-report/index.txt | head -1 |awk '{print $10}')"
 
     # echo "========================== llvm-cov (HTML) =========================="
     #
@@ -53,13 +104,13 @@ if [[ $INSTR_OPTION == clang* ]]; then
 
     echo "========================== llvm-cov (JSON) =========================="
 
-    llvm-cov export -instr-profile default.profdata ./$BINARY | jq > default.json
+    llvm-cov export -instr-profile default.profdata $BINARY | jq > default.json
 
     echo OK
 
     echo "========================== llvm-cov (LCOV) =========================="
 
-    llvm-cov export -instr-profile default.profdata ./$BINARY -format=lcov > default.lcov.txt
+    llvm-cov export -instr-profile default.profdata $BINARY -format=lcov > default.lcov.txt
 
     echo OK
 
@@ -67,6 +118,10 @@ elif [[ $INSTR_OPTION == gcc* ]]; then
 
     PROJECT_ROOT=$(realpath $PROJECT_ROOT)
     cd $PROJECT_ROOT
+
+    if [[ $PACKAGE_NAME == "file" ]]; then
+        cd tests
+    fi
 
     NUM_GCOV_RESULTS=$(find . -type f -name "*.gcov" | wc -l)
     if [[ "$NUM_GCOV_RESULTS" -gt 0 ]]; then
@@ -99,6 +154,36 @@ elif [[ $INSTR_OPTION == gcc* ]]; then
     echo "================================ gcov ==============================="
 
     truncate -s 0 /tmp/gcov/gcov_log.txt
+
+    if [[ $AUTO_TESTS == 1 ]]; then
+        BASENAME=$(cat /tmp/gcov/common_gcda_and_gcno_files.txt | sed 's/$/\./')
+        /opt/gcc-latest/bin/gcov $GCOV_FLAGS \
+            $BASENAME \
+            > /tmp/gcov/gcov_stdout.txt \
+            2> /tmp/gcov/gcov_stderr.txt
+        RET1=$?
+        cat /tmp/gcov/gcov_stderr.txt
+        grep "Cannot open source file" /tmp/gcov/gcov_stderr.txt > /dev/null
+        RET2=$?
+        if [[ $RET1 -ne 0 ]]; then
+
+            cat /tmp/gcov/gcov_stdout.txt >> /tmp/gcov/gcov_log.txt
+
+            echo "gcov error"
+            echo
+            echo "The command is"
+            echo
+            echo "/opt/gcc-latest/bin/gcov $GCOV_FLAGS $BASENAME"
+            echo
+            head -n 50 /tmp/gcov/gcov_log.txt
+            printf ' .\n .\n .\n'
+            tail -n 50 /tmp/gcov/gcov_log.txt
+            rm -rf /tmp/gcov
+            exit 1
+        fi
+        # TODO more complicated gcov error handling
+        /opt/gcc-latest/bin/gcov --json-format $GCOV_FLAGS $BASENAME > /dev/null
+    else
 
     for f in `cat /tmp/gcov/common_gcda_and_gcno_files.txt`; do
 
@@ -243,6 +328,7 @@ elif [[ $INSTR_OPTION == gcc* ]]; then
         cat /tmp/gcov/gcov_stdout.txt >> /tmp/gcov/gcov_log.txt
         cd $PROJECT_ROOT
     done
+    fi
 
     # Display part of gcov commands' stdout
 
