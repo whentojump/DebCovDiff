@@ -24,16 +24,17 @@ you are correctly in `sbuild` group.
 ## Test with Debian packages
 
 ```shell
+AUTO_TESTS=1 \
 ALL_METRICS=1 \
 LOG_LEVEL=warning \
 SHOW_SOURCE=1 \
 START_WITH="download_source" \
-$DIFF_WORKDIR/ase25/diff/scripts/debian-diff.sh grep
+$DIFF_WORKDIR/ase25/diff/scripts/debian-diff.sh procps
 ```
 
 Options:
 
-- `grep`: Debian package name
+- `procps`: Debian package name
 - `LOG_LEVEL=<level>`: one of `error`, `warning`, `info`, `debug`
 - `SHOW_SOURCE=1`: show problematic source code snippet
 - `ALL_METRICS=1`: warn of inconsistency for all metrics. Otherwise this is
@@ -48,12 +49,15 @@ Options:
     - `"diff"`: if the package has been run before, skip everything but the
       final differential testing step, based on the existing coverage reports
       under `/var/lib/sbuild/build/<package>-<toolchain>-<old_id>`
+- `AUTO_TESTS=1`: measure coverage of
+  [`dh_auto_test`](https://manpages.debian.org/bookworm/debhelper/dh_auto_test.1.en.html)
+  if available. Otherwise invoke simple commands as specified in [`./debian/scripts/chroot/`](./debian/scripts/chroot/).
 
 Run all packages
 
 ```shell
+# Optionally: export AUTO_TESTS=1
 $DIFF_WORKDIR/ase25/diff/scripts/debian-batch.sh
-$DIFF_WORKDIR/ase25/diff/scripts/debian-post-batchrun.sh
 ```
 
 ## Generate figures and tables in the paper
