@@ -1,0 +1,9 @@
+bzip2
+distro-info
+file
+ifupdown
+lsof
+lzo2
+mawk
+procps
+psmisc

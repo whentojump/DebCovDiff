@@ -1,3 +1,10 @@
+# In[1]:
+# Common
+
+# Notes:
+# - Reproducible PDF:
+#   https://github.com/matplotlib/matplotlib/issues/6317/
+
 latex_macros = []
 
 def canonicalize_triggering_conditions_latex(c, short=False):
@@ -20,8 +27,10 @@ def canonicalize_triggering_conditions_latex(c, short=False):
             return '\\CodeIn{extern "C"}'
         case 'switch-case':
             return '\\CodeIn{switch}-\\CodeIn{case}'
-        case '#line':
-            return '\\CodeIn{\\#line}'
+        case '#line' | '#ifdef':
+            return 'preprocessor directive'
+        case 'malloc':
+            return '\\CodeIn{malloc}'
     return c
 
 def canonicalize_triggering_conditions_figure(c):
@@ -44,8 +53,10 @@ def canonicalize_triggering_conditions_figure(c):
             return '\\texttt{extern "C"}'
         case 'switch-case':
             return '\\texttt{switch}-\\texttt{case}'
-        case '#line':
-            return '\\texttt{\\#line}'
+        case '#line' | '#ifdef':
+            return 'preprocessor directive'
+        case 'malloc':
+            return '\\texttt{malloc}'
     return c
 
 def canonicalize_inconsistencies(i):
@@ -64,13 +75,18 @@ def canonicalize_inconsistencies(i):
             return 'MV'
     assert False, f"{i}"
 
+# In[2]:
+# Tables
 
 cause_to_projects = {}
 cause_to_occurrence = {}
 
+# In[3]:
+## Table convs
+
 import csv
 
-description_to_id = {}
+description_to_ids = {}
 description_to_inconsistencies = {}
 description_to_triggering_conditions = {}
 
@@ -97,9 +113,9 @@ with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
             comment = ''
         # } // CSV schema
 
-        if description_in_latex not in description_to_id:
-            description_to_id[description_in_latex] = []
-        description_to_id[description_in_latex].append(id)
+        if description_in_latex not in description_to_ids:
+            description_to_ids[description_in_latex] = []
+        description_to_ids[description_in_latex].append(id)
 
         if description_in_latex not in description_to_inconsistencies:
             description_to_inconsistencies[description_in_latex] = []
@@ -112,157 +128,152 @@ with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
 id_to_projects = {}
 id_to_occurrences = {}
 
-with open('../tables/convs.tex', 'w') as out:
-    with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        row_idx = 0
-        first_row = True
-        for row in reader:
-            # CSV schema {
-            if first_row:
-                first_row = False
-                continue
-            # row_idx += 1
-            assert len(row) in [ 4, 5 ] # Optionally "comment" field
-            id          = row[0]
-            description_in_latex     = row[1]
-            inconsistencies        = row[2]
-            triggering_conditions = row[3]
-            if len(row) == 5:
-                comment = row[4]
-            else:
-                comment = ''
-            # } // CSV schema
+with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
+    reader = csv.reader(f)
+    row_idx = 0
+    first_row = True
+    for row in reader:
+        # CSV schema {
+        if first_row:
+            first_row = False
+            continue
+        assert len(row) in [ 4, 5 ] # Optionally "comment" field
+        id = row[0]
+        description_in_latex = row[1]
+        inconsistencies = row[2]
+        triggering_conditions = row[3]
+        if len(row) == 5:
+            comment = row[4]
+        else:
+            comment = ''
+        # } // CSV schema
 
-            # LaTeX table schema {
+        # LaTeX table schema {
 
-            # Multiple entries with distinct "id" fields may get merged in to
-            # one entry with the same "description_in_latex" field
-            if description_to_id[description_in_latex].index(id) != 0:
-                continue
+        # Multiple entries with distinct "id" fields may get merged in to
+        # one entry with the same "description_in_latex" field
+        if description_to_ids[description_in_latex].index(id) != 0:
+            continue
 
-            row_idx += 1
+        row_idx += 1
 
-            inconsistency_order = { 'line': 0, 'branch_num': 1, 'branch_val': 2,
-                                    'mcdc_num': 3, 'mcdc_val': 4 }
+        inconsistency_order = { 'line': 0, 'branch_num': 1, 'branch_val': 2,
+                                'mcdc_num': 3, 'mcdc_val': 4 }
 
-            inconsistencies = set()
-            for inconsistencies_one_entry in description_to_inconsistencies[description_in_latex]:
-                for i in inconsistencies_one_entry.split(','):
-                    inconsistencies.add(i)
-            if len(inconsistencies) > 1:
-                inconsistencies = sorted(inconsistencies, key=lambda x: inconsistency_order[x])
+        inconsistencies = set()
+        for inconsistencies_one_entry in description_to_inconsistencies[description_in_latex]:
+            for i in inconsistencies_one_entry.split(','):
+                inconsistencies.add(i)
+        if len(inconsistencies) > 1:
+            inconsistencies = sorted(inconsistencies, key=lambda x: inconsistency_order[x])
 
-            triggering_conditions = set()
-            for triggering_conditions_one_entry in description_to_triggering_conditions[description_in_latex]:
-                for c in triggering_conditions_one_entry.split(','):
-                    triggering_conditions.add(c)
-            if len(triggering_conditions) > 1:
-                triggering_conditions = sorted(triggering_conditions, key=lambda x: x)
+        triggering_conditions = set()
+        for triggering_conditions_one_entry in description_to_triggering_conditions[description_in_latex]:
+            for c in triggering_conditions_one_entry.split(','):
+                triggering_conditions.add(c)
+        if len(triggering_conditions) > 1:
+            triggering_conditions = sorted(triggering_conditions, key=lambda x: x)
 
-            inconsistencies = [ canonicalize_inconsistencies(i) for i in inconsistencies ]
-            inconsistencies = '/'.join(inconsistencies)
+        inconsistencies = [ canonicalize_inconsistencies(i) for i in inconsistencies ]
+        inconsistencies = '/'.join(inconsistencies)
 
-            triggering_conditions = [ canonicalize_triggering_conditions_latex(c) for c in triggering_conditions ]
-            triggering_conditions = ','.join(triggering_conditions)
+        triggering_conditions = [ canonicalize_triggering_conditions_latex(c) for c in triggering_conditions ]
+        triggering_conditions = ', '.join(triggering_conditions)
 
-            affected_proj = {}
-            occurrence = 0
+        affected_proj = {}
+        occurrence = 0
 
-            with open('data/line_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                first_row = True
-                for row in reader:
-                    # CSV schema {
-                    if first_row:
-                        first_row = False
-                        continue
-                    assert len(row) in [ 5, 6 ]
-                    package = row[0]
-                    reason = row[4]
-                    # } // CSV schema
-                    reason = reason.split(',')
-                    for id in description_to_id[description_in_latex]:
-                        if id in reason:
-                            occurrence += 1
-                            if package not in affected_proj:
-                                affected_proj[package] = 1
-                            else:
-                                affected_proj[package] += 1
-                            break
+        with open('data/line_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            first_row = True
+            for row in reader:
+                # CSV schema {
+                if first_row:
+                    first_row = False
+                    continue
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                for id in description_to_ids[description_in_latex]:
+                    if id in reason:
+                        occurrence += 1
+                        if package not in affected_proj:
+                            affected_proj[package] = 1
+                        else:
+                            affected_proj[package] += 1
+                        # Since we are merging multiple ids into one entry
+                        # in LaTeX. If this specific failure is labeled
+                        # with different variant ids, we count only once.
+                        break
 
-            with open('data/branch_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                first_row = True
-                for row in reader:
-                    # CSV schema {
-                    if first_row:
-                        first_row = False
-                        continue
-                    assert len(row) in [ 5, 6 ]
-                    package = row[0]
-                    reason = row[4]
-                    # } // CSV schema
-                    reason = reason.split(',')
-                    for id in description_to_id[description_in_latex]:
-                        if id in reason:
-                            occurrence += 1
-                            if package not in affected_proj:
-                                affected_proj[package] = 1
-                            else:
-                                affected_proj[package] += 1
-                            break
+        with open('data/branch_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            first_row = True
+            for row in reader:
+                # CSV schema {
+                if first_row:
+                    first_row = False
+                    continue
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                for id in description_to_ids[description_in_latex]:
+                    if id in reason:
+                        occurrence += 1
+                        if package not in affected_proj:
+                            affected_proj[package] = 1
+                        else:
+                            affected_proj[package] += 1
+                        break
 
-            with open('data/mcdc.csv', mode='r', newline='', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                first_row = True
-                for row in reader:
-                    # CSV schema {
-                    if first_row:
-                        first_row = False
-                        continue
-                    assert len(row) in [ 5, 6 ]
-                    package = row[0]
-                    reason = row[4]
-                    # } // CSV schema
-                    reason = reason.split(',')
-                    for id in description_to_id[description_in_latex]:
-                        if id in reason:
-                            occurrence += 1
-                            if package not in affected_proj:
-                                affected_proj[package] = 1
-                            else:
-                                affected_proj[package] += 1
-                            break
+        with open('data/mcdc.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            first_row = True
+            for row in reader:
+                # CSV schema {
+                if first_row:
+                    first_row = False
+                    continue
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                for id in description_to_ids[description_in_latex]:
+                    if id in reason:
+                        occurrence += 1
+                        if package not in affected_proj:
+                            affected_proj[package] = 1
+                        else:
+                            affected_proj[package] += 1
+                        break
 
-            if len(affected_proj):
-                max_occurrence_per_project = max(affected_proj.values())
-                max_occurring_project = { k for k, v in affected_proj.items() if v == max_occurrence_per_project }
-                max_occurring_project = ','.join(sorted(list(max_occurring_project)))
-                affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{max_occurring_project}}})"
-            else:
-                assert False
+        if len(affected_proj):
+            max_occurrence_per_project = max(affected_proj.values())
+            max_occurring_project = { k for k, v in affected_proj.items() if v == max_occurrence_per_project }
+            max_occurring_project = ','.join(sorted(list(max_occurring_project)))
+            affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{max_occurring_project}}})"
+        else:
+            assert False
 
-            id_to_projects[id] = affected_proj
-            id_to_occurrences[id] = occurrence
+        # Different ids with the same description get merged and take
+        # one id in these two mappings.
+        id_to_projects[id] = affected_proj
+        id_to_occurrences[id] = occurrence
 
-            print(
-                f"{row_idx} & {description_in_latex} & {inconsistencies} & {affected_proj_field_in_table} & {occurrence} & {triggering_conditions} \\\\ \\hline",
-                file=out,
-            )
-            latex_lines_to_print.append((
-                occurrence,
-                inconsistencies,
-                f"{description_in_latex} & {inconsistencies} & {affected_proj_field_in_table} & {occurrence} & {triggering_conditions} \\\\ \\hline",
-                id,
-            ))
+        latex_lines_to_print.append((
+            occurrence,
+            inconsistencies,
+            f"{description_in_latex} & {inconsistencies} & {affected_proj_field_in_table} & {occurrence} & {triggering_conditions} \\\\",
+            id,
+        ))
 
 m = f"\\newcommand{{\\numConventions}}{{{row_idx}\\xspace}}"
-print(m)
 latex_macros.append(m)
-
-
-###
 
 metrics_order = {
     'L': 0,
@@ -294,11 +305,23 @@ with open('../tables/convs.tex', 'w') as out:
         cause_to_occurrence[cause_name] = id_to_occurrences[id]
         cause_to_projects[cause_name] = id_to_projects[id]
 
+        if row_idx == len(latex_lines_to_print):
+            print('\\hline', file=out)
+
+# In[4]:
+## Table diff bugs
 
 import csv
 
+num_diff_bug2 = 0 # Just count it in a different way to cross-check
+num_diff_bug_big = 0
+num_diff_bug_small = 0
 num_bug_gcc = 0
 num_bug_llvm = 0
+num_bug_gcc_big = 0
+num_bug_llvm_big = 0
+num_bug_gcc_small = 0
+num_bug_llvm_small = 0
 num_bug_linecov = 0
 num_bug_branchcov_or_mcdc = 0
 num_proj_mostly_recurring = -1
@@ -306,267 +329,350 @@ num_proj_mostly_recurring = -1
 package_to_bug_num: dict[str,int] = {}
 package_to_unique_bug_num: dict[str,int] = {}
 
-# FIXME
-gcc_id_tbd = 0
-llvm_id_tbd = 0
-
 latex_lines_to_print = []
 
-with open('../tables/diff_bugs.tex', 'w') as out:
-    with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        row_idx = 0
-        first_row = True
-        for row in reader:
-            # CSV schema {
-            if first_row:
-                first_row = False
-                continue
-            if len(row) >=3 and row[2] == 'dup':
-                continue
+with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
+    reader = csv.reader(f)
+    row_idx = 0
+    first_row = True
+    for row in reader:
+        # CSV schema {
+        if first_row:
+            first_row = False
+            continue
+        if len(row) >=3 and row[2] == 'dup':
+            continue
 
-            assert len(row) == 7, f"{row}"
+        assert len(row) == 7, f"{row}"
 
-            row_idx += 1
+        row_idx += 1
 
-            id = row[0]
-            comment = row[1]
-            link = row[2]
-            gcc_or_llvm = row[3]
-            affected_metrics = row[4]
-            inconsistencies = row[5]
-            triggering_conditions = row[6]
+        id = row[0]
+        comment = row[1]
+        link = row[2]
+        gcc_or_llvm = row[3]
+        affected_metrics = row[4]
+        inconsistencies = row[5]
+        triggering_conditions = row[6]
 
-            # } // CSV schema
+        # } // CSV schema
 
-            # Treat the known bug and duplicate multiline bugs specially
-            if id == 'LineCoverageBug.MAWK_1' or link == 'dup':
-                assert False
-                # Deprecated
-                increase_bug_cnt = 0
-                row_idx -= 1
+        # Treat the known bug and duplicate multiline bugs specially
+        if id == 'LineCoverageBug.MAWK_1' or link == 'dup':
+            assert False
+
+        num_diff_bug2 += 1
+        if comment == 'BIG TESTS':
+            num_diff_bug_big += 1
+        else:
+            num_diff_bug_small += 1
+
+        if gcc_or_llvm == 'GCC':
+            num_bug_gcc += 1
+            if comment == 'BIG TESTS':
+                num_bug_gcc_big += 1
             else:
-                increase_bug_cnt = 1
+                num_bug_gcc_small += 1
 
-            if gcc_or_llvm == 'GCC':
-                num_bug_gcc += increase_bug_cnt
-            if gcc_or_llvm == 'LLVM':
-                num_bug_llvm += increase_bug_cnt
-
-            # LaTeX table schema {
-
-            metric_order = { 'L': 0, 'B': 1, 'M': 2 }
-            inconsistency_order = { 'line': 0, 'branch_num': 1, 'branch_val': 2,
-                                    'mcdc_num': 3, 'mcdc_val': 4 }
-
-            affected_metrics = affected_metrics.split(',')
-            if 'L' in affected_metrics:
-                num_bug_linecov += increase_bug_cnt
-            if 'B' in affected_metrics or 'M' in affected_metrics:
-                num_bug_branchcov_or_mcdc += increase_bug_cnt
-            if len(affected_metrics) > 1:
-                affected_metrics = sorted(affected_metrics, key=lambda x: metric_order[x])
-            inconsistencies = inconsistencies.split(',')
-            if len(inconsistencies) > 1:
-                inconsistencies = sorted(inconsistencies, key=lambda x: inconsistency_order[x])
-            triggering_conditions = triggering_conditions.split(',')
-            if len(triggering_conditions) > 1:
-                triggering_conditions = sorted(triggering_conditions, key=lambda x: x)
-
-            affected_metrics = '/'.join(affected_metrics)
-
-            inconsistencies = [ canonicalize_inconsistencies(i) for i in inconsistencies ]
-            inconsistencies = '/'.join(inconsistencies)
-
-            triggering_conditions = [ canonicalize_triggering_conditions_latex(c) for c in triggering_conditions ]
-            triggering_conditions = ','.join(triggering_conditions)
-
-            if link.startswith('https://github.com/llvm/llvm-project/'):
-                assert gcc_or_llvm == 'LLVM'
-                id_in_tracker = link.split('/')[-1]
-                id_in_tracker_figure = id_in_tracker
-                if id_in_tracker[-2:] == '41':
-                    num_digits = 3
-                else:
-                    num_digits = 2
-                id_in_tracker_latex = '\\blackout{' + id_in_tracker[:-num_digits] + '}' + id_in_tracker[-num_digits:]
-            elif link.startswith('https://gcc.gnu.org/bugzilla/show_bug.cgi?id='):
-                assert gcc_or_llvm == 'GCC'
-                id_in_tracker = link.split('=')[-1]
-                id_in_tracker_figure = id_in_tracker
-                id_in_tracker_latex = '\\blackout{' + id_in_tracker[:-2] + '}' + id_in_tracker[-2:]
+        if gcc_or_llvm == 'LLVM':
+            num_bug_llvm += 1
+            if comment == 'BIG TESTS':
+                num_bug_llvm_big += 1
             else:
-                assert False
-                id_in_tracker = ''
-                id_in_tracker_latex = ''
-                id_in_tracker_figure = ''
-            if gcc_or_llvm == 'GCC':
-                tool = '\\gcov'
+                num_bug_llvm_small += 1
+
+        # LaTeX table schema {
+
+        metric_order = { 'L': 0, 'B': 1, 'M': 2 }
+        inconsistency_order = { 'line': 0, 'branch_num': 1, 'branch_val': 2,
+                                'mcdc_num': 3, 'mcdc_val': 4 }
+
+        affected_metrics = affected_metrics.split(',')
+        if 'L' in affected_metrics:
+            num_bug_linecov += 1
+        if 'B' in affected_metrics or 'M' in affected_metrics:
+            num_bug_branchcov_or_mcdc += 1
+        if len(affected_metrics) > 1:
+            affected_metrics = sorted(affected_metrics, key=lambda x: metric_order[x])
+        inconsistencies = inconsistencies.split(',')
+        if len(inconsistencies) > 1:
+            inconsistencies = sorted(inconsistencies, key=lambda x: inconsistency_order[x])
+        triggering_conditions = triggering_conditions.split(',')
+        if len(triggering_conditions) > 1:
+            triggering_conditions = sorted(triggering_conditions, key=lambda x: x)
+
+        affected_metrics = '/'.join(affected_metrics)
+
+        inconsistencies = [ canonicalize_inconsistencies(i) for i in inconsistencies ]
+        inconsistencies = '/'.join(inconsistencies)
+
+        triggering_conditions = [ canonicalize_triggering_conditions_latex(c) for c in triggering_conditions ]
+        triggering_conditions = ', '.join(triggering_conditions)
+
+        if link.startswith('https://github.com/llvm/llvm-project/'):
+            assert gcc_or_llvm == 'LLVM'
+            id_in_tracker = link.split('/')[-1]
+            id_in_tracker_figure = id_in_tracker
+            # I was trying to use \blackout to hide the full bug ID but later
+            # not really using it. There were two XXXX41 IDs. The below is
+            # to distinguish them.
+            if id_in_tracker[-2:] == '41':
+                num_digits = 3
             else:
-                tool = '\\llvmcov'
+                num_digits = 2
+            id_in_tracker_latex = '\\blackout{' + id_in_tracker[:-num_digits] + '}' + id_in_tracker[-num_digits:]
+        elif link.startswith('https://gcc.gnu.org/bugzilla/show_bug.cgi?id='):
+            assert gcc_or_llvm == 'GCC'
+            id_in_tracker = link.split('=')[-1]
+            id_in_tracker_figure = id_in_tracker
+            id_in_tracker_latex = '\\blackout{' + id_in_tracker[:-2] + '}' + id_in_tracker[-2:]
+        else:
+            assert False
 
-            affected_proj = {}
-            occurrence = 0
+        if gcc_or_llvm == 'GCC':
+            tool = '\\gcov'
+        else:
+            tool = '\\llvmcov'
 
-            with open('data/line_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                first_row = True
-                for row in reader:
-                    # CSV schema {
-                    if first_row:
-                        first_row = False
-                        continue
-                    assert len(row) in [ 5, 6 ]
-                    package = row[0]
-                    reason = row[4]
-                    # } // CSV schema
-                    reason = reason.split(',')
-                    if id in reason:
-                        occurrence += 1
-                        if package not in affected_proj:
-                            affected_proj[package] = 1
-                        else:
-                            affected_proj[package] += 1
+        affected_proj = {}
+        occurrence = 0
+        unique_occurrence_in_big_tests = 0
 
-            with open('data/branch_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                first_row = True
-                for row in reader:
-                    # CSV schema {
-                    if first_row:
-                        first_row = False
-                        continue
-                    assert len(row) in [ 5, 6 ]
-                    package = row[0]
-                    reason = row[4]
-                    # } // CSV schema
-                    reason = reason.split(',')
-                    if id in reason:
-                        occurrence += 1
-                        if package not in affected_proj:
-                            affected_proj[package] = 1
-                        else:
-                            affected_proj[package] += 1
-
-            with open('data/mcdc.csv', mode='r', newline='', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                first_row = True
-                for row in reader:
-                    # CSV schema {
-                    if first_row:
-                        first_row = False
-                        continue
-                    assert len(row) in [ 5, 6 ]
-                    package = row[0]
-                    reason = row[4]
-                    # } // CSV schema
-                    reason = reason.split(',')
-                    if id in reason:
-                        occurrence += 1
-                        if package not in affected_proj:
-                            affected_proj[package] = 1
-                        else:
-                            affected_proj[package] += 1
-
-            if len(affected_proj):
-                if len(affected_proj) == 1:
-                    for proj in affected_proj.keys():
-                        if proj in package_to_unique_bug_num:
-                            package_to_unique_bug_num[proj] += increase_bug_cnt
-                        else:
-                            package_to_unique_bug_num[proj] = increase_bug_cnt
-
-                for proj in affected_proj.keys():
-                    if proj in package_to_bug_num:
-                        package_to_bug_num[proj] += increase_bug_cnt
+        with open('data/line_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            first_row = True
+            for row in reader:
+                # CSV schema {
+                if first_row:
+                    first_row = False
+                    continue
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                if id in reason:
+                    occurrence += 1
+                    if package not in affected_proj:
+                        affected_proj[package] = 1
                     else:
-                        package_to_bug_num[proj] = increase_bug_cnt
+                        affected_proj[package] += 1
 
-                max_occurrence_per_project = max(affected_proj.values())
-                max_occurring_project = { k for k, v in affected_proj.items() if v == max_occurrence_per_project }
-                max_occurring_project = ','.join(sorted(list(max_occurring_project)))
-                affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{max_occurring_project}}})"
-                if (len(affected_proj) > num_proj_mostly_recurring):
-                    num_proj_mostly_recurring = len(affected_proj)
+        with open('data-mr/big-tests-inspection-ex-small/line_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                # CSV schema {
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                if id in reason:
+                    unique_occurrence_in_big_tests += 1
+                    if package not in affected_proj:
+                        affected_proj[package] = 1
+                    else:
+                        affected_proj[package] += 1
 
-            if id_in_tracker_figure != '':
-                cause_name = gcc_or_llvm + '\\#' + str(id_in_tracker_figure)
-            elif id == 'LineCoverageBug.MAWK_1':
-                cause_name = 'LLVM\\#UCF'
-            else:
-                if gcc_or_llvm == 'GCC':
-                    cause_name = 'GCC\\#??' + str(gcc_id_tbd)
-                    gcc_id_tbd += 1
+        with open('data/branch_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            first_row = True
+            for row in reader:
+                # CSV schema {
+                if first_row:
+                    first_row = False
+                    continue
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                if id in reason:
+                    occurrence += 1
+                    if package not in affected_proj:
+                        affected_proj[package] = 1
+                    else:
+                        affected_proj[package] += 1
+
+        with open('data-mr/big-tests-inspection-ex-small/branch_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                # CSV schema {
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                if id in reason:
+                    unique_occurrence_in_big_tests += 1
+                    if package not in affected_proj:
+                        affected_proj[package] = 1
+                    else:
+                        affected_proj[package] += 1
+
+        with open('data/mcdc.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            first_row = True
+            for row in reader:
+                # CSV schema {
+                if first_row:
+                    first_row = False
+                    continue
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                if id in reason:
+                    occurrence += 1
+                    if package not in affected_proj:
+                        affected_proj[package] = 1
+                    else:
+                        affected_proj[package] += 1
+
+        with open('data-mr/big-tests-inspection-ex-small/mcdc.csv', mode='r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                # CSV schema {
+                assert len(row) in [ 5, 6 ]
+                package = row[0]
+                reason = row[4]
+                # } // CSV schema
+                reason = reason.split(',')
+                if id in reason:
+                    unique_occurrence_in_big_tests += 1
+                    if package not in affected_proj:
+                        affected_proj[package] = 1
+                    else:
+                        affected_proj[package] += 1
+
+        if len(affected_proj):
+            if len(affected_proj) == 1:
+                the_only_proj = list(affected_proj.keys())[0]
+                if the_only_proj in package_to_unique_bug_num:
+                    package_to_unique_bug_num[the_only_proj] += 1
                 else:
-                    cause_name = 'LLVM\\#??' + str(llvm_id_tbd)
-                    llvm_id_tbd += 1
-            cause_to_projects[cause_name] = affected_proj
-            cause_to_occurrence[cause_name] = occurrence
+                    package_to_unique_bug_num[the_only_proj] = 1
 
-            if id == 'LineCoverageBug.MAWK_1':
-                # print(
-                #     f"-- & \\llvmKnownBugInTable & {tool} & {inconsistencies} & {affected_proj_field_in_table} & {occurrence} & {triggering_conditions} \\\\ \\hline",
-                #     file=out,
-                # )
-                pass
+            for proj in affected_proj.keys():
+                if proj in package_to_bug_num:
+                    package_to_bug_num[proj] += 1
+                else:
+                    package_to_bug_num[proj] = 1
+
+            max_occurrence_per_project = max(affected_proj.values())
+            max_occurring_project = { k for k, v in affected_proj.items() if v == max_occurrence_per_project }
+            max_occurring_project = ','.join(sorted(list(max_occurring_project)))
+            affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{max_occurring_project}}})"
+            if (len(affected_proj) > num_proj_mostly_recurring):
+                num_proj_mostly_recurring = len(affected_proj)
+        else:
+            assert False
+
+        if id_in_tracker_figure != '':
+            cause_name = gcc_or_llvm + '\\#' + str(id_in_tracker_figure)
+        else:
+            assert False
+
+        cause_to_projects[cause_name] = affected_proj
+        cause_to_occurrence[cause_name] = occurrence + unique_occurrence_in_big_tests
+
+        if comment == 'BIG TESTS':
+            latex_line = f"\\mr{{{id_in_tracker_latex}}}" + " & " \
+                        + f"\\mr{{{tool}}}" + " & " \
+                        + f"\\mr{{{inconsistencies}}}" + " & " \
+                        + f"\\mr{{{affected_proj_field_in_table}}}" + " & " \
+                        + f"\\mr{{{occurrence} + {unique_occurrence_in_big_tests}}}" + " & " \
+                        + f"\\mr{{{triggering_conditions}}}" + " \\\\"
+        else:
+            # Old bugs: did it manifest in 9 packages for which we run big tests?
+            packages_we_run_big_tests = set([
+                "bzip2",
+                "distro-info",
+                "file",
+                "ifupdown",
+                "lsof",
+                "lzo2",
+                "mawk",
+                "procps",
+                "psmisc",
+            ])
+            if set(affected_proj.keys()) & packages_we_run_big_tests:
+                latex_line = f"{id_in_tracker_latex}" + " & " \
+                        + f"{tool}" + " & " \
+                        + f"{inconsistencies}" + " & " \
+                        + f"{affected_proj_field_in_table}" + " & " \
+                        + f"{occurrence} + \\mr{{{unique_occurrence_in_big_tests}}}" + " & " \
+                        + f"{triggering_conditions}" + "\\\\"
             else:
-                latex_line = f"{row_idx} & {id_in_tracker_latex} & {tool} & {inconsistencies} & {affected_proj_field_in_table} & {occurrence} & {triggering_conditions} \\\\ \\hline"
-                print(
-                    latex_line,
-                    file=out,
-                )
-                latex_line = f"{id_in_tracker_latex} & {tool} & {inconsistencies} & {affected_proj_field_in_table} & {occurrence} & {triggering_conditions} \\\\ \\hline"
-                latex_lines_to_print.append((id_in_tracker,tool,inconsistencies,occurrence,latex_line))
+                latex_line = f"{id_in_tracker_latex}" + " & " \
+                        + f"{tool}" + " & " \
+                        + f"{inconsistencies}" + " & " \
+                        + f"{affected_proj_field_in_table}" + " & " \
+                        + f"{occurrence} + n/a" + " & " \
+                        + f"{triggering_conditions}" + "\\\\"
 
-print()
+        latex_lines_to_print.append((
+            # Metrics used to reorder rows in the table
+            id_in_tracker,
+            tool,
+            inconsistencies,
+            occurrence,
+            1 if comment == 'BIG TESTS' else 0,
+            unique_occurrence_in_big_tests,
+            # Row
+            latex_line,
+        ))
 
 num_diff_bug = row_idx
+assert num_diff_bug == num_diff_bug2
 m = f"\\newcommand{{\\numDiffBugs}}{{{num_diff_bug}\\xspace}}"
-print(m)
+latex_macros.append(m)
+
+m = f"\\newcommand{{\\numDiffBugsBigTests}}{{{num_diff_bug_big}\\xspace}}"
+latex_macros.append(m)
+
+m = f"\\newcommand{{\\numDiffBugsSmallTests}}{{{num_diff_bug_small}\\xspace}}"
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numGccDiffbugs}}{{{num_bug_gcc}\\xspace}}"
-print(m)
+latex_macros.append(m)
+
+m = f"\\newcommand{{\\numGccDiffbugsBigTests}}{{{num_bug_gcc_big}\\xspace}}"
+latex_macros.append(m)
+
+m = f"\\newcommand{{\\numGccDiffbugsSmallTests}}{{{num_bug_gcc_small}\\xspace}}"
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numLlvmDiffBugs}}{{{num_bug_llvm}\\xspace}}"
-print(m)
+latex_macros.append(m)
+
+m = f"\\newcommand{{\\numLlvmDiffBugsBigTests}}{{{num_bug_llvm_big}\\xspace}}"
+latex_macros.append(m)
+
+m = f"\\newcommand{{\\numLlvmDiffBugsSmallTests}}{{{num_bug_llvm_small}\\xspace}}"
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numDiffBugsLine}}{{{num_bug_linecov}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numDiffBugsBranchOrMcdc}}{{{num_bug_branchcov_or_mcdc}\\xspace}}"
-print(m)
 latex_macros.append(m)
-
-# package_to_unique_bug_num = dict(sorted(package_to_unique_bug_num.items(), key=lambda item: item[1]))
-# package_to_bug_num = dict(sorted(package_to_bug_num.items(), key=lambda item: item[1]))
-# print(package_to_unique_bug_num)
-# print(package_to_bug_num)
 
 most_unique_bug = max(package_to_unique_bug_num.items(), key=lambda item: item[1])
 most_bug = max(package_to_bug_num.items(), key=lambda item: item[1])
 
 m = f"\\newcommand{{\\ProjExposingMostBugs}}{{\\package{{{most_bug[0]}}}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numExposingMostBugs}}{{{most_bug[1]}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\ProjExposingMostUniqueBugs}}{{\\package{{{most_unique_bug[0]}}}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numExposingMostUniqueBugs}}{{{most_unique_bug[1]}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numProjMostlyRecurringBug}}{{{num_proj_mostly_recurring}\\xspace}}"
-print(m)
 latex_macros.append(m)
-
-###
 
 metrics_order = {
     'L': 0,
@@ -583,111 +689,70 @@ metrics_order = {
 }
 latex_lines_to_print = sorted(latex_lines_to_print,
                               key=lambda x: (
+                                  int(x[4]), # is big tests
                                   x[1], # tool
                                   metrics_order.get(x[2], float('inf')), # metric, in a prescribed order
                                   -int(x[3]), # occur
+                                  -int(x[5]), # unique occurrence in big tests
                                   int(x[0]), # id
                               ))
 
 row_idx = 0
+print_separator = False
 with open('../tables/diff_bugs.tex', 'w') as out:
     for l in latex_lines_to_print:
+        if not print_separator and l[4] == 1:
+            print_separator = True
+            print('\\hline', file=out)
         row_idx += 1
-        print(f'{row_idx} & ' + l[4], file=out)
+        print(f'{row_idx} & ' + l[6], file=out)
+        if row_idx == len(latex_lines_to_print):
+            print('\\hline', file=out)
 
+# In[5]:
+## Table crash bugs (deprecated). Now we only count some numbers here.
 
 import csv
 
 num_crash_occurrence = 0
 
-with open('../tables/crash_bugs.tex', 'w') as out:
-    with open('data/bugs_debian_crash.csv', mode='r', newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        row_idx = 0
-        first_row = True
-        for row in reader:
-            # CSV schema {
-            if first_row:
-                first_row = False
-                continue
-            row_idx += 1
-            assert len(row) == 7, f"{row}"
-            id          = row[0]
-            comment     = row[1]
-            link        = row[2]
-            gcc_or_llvm = row[3]
-            affected_metrics      = row[4]
-            triggering_conditions = row[5]
-            affected_proj         = row[6]
-            # } // CSV schema
+with open('data/bugs_debian_crash.csv', mode='r', newline='', encoding='utf-8') as f:
+    reader = csv.reader(f)
+    row_idx = 0
+    first_row = True
+    for row in reader:
+        # CSV schema {
+        if first_row:
+            first_row = False
+            continue
+        row_idx += 1
+        assert len(row) == 7, f"{row}"
+        id          = row[0]
+        comment     = row[1]
+        link        = row[2]
+        gcc_or_llvm = row[3]
+        affected_metrics      = row[4]
+        triggering_conditions = row[5]
+        affected_proj         = row[6]
+        # } // CSV schema
 
-            # LaTeX table schema {
-
-            metric_order = { 'L': 0, 'B': 1, 'M': 2 }
-
-            affected_metrics = affected_metrics.split(',')
-            if len(affected_metrics) > 1:
-                affected_metrics = sorted(affected_metrics, key=lambda x: metric_order[x])
-            triggering_conditions = triggering_conditions.split(',')
-            if len(triggering_conditions) > 1:
-                triggering_conditions = sorted(triggering_conditions, key=lambda x: x)
-            affected_proj = affected_proj.split(',')
-            if len(affected_proj) > 1:
-                affected_proj = sorted(affected_proj, key=lambda x: x)
-
-            affected_metrics = [ 'MC/DC' if m == 'M' else m for m in affected_metrics ]
-            affected_metrics = '/'.join(affected_metrics)
-
-            triggering_conditions = [ canonicalize_triggering_conditions_latex(c, short=False) for c in triggering_conditions ]
-            triggering_conditions = ','.join(triggering_conditions)
-
-            if link.startswith('https://github.com/llvm/llvm-project/'):
-                assert gcc_or_llvm == 'LLVM'
-                id_in_tracker = link.split('/')[-1]
-                id_in_tracker_latex = '\\blackout{' + id_in_tracker[:-2] + '}' + id_in_tracker[-2:]
-            elif link.startswith('https://gcc.gnu.org/bugzilla/show_bug.cgi?id='):
-                assert gcc_or_llvm == 'GCC'
-                id_in_tracker = link.split('=')[-1]
-                id_in_tracker_latex = '\\blackout{' + id_in_tracker[:-2] + '}' + id_in_tracker[-2:]
-            else:
-                assert False
-            if gcc_or_llvm == 'GCC':
-                tool = '\\gcov'
-            else:
-                tool = '\\llvmcov'
-
-            num_crash_occurrence += len(affected_proj)
-
-            if len(affected_proj) > 1:
-                project_1 = affected_proj[0]
-                project_2 = affected_proj[1]
-                affected_proj = f"{len(affected_proj)} (\\package{{{project_1}}}, ...)"
-            elif len(affected_proj) == 1:
-                project_1 = affected_proj[0]
-                affected_proj = f"{len(affected_proj)} (\\package{{{project_1}}})"
-
-
-
-            print(
-                f"{row_idx} & {id_in_tracker_latex} & {tool} & {affected_metrics} & {affected_proj} & {triggering_conditions} \\\\ \\hline",
-                file=out,
-            )
+        affected_proj = affected_proj.split(',')
+        if len(affected_proj) > 1:
+            affected_proj = sorted(affected_proj, key=lambda x: x)
+        num_crash_occurrence += len(affected_proj)
 
 num_crash_bug = row_idx
 num_total_bug = num_crash_bug + num_diff_bug
 
-print()
-
 m = f"\\newcommand{{\\numCrashBugs}}{{{num_crash_bug}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numTotalBugs}}{{{num_total_bug}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numCrashOccurrence}}{{{num_crash_occurrence}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
+# In[6]:
+## Table all inconsistencies
 
 import csv
 import numpy as np
@@ -809,7 +874,6 @@ with open('../tables/inconsistencies.tex', 'w') as out:
 
     # } // LaTeX schema
 
-
 num_package_at_least_one_inconsistency = sum(
     (all_package_line_coverage_failure > 0) |
     (all_package_branch_coverage_failure > 0) |
@@ -840,31 +904,25 @@ num_package_at_least_one_mcdc_val_inconsistency = sum(
     (all_package_mcdc_failure_val > 0)
 )
 
-print()
 m = f"\\newcommand{{\\numPkgWithAtLeastOneInconsistency}}{{{num_package_at_least_one_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneLineCovInconsistency}}{{{num_package_at_least_one_line_coverage_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneBranchCovInconsistency}}{{{num_package_at_least_one_branch_coverage_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneBranchCovNumInconsistency}}{{{num_package_at_least_one_branch_coverage_num_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneBranchCovValInconsistency}}{{{num_package_at_least_one_branch_coverage_val_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneMcdcInconsistency}}{{{num_package_at_least_one_mcdc_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneMcdcNumInconsistency}}{{{num_package_at_least_one_mcdc_num_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numPkgWithAtLeastOneMcdcValInconsistency}}{{{num_package_at_least_one_mcdc_val_inconsistency}\\xspace}}"
-print(m)
 latex_macros.append(m)
+
+# In[7]:
+# Figures
 
 metric_colors = [
     'cornflowerblue',
@@ -883,11 +941,8 @@ gcc_bug_color = bug_color
 llvm_bug_color = 'peru'
 conv_color = 'tab:purple'
 
-metric_hatches = [
-    '..',
-    'xx',
-    '--',
-]
+# In[8]:
+## Print some RGB values so that we can use them elsewhere in LaTeX.
 
 import matplotlib.colors as mcolors
 from PIL import ImageColor
@@ -895,241 +950,11 @@ from PIL import ImageColor
 def matplotlib_color_name_to_RGB(name):
     return ImageColor.getcolor(mcolors.TABLEAU_COLORS[name], 'RGB')
 
-
 print(matplotlib_color_name_to_RGB(bug_color))
 print(matplotlib_color_name_to_RGB(conv_color))
 
-import matplotlib.pyplot as plt
-import numpy as np
-import csv
-
-data = []
-package_names = []
-
-with open('data/per-package-failures.csv', mode='r', newline='', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    row_idx = 0
-    first_row = True
-    for row in reader:
-        # CSV schema {
-        if first_row:
-            first_row = False
-            continue
-        row_idx += 1
-
-        package = row[0]
-        line_coverage_total = int(row[1])
-        line_coverage_failure = int(row[2])
-        branch_coverage_total = int(row[3])
-        branch_coverage_failure_val = int(row[4])
-        branch_coverage_failure_num = int(row[5])
-        mcdc_total = int(row[6])
-        mcdc_failure_val = int(row[7])
-        mcdc_failure_num = int(row[8])
-        data.append([
-            line_coverage_total,
-            branch_coverage_total,
-            mcdc_total,
-        ])
-        package_names.append(package)
-
-data = np.array(data)
-package_names = np.array(package_names)
-
-sorted_indices = np.argsort(data[:, 0])
-
-labels = [
-    'Compared lines',
-    'Compared branches',
-    'Compared decisions'
-]
-data = data[sorted_indices]
-package_names = package_names[sorted_indices]
-
-num_package, num_bar = data.shape
-
-x = np.arange(num_package)
-
-bar_width = 0.25
-offsets = np.linspace(-bar_width, bar_width, num_bar)
-
-fig, ax = plt.subplots(figsize=(15, 5))
-
-ax.set_yscale("log")
-
-for bar_idx in range(num_bar):
-    ax.bar(
-        x + offsets[bar_idx], data[:, bar_idx],
-        width=bar_width,
-        label=labels[bar_idx],
-        color=metric_colors[bar_idx],
-    )
-
-plt.xticks(x, package_names)
-plt.ylabel('Number of instance(s)')
-plt.legend()
-plt.setp(ax.get_xticklabels(), rotation=50, horizontalalignment='right')
-
-plt.tight_layout()
-plt.savefig('../figures/compared_num.pdf', metadata={'CreationDate': None})
-plt.show()
-
-
-import matplotlib.pyplot as plt
-import numpy as np
-import csv
-
-data = []
-package_names = []
-
-with open('data/per-package-failures.csv', mode='r', newline='', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    row_idx = 0
-    first_row = True
-    for row in reader:
-        # CSV schema {
-        if first_row:
-            first_row = False
-            continue
-        row_idx += 1
-
-        package = row[0]
-        line_coverage_total = int(row[1])
-        line_coverage_failure = int(row[2])
-        branch_coverage_total = int(row[3])
-        branch_coverage_failure_val = int(row[4])
-        branch_coverage_failure_num = int(row[5])
-        mcdc_total = int(row[6])
-        mcdc_failure_val = int(row[7])
-        mcdc_failure_num = int(row[8])
-        # } // CSV schema
-
-        data.append([
-            line_coverage_total, (line_coverage_failure),
-            branch_coverage_total, (branch_coverage_failure_num + branch_coverage_failure_val),
-            mcdc_total, (mcdc_failure_num + mcdc_failure_val)
-        ])
-        package_names.append(package)
-
-data = np.array(data)
-package_names = np.array(package_names)
-
-sorted_indices = np.argsort(data[:, 0])
-
-data = data[sorted_indices]
-data = data[:, [1, 3, 5]]
-labels = [
-    'Inconsistent lines',
-    'Inconsistent branches',
-    'Inconsistent decisions'
-]
-package_names = package_names[sorted_indices]
-
-num_package, num_bar = data.shape
-
-x = np.arange(num_package)
-
-bar_width = 0.25
-offsets = np.linspace(-bar_width, bar_width, num_bar)
-
-fig, ax = plt.subplots(figsize=(15, 5))
-
-ax.set_yscale("log")
-
-for bar_idx in range(num_bar):
-    ax.bar(
-        x + offsets[bar_idx], data[:, bar_idx],
-        width=bar_width,
-        label=labels[bar_idx],
-        color=metric_colors[bar_idx],
-    )
-
-plt.xticks(x, package_names)
-plt.ylabel('Number of instance(s)')
-plt.legend()
-plt.setp(ax.get_xticklabels(), rotation=50, horizontalalignment='right')
-
-plt.tight_layout()
-plt.savefig('../figures/inconsistent_num.pdf', metadata={'CreationDate': None})
-plt.show()
-
-import matplotlib.pyplot as plt
-import numpy as np
-import csv
-
-data = []
-package_names = []
-
-with open('data/per-package-failures.csv', mode='r', newline='', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    row_idx = 0
-    first_row = True
-    for row in reader:
-        # CSV schema {
-        if first_row:
-            first_row = False
-            continue
-        row_idx += 1
-
-        package = row[0]
-        line_coverage_total = int(row[1])
-        line_coverage_failure = int(row[2])
-        branch_coverage_total = int(row[3])
-        branch_coverage_failure_val = int(row[4])
-        branch_coverage_failure_num = int(row[5])
-        mcdc_total = int(row[6])
-        mcdc_failure_val = int(row[7])
-        mcdc_failure_num = int(row[8])
-        def division(n, d):
-            return n / d if d else 0
-        data.append([
-            line_coverage_total, division((line_coverage_failure), line_coverage_total),
-            branch_coverage_total, division((branch_coverage_failure_num + branch_coverage_failure_val), branch_coverage_total),
-            mcdc_total, division((mcdc_failure_num + mcdc_failure_val), mcdc_total)
-        ])
-        package_names.append(package)
-
-data = np.array(data)
-package_names = np.array(package_names)
-
-sorted_indices = np.argsort(data[:, 0])
-
-data = data[sorted_indices]
-data = data[:, [1, 3, 5]]
-labels = [
-    'Inconsistent lines',
-    'Inconsistent branches',
-    'Inconsistent decisions'
-]
-package_names = package_names[sorted_indices]
-
-num_package, num_bar = data.shape
-
-x = np.arange(num_package)
-
-bar_width = 0.25
-offsets = np.linspace(-bar_width, bar_width, num_bar)
-
-fig, ax = plt.subplots(figsize=(15, 5))
-
-ax.set_yscale("log")
-
-for bar_idx in range(num_bar):
-    ax.bar(
-        x + offsets[bar_idx], data[:, bar_idx],
-        width=bar_width,
-        label=labels[bar_idx],
-        color=metric_colors[bar_idx],
-    )
-
-plt.xticks(x, package_names)
-plt.ylabel('Percent')
-plt.legend()
-plt.setp(ax.get_xticklabels(), rotation=50, horizontalalignment='right')
-
-plt.tight_layout()
-plt.savefig('../figures/inconsistent_percent.pdf', metadata={'CreationDate': None})
-plt.show()
+# In[9]:
+## Figure per-package inconsistencies
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -1197,7 +1022,7 @@ x = np.arange(num_package)
 bar_width = 0.25
 offsets = np.linspace(-bar_width, bar_width, num_bar)
 
-fig, ax = plt.subplots(figsize=(15, 5))
+fig, ax = plt.subplots(figsize=(15, 5*0.7))
 
 ax.set_yscale("log")
 
@@ -1238,6 +1063,8 @@ plt.tight_layout()
 plt.savefig('../figures/compared_and_inconsistent_num.pdf', metadata={'CreationDate': None})
 plt.show()
 
+# In[10]:
+### Some numbers in this figure
 
 import csv
 import numpy as np
@@ -1305,21 +1132,20 @@ branch_inconsistent_percent = branch_inconsistent_percent[sorted_indices]
 all_package_name = all_package_name[sorted_indices]
 
 m = f"\\newcommand{{\\HighestBranchInconsistentPackage}}{{\\package{{{all_package_name[-1]}}}\\xspace}}"
-print(m)
 latex_macros.append(m)
 val = "{:.2f}".format(branch_inconsistent_percent[-1])
 m = f"\\newcommand{{\\HighestBranchInconsistentPercent}}{{{val}\\%\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\SecondHighestBranchInconsistentPackage}}{{\\package{{{all_package_name[-2]}}}\\xspace}}"
-print(m)
 latex_macros.append(m)
 val = "{:.2f}".format(branch_inconsistent_percent[-2])
 m = f"\\newcommand{{\\SecondHighestBranchInconsistentPercent}}{{{val}\\%\\xspace}}"
-print(m)
 latex_macros.append(m)
 
+# In[11]:
+### Figure triggering conditions
 
+# FIXME cleaned here
 import csv
 
 bug_triggering_condition_summary: dict[str,int] = {}
@@ -1379,69 +1205,7 @@ with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
         # which is not too meaningful
         continue
 
-        with open('data/line_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            first_row = True
-            for row in reader:
-                # CSV schema {
-                if first_row:
-                    first_row = False
-                    continue
-                assert len(row) in [ 5, 6 ]
-                package = row[0]
-                reason = row[4]
-                # } // CSV schema
-                reason = reason.split(',')
-                if id in reason:
-                    for c in triggering_conditions:
-                        if c not in bug_triggering_condition_summary:
-                            bug_triggering_condition_summary[c] = 1
-                        else:
-                            bug_triggering_condition_summary[c] += 1
-
-        with open('data/branch_coverage.csv', mode='r', newline='', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            first_row = True
-            for row in reader:
-                # CSV schema {
-                if first_row:
-                    first_row = False
-                    continue
-                assert len(row) in [ 5, 6 ]
-                package = row[0]
-                reason = row[4]
-                # } // CSV schema
-                reason = reason.split(',')
-                if id in reason:
-                    for c in triggering_conditions:
-                        if c not in bug_triggering_condition_summary:
-                            bug_triggering_condition_summary[c] = 1
-                        else:
-                            bug_triggering_condition_summary[c] += 1
-
-        with open('data/mcdc.csv', mode='r', newline='', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            first_row = True
-            for row in reader:
-                # CSV schema {
-                if first_row:
-                    first_row = False
-                    continue
-                assert len(row) in [ 5, 6 ]
-                package = row[0]
-                reason = row[4]
-                # } // CSV schema
-                reason = reason.split(',')
-                if id in reason:
-                    for c in triggering_conditions:
-                        if c not in bug_triggering_condition_summary:
-                            bug_triggering_condition_summary[c] = 1
-                        else:
-                            bug_triggering_condition_summary[c] += 1
-
-# print(bug_triggering_condition_summary)
-
-description_to_id = {}
+description_to_ids = {}
 description_to_triggering_conditions = {}
 
 with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
@@ -1462,9 +1226,9 @@ with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
         triggering_conditions = row[3]
         # } // CSV schema
 
-        if description_in_latex not in description_to_id:
-            description_to_id[description_in_latex] = []
-        description_to_id[description_in_latex].append(id)
+        if description_in_latex not in description_to_ids:
+            description_to_ids[description_in_latex] = []
+        description_to_ids[description_in_latex].append(id)
 
         if description_in_latex not in description_to_triggering_conditions:
             description_to_triggering_conditions[description_in_latex] = []
@@ -1488,7 +1252,7 @@ with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
         triggering_conditions = row[3]
         # } // CSV schema
 
-        if description_to_id[description_in_latex].index(id) != 0:
+        if description_to_ids[description_in_latex].index(id) != 0:
             continue
 
         triggering_conditions = set()
@@ -1505,8 +1269,6 @@ with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
                 conv_triggering_condition_summary[c] = 1
             else:
                 conv_triggering_condition_summary[c] += 1
-
-# print(conv_triggering_condition_summary)
 
 all_triggering_conditions = list(bug_triggering_condition_summary.keys())
 
@@ -1577,7 +1339,7 @@ plt.rcParams.update({
     "font.family": "Computer Modern Roman"
 })
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(6.4, 4.8*0.7))
 
 bar_width = 0.8
 
@@ -1599,7 +1361,7 @@ ax.legend(loc='upper right')
 # ax.set_yscale("log") # TODO see if log scale is needed
 
 # plt.xlabel("Triggering Condition")
-plt.ylabel("Number of Bugs or Convention Differences")
+plt.ylabel("Number of Bugs or \n Convention Differences")
 
 plt.setp(ax.get_xticklabels(), rotation=50, horizontalalignment='right')
 
@@ -1615,6 +1377,14 @@ plt.show()
 #     subprocess.check_output(incmd)
 
 # savepdfviasvg(fig, "../figures/bug_conv_count_wrt_triggering_condition2")
+
+print(f"Figure size: {fig.get_size_inches()}") # Previously [6.4 4.8] -> 30% shorter
+
+
+# ### Impacts
+
+# In[15]:
+
 
 import numpy as np
 
@@ -1654,7 +1424,7 @@ causes, occurrences, project_nums = map(list, zip(*sorted_data))
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(6.4, 4.8*0.7))
 ax1 = ax
 ax2 = ax1.twinx()
 
@@ -1688,6 +1458,14 @@ plt.show()
 
 for a, b in zip(causes, occurrences):
     print(a, b)
+
+print(f"Figure size: {fig.get_size_inches()}") # Previously [6.4 4.8] -> 30% shorter
+
+# ## Numbers
+
+# ### Package selection
+
+# In[17]:
 
 
 with open('data/select/selection_1_priority.txt', 'r') as f:
@@ -1753,6 +1531,12 @@ latex_macros.append(m)
 m = f"\\newcommand{{\\numAllAttemptedPkg}}{{{num_select_c_cxx+num_select_random_from_low_priority_group}\\xspace}}"
 print(m)
 latex_macros.append(m)
+
+
+# ### Inspection, Inconsistency breakdown (bug, conv, other)
+
+# In[18]:
+
 
 import csv
 
@@ -1917,45 +1701,7 @@ m = f"\\newcommand{{\\numInspectedTotal}}{{{num_inspection}\\xspace}}"
 print(m)
 latex_macros.append(m)
 
-triggering_condition_to_bug_num: dict[str,int] = {}
-
-with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    row_idx = 0
-    first_row = True
-    for row in reader:
-        # CSV schema {
-        if first_row:
-            first_row = False
-            continue
-        if len(row) >=3 and row[2] == 'dup':
-            continue
-
-        assert len(row) == 7, f"{row}"
-
-        row_idx += 1
-
-        id = row[0]
-        comment = row[1]
-        link = row[2]
-        gcc_or_llvm = row[3]
-        affected_metrics = row[4]
-        inconsistencies = row[5]
-        triggering_conditions = row[6]
-
-        # } // CSV schema
-
-        for c in triggering_conditions.split(','):
-            if c in triggering_condition_to_bug_num:
-                triggering_condition_to_bug_num[c][gcc_or_llvm] += 1
-            else:
-                triggering_condition_to_bug_num[c] = { 'GCC': 0, 'LLVM': 0 }
-                triggering_condition_to_bug_num[c][gcc_or_llvm] += 1
-
-for c in triggering_condition_to_bug_num:
-    gcc_num = triggering_condition_to_bug_num[c]['GCC']
-    llvm_num = triggering_condition_to_bug_num[c]['LLVM']
-    print(f"{c}, {gcc_num}, {llvm_num}")
+## Crashing bug related numbers
 
 with open('data/bugs_debian_crash.csv', mode='r', newline='', encoding='utf-8') as f:
     reader = csv.reader(f)
@@ -1982,19 +1728,16 @@ with open('data/bugs_debian_crash.csv', mode='r', newline='', encoding='utf-8') 
             y = len(affected_proj.split(','))
 
 m = f"\\newcommand{{\\numOccurenceOfCrashBugsTriggeredByMcdc}}{{{x}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numOccurenceOfCrashBugsIncludeHeaderInFuncBody}}{{{y}\\xspace}}"
-print(m)
 latex_macros.append(m)
 m = f"\\newcommand{{\\numOccurenceOfCrashBugsTotal}}{{{x+y}\\xspace}}"
-print(m)
 latex_macros.append(m)
+
+## Other failures (not differential inconsistency, not crash either) numbers
 
 import csv
 
-# "Other failures" throughout means (1) not differential inconsistency
-# (2) not crash
 num_failure_other_than_crash = 0
 num_gcov_failure_other_than_crash = 0
 num_llvmcov_failure_other_than_crash = 0
@@ -2049,15 +1792,12 @@ with open('data/other_failures.csv', mode='r', newline='', encoding='utf-8') as 
                 num_gcov_error += 1
 
 m = f"\\newcommand{{\\numFailureOtherThanCrash}}{{{num_failure_other_than_crash}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numGcovFailureOtherThanCrash}}{{{num_gcov_failure_other_than_crash}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numLlvmcovFailureOtherThanCrash}}{{{num_llvmcov_failure_other_than_crash}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 assert num_both_tool_have_some_other_failure == \
@@ -2066,36 +1806,31 @@ assert num_both_tool_have_some_other_failure == \
      - num_failure_other_than_crash
 
 m = f"\\newcommand{{\\numBothToolsHaveSomeOtherFailure}}{{{num_both_tool_have_some_other_failure}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numOtherFailureBuildFail}}{{{num_build_fail}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numOtherFailureNoProfile}}{{{num_no_profile}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 assert num_no_profile == num_no_profile_custom_exit \
-                       + num_no_profile_cap\
+                       + num_no_profile_cap \
                        + num_no_profile_hardwire
 
 m = f"\\newcommand{{\\numOtherFailureNoProfileCustomExit}}{{{num_no_profile_custom_exit}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numOtherFailureNoProfileCap}}{{{num_no_profile_cap}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numOtherFailureNoProfileHardwire}}{{{num_no_profile_hardwire}\\xspace}}"
-print(m)
 latex_macros.append(m)
 
 m = f"\\newcommand{{\\numOtherFailureGcovError}}{{{num_gcov_error}\\xspace}}"
-print(m)
 latex_macros.append(m)
+
+## LaTeX macros
 
 with open('../numbers_auto.tex', 'w') as out:
     for m in latex_macros:

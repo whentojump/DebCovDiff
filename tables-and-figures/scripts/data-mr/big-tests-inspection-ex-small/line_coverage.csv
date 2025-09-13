@@ -1,0 +1,408 @@
+bzip2,bzip2-1.0.8/blocksort.c,135,bug,LineCoverageBug.LZMA_1
+bzip2,bzip2-1.0.8/blocksort.c,166,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/blocksort.c,167,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/blocksort.c,514,bug,gcc coverage of while statement added by coverage of line after while loop
+bzip2,bzip2-1.0.8/blocksort.c,528,bug,gcc coverage of while statement added by coverage of line after while loop
+bzip2,bzip2-1.0.8/blocksort.c,542,bug,gcc coverage of while statement added by coverage of line after while loop
+bzip2,bzip2-1.0.8/blocksort.c,664,bug,LineCoverageBug.LZMA_1
+bzip2,bzip2-1.0.8/blocksort.c,696,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/blocksort.c,697,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/blocksort.c,856,bug,goto-label-after-if
+bzip2,bzip2-1.0.8/bzlib.c,373,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+bzip2,bzip2-1.0.8/bzlib.c,374,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+bzip2,bzip2-1.0.8/bzlib.c,761,bug,LineCoverageBug.LZMA_1
+bzip2,bzip2-1.0.8/bzlib.c,1205,conv,gcc marks multiline if statement line coverage with branch coverage results
+bzip2,bzip2-1.0.8/bzlib.c,1210,conv,llvm treats the unneeded semicolon in 'return; };' as an empty statement and actually talks about that. what's interesting. right a few lines below. there is a similar pattern but llvm talks about the thing before curly brace. experiments show llvm picks up whichever value that is greater
+bzip2,bzip2-1.0.8/compress.c,75,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/compress.c,296,conv,gcc marks multiline if statement line coverage with branch coverage results
+bzip2,bzip2-1.0.8/compress.c,297,conv,gcc marks multiline if statement line coverage with branch coverage results
+bzip2,bzip2-1.0.8/compress.c,554,bug,gcc if statement in one line with multiconditions
+bzip2,bzip2-1.0.8/decompress.c,197,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,200,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,203,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,206,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,222,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,226,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,228,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,230,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,232,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,234,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,242,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,244,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,246,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,248,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,251,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,254,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,256,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,258,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,268,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,279,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,289,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,294,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,324,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,328,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,330,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,379,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,400,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,489,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,590,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,592,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,594,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,596,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,598,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,602,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,604,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,606,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/decompress.c,608,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/huffman.c,95,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/huffman.c,101,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/huffman.c,102,conv,gcc adds branch coverage from macro-like function to line coverage
+bzip2,bzip2-1.0.8/huffman.c,109,conv,gcc adds branch coverage from macro-like function to line coverage
+ifupdown,ifupdown-0.8.41/config.c,597,bug,gcc return at the end of if statement
+ifupdown,ifupdown-0.8.41/config.c,696,bug,gcc if statement in one line with multiconditions
+ifupdown,ifupdown-0.8.41/execute.c,63,false positive,,reading environment variables during program execution
+ifupdown,ifupdown-0.8.41/execute.c,64,false positive,,reading environment variables during program execution
+ifupdown,ifupdown-0.8.41/execute.c,79,false positive,,reading environment variables during program execution
+ifupdown,ifupdown-0.8.41/execute.c,80,false positive,,reading environment variables during program execution
+ifupdown,ifupdown-0.8.41/main.c,141,bug,NOT INSPECTED YET
+ifupdown,ifupdown-0.8.41/main.c,452,bug,LineCoverageBug.LZMA_1
+ifupdown,ifupdown-0.8.41/main.c,838,bug,gcc if statement in one line with multiconditions
+ifupdown,ifupdown-0.8.41/main.c,1207,conv,two if sections in one line
+ifupdown,ifupdown-0.8.41/main.c,1429,conv,two if sections in one line
+ifupdown,ifupdown-0.8.41/main.c,1489,bug,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1492,bug,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1495,bug,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1498,bug,"LineCoverageBug.MAWK_1,goto-label-after-if"
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,148,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,176,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,194,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,195,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,209,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,210,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,270,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,284,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,759,bug,llvm case label line coverage reflecting the previous case
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,875,bug,llvm case label line coverage reflecting the previous case
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,879,bug,llvm merge coverage for the same function with different body due to ifdef's
+distro-info,distro-info-1.5+deb12u1/ubuntu-distro-info.c,33,bug,LineCoverageBug.INETUTILS_1
+distro-info,distro-info-1.5+deb12u1/ubuntu-distro-info.c,34,bug,LineCoverageBug.INETUTILS_1
+lsof,lsof-4.95.0/arg.c,1887,conv,gcc marks multiline if statement line coverage with branch coverage results
+lsof,lsof-4.95.0/arg.c,1893,conv,gcc marks multiline if statement line coverage with branch coverage results
+lsof,lsof-4.95.0/dnode.c,359,bug,LineCoverageBug.INETUTILS_1
+lsof,lsof-4.95.0/dnode.c,361,bug,LineCoverageBug.INETUTILS_1
+lsof,lsof-4.95.0/main.c,1179,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1191,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1195,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1199,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1201,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1203,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1205,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1207,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1209,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1211,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1213,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1221,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1223,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1231,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1232,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1234,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1239,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1260,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1264,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1271,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1272,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1295,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1296,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1297,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1298,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1299,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1300,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1301,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1302,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1303,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1304,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1305,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1306,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1312,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1321,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1328,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1332,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1352,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1513,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1583,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1585,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1590,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1591,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1592,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1605,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1618,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1659,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1701,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1712,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1726,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1742,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1751,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1765,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1797,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1814,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1826,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1844,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1846,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1848,bug,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1949,conv,closing curly bracket and else if clause on the same line 
+lsof,lsof-4.95.0/usage.c,943,bug,LineCoverageBug.DISTRO_INFO_1(bug),this might be related to some multiline return with conditional expressions
+lzo2,lzo2-2.10/lzotest/lzotest.c,1901,false positive,,main function looping over argv[0]
+lzo2,lzo2-2.10/lzotest/lzotest.c,1902,false positive,,main function looping over argv[0]
+lzo2,lzo2-2.10/minilzo/minilzo.c,3892,bug,gcc missing coverage at return of inline function
+lzo2,lzo2-2.10/minilzo/minilzo.c,3914,bug,gcc missing coverage at return of inline function
+lzo2,lzo2-2.10/minilzo/minilzo.c,3930,bug,gcc missing coverage at return of inline function
+lzo2,lzo2-2.10/minilzo/minilzo.c,3943,bug,gcc missing coverage at return of inline function
+lzo2,lzo2-2.10/minilzo/minilzo.c,4625,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+lzo2,lzo2-2.10/minilzo/minilzo.c,5108,bug,LineCoverageBug.LZO2_1
+lzo2,lzo2-2.10/minilzo/minilzo.c,5112,bug,LineCoverageBug.LZO2_1
+lzo2,lzo2-2.10/minilzo/minilzo.c,5115,conv,llvm marks do while loop coverage as regular while
+lzo2,lzo2-2.10/minilzo/minilzo.c,5507,bug,LineCoverageBug.LZMA_1
+lzo2,lzo2-2.10/minilzo/minilzo.c,5572,bug,LineCoverageBug.LZMA_1
+lzo2,lzo2-2.10/src/lzo1.c,236,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1.c,256,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1.c,305,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1.c,311,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1.c,364,bug,NOT INSPECTED YET
+lzo2,lzo2-2.10/src/lzo1.c,409,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1a.c,171,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1a.c,193,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1a.c,205,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1a.c,216,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1a.c,281,bug,NOT INSPECTED YET
+lzo2,lzo2-2.10/src/lzo1a.c,371,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1a.c,380,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1a_cr.ch,103,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_9x.c,174,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1b_9x.c,235,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1b_c.ch,124,bug,LineCoverageBug.LZMA_1
+lzo2,lzo2-2.10/src/lzo1b_c.ch,161,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1b_c.ch,170,bug,NOT INSPECTED YET
+lzo2,lzo2-2.10/src/lzo1b_cm.ch,157,bug,NOT INSPECTED YET
+lzo2,lzo2-2.10/src/lzo1b_cr.ch,84,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_cr.ch,95,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_d.ch,108,conv,gcc same line if do while
+lzo2,lzo2-2.10/src/lzo1b_d.ch,147,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1b_d.ch,162,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_d.ch,203,conv,gcc same line if do while
+lzo2,lzo2-2.10/src/lzo1b_d.ch,209,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_r.ch,86,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_r.ch,95,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1b_sm.ch,180,bug,NOT INSPECTED YET
+lzo2,lzo2-2.10/src/lzo1b_sm.ch,184,bug,NOT INSPECTED YET
+lzo2,lzo2-2.10/src/lzo1c_9x.c,176,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1c_9x.c,241,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1c_9x.c,295,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo1f_1.c,73,bug,LineCoverageBug.LZMA_1
+lzo2,lzo2-2.10/src/lzo1f_1.c,129,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1f_1.c,137,bug,variant llvm case label line coverage reflecting the previous case,same as the bug found in distro-info
+lzo2,lzo2-2.10/src/lzo1f_1.c,171,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1f_9x.c,63,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1f_9x.c,216,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1f_9x.c,221,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1f_9x.c,228,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1f_d.ch,86,conv,gcc same line if do while
+lzo2,lzo2-2.10/src/lzo1f_d.ch,107,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1f_d.ch,156,conv,gcc same line if do while
+lzo2,lzo2-2.10/src/lzo1f_d.ch,161,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1x_9x.c,465,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,481,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,492,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,504,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,505,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,615,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,621,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_9x.c,623,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo1x_d.ch,420,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1x_d.ch,427,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1x_d.ch,437,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo2a_9x.c,179,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo2a_9x.c,183,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo2a_d.ch,87,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo2a_d.ch,135,conv,gcc adds branch coverage from macro-like function to line coverage,did not find the macro in source but presumably the same behavior as a bug in bzip2
+lzo2,lzo2-2.10/src/lzo_swd.ch,534,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo_swd.ch,536,conv,gcc marks multiline if statement line coverage with branch coverage results
+lzo2,lzo2-2.10/src/lzo_swd.ch,537,conv,gcc marks multiline if statement line coverage with branch coverage results
+mawk,mawk-1.3.4.20200120/bi_funct.c,1191,conv,,
+mawk,mawk-1.3.4.20200120/bi_funct.c,1192,conv,,
+mawk,mawk-1.3.4.20200120/bi_funct.c,1193,conv,,
+mawk,mawk-1.3.4.20200120/execute.c,1135,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1136,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1137,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1145,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1158,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1159,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1160,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1366,conv,,
+mawk,mawk-1.3.4.20200120/execute.c,1411,conv,,
+mawk,mawk-1.3.4.20200120/execute.c,1424,conv,,
+mawk,mawk-1.3.4.20200120/execute.c,818,conv,,
+mawk,mawk-1.3.4.20200120/execute.c,821,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,991,bug,LineCoverageBug.APACHE2_1,
+mawk,mawk-1.3.4.20200120/fcall.c,194,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+mawk,mawk-1.3.4.20200120/files.c,357,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/files.c,374,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/files.c,375,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/files.c,377,conv,,
+mawk,mawk-1.3.4.20200120/fin.c,269,bug,goto-label-after-if,
+mawk,mawk-1.3.4.20200120/fin.c,289,conv,,
+mawk,mawk-1.3.4.20200120/fin.c,405,bug,goto-label-after-if,
+mawk,mawk-1.3.4.20200120/fin.c,558,conv,,
+mawk,mawk-1.3.4.20200120/init.c,496,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/init.c,507,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/init.c,510,conv,,
+mawk,mawk-1.3.4.20200120/init.c,88,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/init.c,89,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/init.c,90,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/init.c,95,conv,,
+mawk,mawk-1.3.4.20200120/main.c,105,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,52,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,53,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,54,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,55,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,56,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,57,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,63,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,68,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,70,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/main.c,71,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/print.c,128,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/print.c,473,bug,LineCoverageBug.DISTRO_INFO_1(bug),
+mawk,mawk-1.3.4.20200120/print.c,474,bug,LineCoverageBug.DISTRO_INFO_1(bug),
+mawk,mawk-1.3.4.20200120/print.c,58,bug,llvm case label line coverage reflecting the previous case,
+mawk,mawk-1.3.4.20200120/re_cmpl.c,253,conv,,
+mawk,mawk-1.3.4.20200120/re_cmpl.c,53,conv,,
+mawk,mawk-1.3.4.20200120/re_cmpl.c,85,bug,goto-label-after-if,
+mawk,mawk-1.3.4.20200120/rexp0.c,122,conv,,
+mawk,mawk-1.3.4.20200120/rexp0.c,169,conv,,
+mawk,mawk-1.3.4.20200120/rexp0.c,215,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,233,bug,llvm case label line coverage reflecting the previous case,
+mawk,mawk-1.3.4.20200120/rexp0.c,292,bug,goto-label-after-if,
+mawk,mawk-1.3.4.20200120/rexp0.c,620,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,621,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,623,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,624,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,626,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,630,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,632,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,634,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,690,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,696,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp0.c,697,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp1.c,148,conv,,
+mawk,mawk-1.3.4.20200120/rexp2.c,179,bug,gcc line coverage for if's then clause is somehow reflecting the whole if statement
+mawk,mawk-1.3.4.20200120/rexp2.c,255,bug,LineCoverageBug.LZMA_1,a new variant. considering adding it to the comment
+mawk,mawk-1.3.4.20200120/rexp2.c,359,bug,crazy macro wrapping case labels
+mawk,mawk-1.3.4.20200120/rexp2.c,361,bug,crazy macro wrapping case labels
+mawk,mawk-1.3.4.20200120/rexp2.c,368,bug,crazy macro wrapping case labels
+mawk,mawk-1.3.4.20200120/rexp2.c,369,bug,crazy macro wrapping case labels
+mawk,mawk-1.3.4.20200120/rexp3.c,394,conv,,
+mawk,mawk-1.3.4.20200120/rexp3.c,416,conv,,
+mawk,mawk-1.3.4.20200120/rexp3.c,419,bug,LineCoverageBug.LZMA_4,not exactly the same. e.g. the symptom here is the macro itself not statements after it. but let's be conservative
+mawk,mawk-1.3.4.20200120/rexp3.c,432,conv,,
+mawk,mawk-1.3.4.20200120/rexp3.c,76,bug,gcc line coverage for if's then clause is somehow reflecting the whole if statement
+mawk,mawk-1.3.4.20200120/rexp3.c,85,bug,goto-label-after-if,
+mawk,mawk-1.3.4.20200120/rexp.c,121,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp.c,122,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp.c,123,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp.c,125,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/rexp.c,130,conv,,
+mawk,mawk-1.3.4.20200120/rexp.h,192,conv,,
+mawk,mawk-1.3.4.20200120/scan.c,401,bug,LineCoverageBug.LZMA_4,not exactly the same. e.g. the symptom here is the macro itself not statements after it. but let's be conservative
+mawk,mawk-1.3.4.20200120/scan.c,525,conv,,
+mawk,mawk-1.3.4.20200120/scan.c,642,conv,,
+procps,procps-4.0.2/library/diskstats.c,521,conv,multiline if statement
+procps,procps-4.0.2/library/meminfo.c,475,bug,LineCoverageBug.LZMA_1
+procps,procps-4.0.2/library/meminfo.c,650,conv,multiline if statement
+procps,procps-4.0.2/library/stat.c,410,bug,LineCoverageBug.LZMA_1
+procps,procps-4.0.2/library/stat.c,722,conv,multiline if statement
+procps,procps-4.0.2/library/tests/test_pids.c,46,bug,LineCoverageBug.INETUTILS_1
+procps,procps-4.0.2/library/tests/test_pids.c,47,bug,LineCoverageBug.INETUTILS_1
+procps,procps-4.0.2/library/tests/test_pids.c,57,bug,LineCoverageBug.INETUTILS_1
+procps,procps-4.0.2/library/tests/test_pids.c,59,bug,LineCoverageBug.INETUTILS_1
+procps,procps-4.0.2/src/free.c,343,bug,LineCoverageBug.INETUTILS_1
+procps,procps-4.0.2/src/free.c,348,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/free.c,393,conv,loop in macro
+procps,procps-4.0.2/src/pgrep.c,851,conv,multiline if statement
+procps,procps-4.0.2/src/pgrep.c,1051,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pgrep.c,1084,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pgrep.c,1085,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pmap.c,672,bug,NOT INSPECTED YET,may be related to gcc 120321
+procps,procps-4.0.2/src/ps/display.c,659,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,666,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,668,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,669,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,671,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,672,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,673,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,675,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,676,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/global.c,370,bug,variant llvm case label line coverage reflecting the previous case
+procps,procps-4.0.2/src/ps/sortformat.c,592,conv,closing bracket in the same line with while loop
+procps,procps-4.0.2/src/pwdx.c,104,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,120,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,129,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,133,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,135,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,141,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,142,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,145,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,147,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/pwdx.c,148,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/slabtop.c,187,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/slabtop.c,188,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/slabtop.c,189,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/slabtop.c,191,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/slabtop.c,198,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/slabtop.c,199,bug,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/sysctl.c,953,conv,while loop
+procps,procps-4.0.2/src/vmstat.c,289,conv,conditional expression in multiline
+procps,procps-4.0.2/src/vmstat.c,293,conv,conditional expression in multiline
+procps,procps-4.0.2/src/vmstat.c,421,conv,loop in macro
+procps,procps-4.0.2/src/vmstat.c,966,conv,while loop
+procps,procps-4.0.2/src/w.c,585,conv,while loop
+psmisc,psmisc-23.6/src/fuser.c,1305,conv,multiline if statement
+psmisc,psmisc-23.6/src/fuser.c,1359,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1367,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1376,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1379,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1388,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1398,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1399,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1401,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1402,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1407,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1409,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1411,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1412,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1413,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1414,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1415,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,1416,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/fuser.c,2067,bug,llvm for loop
+psmisc,psmisc-23.6/src/fuser.c,2076,conv,multiline if statement
+psmisc,psmisc-23.6/src/killall.c,934,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,935,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,939,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,942,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,943,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,1052,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,1053,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,1056,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,1061,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,1066,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/killall.c,1067,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,89,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,92,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,96,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,101,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,102,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,112,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,113,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,122,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,136,bug,LineCoverageBug.MAWK_1
+psmisc,psmisc-23.6/src/pslog.c,137,bug,LineCoverageBug.MAWK_1

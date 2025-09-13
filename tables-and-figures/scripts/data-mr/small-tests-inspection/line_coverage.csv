@@ -1,4 +1,3 @@
-package,filename,line number,reason type,reason,comment
 apache2,apache2-2.4.62/server/mpm_unix.c,901,bug,LineCoverageBug.APACHE2_2
 apache2,apache2-2.4.62/server/util_filter.c,138,bug,LineCoverageBug.APACHE2_1
 bzip2,bzip2-1.0.8/bzip2.c,1863,conv,line coverage multi-line logical expression that still makes sense

@@ -22,5 +22,3 @@ main
 # clangd
 compile_commands.json
 **/.cache/clangd
-# Let VS code Python plugin know where to find LLVM source code
-.env

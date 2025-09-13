@@ -1,0 +1,14 @@
+lsof,lsof-4.95.0/dproc.c,516,Inconsistency.MCDC_NUM_CONDITION,16,24
+mawk,mawk-1.3.4.20200120/fcall.c,340,Inconsistency.MCDC_NUM_CONDITION,8,6
+procps,procps-4.0.2/library/diskstats.c,823,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/diskstats.c,941,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/diskstats.c,988,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/meminfo.c,892,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/meminfo.c,977,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/pids.c,1617,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/slabinfo.c,1000,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/slabinfo.c,848,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/slabinfo.c,954,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/stat.c,1202,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/stat.c,1350,Inconsistency.MCDC_NUM_CONDITION,2,4
+procps,procps-4.0.2/library/stat.c,1396,Inconsistency.MCDC_NUM_CONDITION,2,4
