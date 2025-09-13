@@ -3,6 +3,7 @@ import sys
 import subprocess
 from multiprocessing import Pool, cpu_count
 from typing import List, Tuple
+import argparse
 
 # Configuration
 BUG_IDS = [
@@ -11,7 +12,6 @@ BUG_IDS = [
     "gcc120492", "gcc120486", "gcc120319", "gcc120332", "llvm140427",
     "llvm114622", "llvm116884", "llvm105341"
 ]
-CSMITH_PROGRAMS_DIR = "inline"
 
 def get_csmith_programs(directory: str) -> List[str]:
     """Get a list of all program files in the specified directory."""
@@ -61,9 +61,15 @@ def main():
     """
     Main function to orchestrate the parallel checking.
     """
-    csmith_programs = get_csmith_programs(CSMITH_PROGRAMS_DIR)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--csmith-programs-dir", type=str, default='inline')
+    args = parser.parse_args()
+
+    csmith_programs_dir = args.csmith_programs_dir
+
+    csmith_programs = get_csmith_programs(csmith_programs_dir)
     if not csmith_programs:
-        print(f"No programs found in '{CSMITH_PROGRAMS_DIR}'. Exiting.")
+        print(f"No programs found in '{csmith_programs_dir}'. Exiting.")
         sys.exit(0)
 
     # Use a pool of workers to run checks in parallel.

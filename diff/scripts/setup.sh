@@ -82,7 +82,7 @@ export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
 # apt
 
 sudo apt -yq update
-sudo apt -yq install flex cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild
+sudo apt -yq install flex cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild csmith
 # for figures
 sudo apt -yq install texlive dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 
