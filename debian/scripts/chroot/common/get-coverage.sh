@@ -15,7 +15,11 @@ if [[ $INSTR_OPTION == clang* ]]; then
     # Avoid ls'ing *.profraw files when running automatic tests which may produce
     # too large output and exceed the ARG_MAX limit.
 
-    find $PROFRAW_DIR -name "*.profraw" -type f | sort > /tmp/llvm-cov/profraw-list.txt
+    if [[ "$AUTO_TESTS" == "1" ]]; then
+        find $PROFRAW_DIR -name "*.profraw" -type f | sort > /tmp/llvm-cov/profraw-list.txt
+    else
+        ls $PROFRAW_DIR/*.profraw | sort | tee /tmp/llvm-cov/profraw-list.txt
+    fi
 
     # It is observed in "psmisc" dh_auto_test that some *.profraw files are
     # empty. Tolerate such cases.
@@ -26,7 +30,11 @@ if [[ $INSTR_OPTION == clang* ]]; then
         fi
     done
 
-    find $PROFRAW_DIR -name "*.profraw" -type f | sort > /tmp/llvm-cov/profraw-list.txt
+    if [[ "$AUTO_TESTS" == "1" ]]; then
+        find $PROFRAW_DIR -name "*.profraw" -type f | sort > /tmp/llvm-cov/profraw-list.txt
+    else
+        ls $PROFRAW_DIR/*.profraw | sort | tee /tmp/llvm-cov/profraw-list.txt
+    fi
 
     NUM_PROFRAW_FILES=$(wc -l < /tmp/llvm-cov/profraw-list.txt)
 
@@ -119,7 +127,7 @@ elif [[ $INSTR_OPTION == gcc* ]]; then
     PROJECT_ROOT=$(realpath $PROJECT_ROOT)
     cd $PROJECT_ROOT
 
-    if [[ $PACKAGE_NAME == "file" ]]; then
+    if [[ $PACKAGE_NAME == "file" && $AUTO_TESTS == 1 ]]; then
         cd tests
     fi
 

@@ -113,6 +113,47 @@ def merge_partial_gcc_file_json(gcc_file_json1, gcc_file_json2):
                 'branches': [],
                 'conditions': [],
             }
+        elif (
+            file_name == 'e2fsprogs-1.47.0/lib/ext2fs/ext2_fs.h' and
+            line_number >= 925 and line_number <= 970
+        ):
+            # https://sources.debian.org/src/e2fsprogs/1.47.0-2/lib/ext2fs/ext2_fs.h#L925
+            # where one macro defines three functions...
+            assert (
+                existing_json['branches'] == [] and
+                existing_json['conditions'] == [] and
+                new_json['branches'] == [] and
+                new_json['conditions'] == []
+            )
+            return {
+                'line_number': line_number,
+                'count': existing_json['count'] + new_json['count'],
+                'branches': [],
+                'conditions': [],
+            }
+        elif (
+            file_name == 'lzma-9.22/CPP/7zip/Common/FileStreams.h' or
+            file_name == 'lzma-9.22/CPP/Common/MyWindows.h'
+        ):
+            # There is no branch or MC/DC decision reported in LLVM anyway
+            return {
+                'line_number': line_number,
+                'count': existing_json['count'] + new_json['count'],
+                'branches': [],
+                'conditions': [],
+            }
+        elif (
+            file_name == 'lzma-9.22/CPP/Common/MyCom.h' and
+            line_number >= 12 and
+            line_number <= 77
+        ):
+            # C++ templates
+            return {
+                'line_number': line_number,
+                'count': existing_json['count'] + new_json['count'],
+                'branches': existing_json['branches'] + new_json['branches'],
+                'conditions': existing_json['conditions'] + new_json['conditions'],
+            }
         else:
             print(existing_json)
             print(new_json)
