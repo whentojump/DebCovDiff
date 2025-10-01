@@ -1,0 +1,36 @@
+llvm101241 @@@@@ https://github.com/llvm/llvm-project/issues/101241
+llvm105341 @@@@@ https://github.com/llvm/llvm-project/issues/105341
+LineCoverageBug.SL_1 @@@@@ https://github.com/llvm/llvm-project/issues/114622
+LineCoverageBug.APACHE2_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=117412
+LineCoverageBug.APACHE2_2 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=117415
+IdTbdCppSplitLine @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120319
+LineCoverageBug.LZMA_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120321
+LineCoverageBug.LZMA_4 @@@@@ https://github.com/llvm/llvm-project/issues/140427
+LineCoverageBug.LZMA_5 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120492
+LineCoverageBug.LZMA_6 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120491
+LineCoverageBug.LZ4_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120490
+LineCoverageBug.LZ4_2 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120489
+LineCoverageBug.CURL_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120484
+LineCoverageBug.GREP_3 @@@@@ https://github.com/llvm/llvm-project/issues/116884
+BranchCoverageBug.MAWK_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120485
+McdcBug.HOSTNAME_1 @@@@@ https://github.com/llvm/llvm-project/issues/131505
+LineCoverageBug.INETUTILS_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120486
+LineCoverageBug.LZO2_1 @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120478
+line coverage inline function superimpose direct or indirect invocations @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120482
+bug-string-vector @@@@@ https://github.com/llvm/llvm-project/issues/116902
+goto-label-after-if @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120332
+cpp-extern-pass-pointer @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120348
+LineCoverageBug.DISTRO_INFO_1(bug) @@@@@ dup
+LineCoverageBug.GREP_1 @@@@@ dup
+LineCoverageBug.LZMA_2 @@@@@ dup
+LineCoverageBug.MAWK_1 @@@@@ dup
+gcc if statement in one line with multiconditions @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=121897
+llvm merge coverage for the same function with different body due to ifdef's @@@@@ https://github.com/llvm/llvm-project/issues/157946
+gcc line coverage for if's then clause is somehow reflecting the whole if statement @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=121896
+variant llvm case label line coverage reflecting the previous case @@@@@ https://github.com/llvm/llvm-project/issues/157959
+llvm for loop @@@@@ https://github.com/llvm/llvm-project/issues/157981
+crazy macro wrapping case labels @@@@@ https://github.com/llvm/llvm-project/issues/158003
+gcc return at the end of if statement @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=121902
+gcc coverage of while statement added by coverage of line after while loop @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=121901
+llvm case label line coverage reflecting the previous case @@@@@ https://github.com/llvm/llvm-project/issues/158080
+gcc missing coverage at return of inline function @@@@@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=121914

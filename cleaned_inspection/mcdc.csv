@@ -1,0 +1,30 @@
+apache2,apache2-2.4.62/server/request.c,1020,conv num,mcdc ternary
+apache2,apache2-2.4.62/server/util_expr_parse.c,1120,conv num,mcdc integer compared with type min max
+apache2,apache2-2.4.62/server/util_expr_parse.c,1144,conv num,mcdc integer compared with type min max
+apache2,apache2-2.4.62/server/util_expr_parse.c,1151,conv num,mcdc integer compared with type min max
+base-passwd,base-passwd-3.6.1/update-passwd.c,1105,conv num,mcdc integer compared with type min max
+base-passwd,base-passwd-3.6.1/update-passwd.c,884,conv num,mcdc integer compared with type min max
+base-passwd,base-passwd-3.6.1/update-passwd.c,944,conv num,mcdc integer compared with type min max
+coreutils,coreutils-9.1/src/seq.c,192,conv num,mcdc ternary
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1104,conv num,mcdc empty then clause
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1245,conv num,mcdc empty then clause
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,103,conv val,mcdc definition
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1b.c,600,conv num,mcdc ternary
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/super.c,1433,conv num,mcdc ternary
+grep,grep-3.8/lib/fts.c,1587,conv num,mcdc ternary
+gzip,gzip-1.12/gzip.c,658,conv num,mcdc empty then clause
+gzip,gzip-1.12/gzip.c,759,conv num,mcdc empty then clause
+gzip,gzip-1.12/gzip.c,762,conv num,mcdc empty then clause
+inetutils,inetutils-2.4/lib/argp-fmtstream.c,274,conv num,mcdc ternary
+inetutils,inetutils-2.4/lib/argp-help.c,487,conv num,mcdc ternary
+inetutils,inetutils-2.4/lib/argp-help.c,848,conv num,mcdc ternary
+inetutils,inetutils-2.4/lib/argp-help.c,850,conv num,mcdc ternary
+less,less-590/cmdbuf.c,1002,conv num,mcdc empty then clause
+lsof,lsof-4.95.0/dproc.c,516,conv num,mcdc constant condition
+hostname,hostname-3.23+nmu1/hostname.c,312,bug num,"McdcBug.HOSTNAME_1,llvm105341"
+wget,wget-1.21.3/src/progress.c,971,conv num,mcdc constant condition,true after comma
+wget,wget-1.21.3/src/netrc.c,296,conv num,mcdc ternary
+mawk,mawk-1.3.4.20200120/fcall.c,340,conv num,mcdc ternary
+net-tools,net-tools-2.10/lib/ash.c,43,bug num,llvm101241,NOTE application itself is written in unusual way: (uchar) x != 0xc9 && (uchar) x != 0xff
+gzip,gzip-1.12/lib/utimens.c,396,conv num,mcdc ternary
+lz4,lz4-1.9.4/lib/lz4hc.c,282,conv num,mcdc inline and const

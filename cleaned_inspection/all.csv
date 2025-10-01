@@ -1,0 +1,1240 @@
+apache2,apache2-2.4.62/modules/arch/unix/mod_unixd.c,310,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_etag.c,271,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,1244,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/modules/http/http_filters.c,1309,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,1332,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,1348,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,1529,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,221,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,518,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,590,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,667,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_filters.c,796,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/modules/http/http_filters.c,872,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_protocol.c,1426,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_protocol.c,1499,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_protocol.c,1500,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_protocol.c,562,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_request.c,252,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/http/http_request.c,764,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/modules/http/http_request.c,765,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/modules/loggers/mod_log_config.c,1692,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+apache2,apache2-2.4.62/modules/loggers/mod_log_config.c,574,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/modules/loggers/mod_log_config.c,585,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/config.c,1600,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/config.c,1618,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/config.c,2515,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/config.c,421,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/core.c,1663,conv num,multiline ternary
+apache2,apache2-2.4.62/server/core.c,2918,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/core.c,4905,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/core_filters.c,148,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/core_filters.c,234,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/core_filters.c,267,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/core_filters.c,268,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/core_filters.c,450,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/core_filters.c,507,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/core_filters.c,568,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/core_filters.c,622,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/listen.c,299,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/listen.c,490,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/listen.c,510,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+apache2,apache2-2.4.62/server/listen.c,513,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/listen.c,543,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/log.c,1773,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/log.c,1827,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/log.c,669,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/main.c,553,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/mpm_common.c,498,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/mpm_unix.c,139,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/mpm_unix.c,552,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/mpm_unix.c,584,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/protocol.c,1438,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/protocol.c,1940,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/protocol.c,1979,conv num,"branch coverage multiline misalignment,branch coverage decision in macro,branch coverage macro in decision"
+apache2,apache2-2.4.62/server/protocol.c,308,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/protocol.c,765,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/protocol.c,795,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/protocol.c,844,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/protocol.c,845,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/protocol.c,855,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/protocol.c,856,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/request.c,1022,conv num,LLVM ternary
+apache2,apache2-2.4.62/server/request.c,133,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/request.c,1572,conv num,LLVM ternary
+apache2,apache2-2.4.62/server/request.c,1575,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/request.c,1774,conv num,LLVM ternary
+apache2,apache2-2.4.62/server/request.c,2570,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/request.c,331,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/scoreboard.c,669,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/scoreboard.c,670,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/ssl.c,167,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/ssl.c,168,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/ssl.c,207,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/ssl.c,212,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,102,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1185,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1262,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1280,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1283,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1286,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,129,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1301,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1351,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1358,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1365,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1371,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1380,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1384,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1434,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1477,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1484,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1491,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1497,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1506,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1510,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util.c,1518,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,1705,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,1706,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,1737,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1770,conv num,"branch coverage multiline misalignment,branch coverage macro in decision"
+apache2,apache2-2.4.62/server/util.c,1907,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1908,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1913,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1915,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,1916,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,2689,conv num,"branch coverage multiline misalignment,branch coverage macro in decision"
+apache2,apache2-2.4.62/server/util.c,2704,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,3337,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,3338,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,3417,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util.c,395,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,432,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,537,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util.c,539,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util_cookies.c,285,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util_cookies.c,57,conv num,"branch coverage multiline misalignment,ternary function call"
+apache2,apache2-2.4.62/server/util_cookies.c,99,conv num,"branch coverage multiline misalignment,ternary function call"
+apache2,apache2-2.4.62/server/util_debug.c,176,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util_expr_eval.c,1257,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util_expr_eval.c,1301,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+apache2,apache2-2.4.62/server/util_expr_parse.c,1109,conv num,branch coverage constant condition
+apache2,apache2-2.4.62/server/util_expr_parse.c,1128,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util_expr_parse.c,1144,conv num,branch coverage constant condition
+apache2,apache2-2.4.62/server/util_expr_scan.c,1596,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/util_expr_scan.c,1940,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,1964,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,2036,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,2064,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,2098,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,2142,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,2368,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,2434,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_expr_scan.c,906,conv num,ternary disaster
+apache2,apache2-2.4.62/server/util_filter.c,570,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util_pcre.c,124,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util_regex.c,196,conv num,branch coverage decision in macro
+apache2,apache2-2.4.62/server/util_script.c,633,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/util_script.c,775,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/util_script.c,776,conv num,branch coverage multiline misalignment
+apache2,apache2-2.4.62/server/vhost.c,460,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/vhost.c,778,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/vhost.c,783,conv num,branch coverage macro in decision
+apache2,apache2-2.4.62/server/vhost.c,792,conv num,branch coverage macro in decision
+bzip2,bzip2-1.0.8/bzip2.c,1145,conv num,branch coverage switch-case
+bzip2,bzip2-1.0.8/bzip2.c,1211,conv num,branch coverage multiline misalignment
+bzip2,bzip2-1.0.8/bzip2.c,1329,conv num,branch coverage switch-case
+bzip2,bzip2-1.0.8/bzip2.c,1397,conv num,branch coverage multiline misalignment
+bzip2,bzip2-1.0.8/bzip2.c,1524,conv num,branch coverage switch-case
+coreutils,coreutils-9.1/lib/closeout.c,134,conv num,branch coverage constant condition
+coreutils,coreutils-9.1/lib/quotearg.c,405,conv num,branch coverage multiline misalignment
+coreutils,coreutils-9.1/lib/quotearg.c,647,conv num,branch coverage constant condition
+coreutils,coreutils-9.1/lib/version-etc.c,208,conv num,branch coverage multiline misalignment
+coreutils,coreutils-9.1/lib/xmalloc.c,256,conv num,"branch coverage integer compared with type min max,branch coverage constant condition,branch coverage macro in decision,system header"
+coreutils,coreutils-9.1/src/seq.c,180,conv num,branch coverage macro in decision
+coreutils,coreutils-9.1/src/seq.c,193,conv num,branch coverage multiline misalignment
+coreutils,coreutils-9.1/src/seq.c,567,conv num,branch coverage macro in decision
+coreutils,coreutils-9.1/src/seq.c,599,conv num,branch coverage macro in decision
+coreutils,coreutils-9.1/src/seq.c,684,bug val,LineCoverageBug.MAWK_1
+coreutils,coreutils-9.1/src/seq.c,705,bug val,LineCoverageBug.MAWK_1
+coreutils,coreutils-9.1/src/seq.c,706,conv num,"branch coverage macro in decision,branch coverage multiline misalignment"
+coreutils,coreutils-9.1/src/seq.c,727,bug val,LineCoverageBug.MAWK_1
+coreutils,coreutils-9.1/src/system.h,653,conv num,branch coverage macro in decision
+cron,cron-3.0pl1/cron.c,108,bug val,LineCoverageBug.MAWK_1
+cron,cron-3.0pl1/cron.c,122,bug val,LineCoverageBug.MAWK_1
+cron,cron-3.0pl1/cron.c,88,bug val,LineCoverageBug.MAWK_1
+curl,curl-7.88.1/debian/build/lib/strtoofft.c,226,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/lib/strtoofft.c,228,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_cb_hdr.c,112,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_cb_hdr.c,137,conv num,"branch coverage multiline misalignment,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_cb_hdr.c,148,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_cb_prg.c,235,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_cb_rea.c,70,conv num,"branch coverage constant condition,branch coverage decision in macro,system header"
+curl,curl-7.88.1/debian/build/src/tool_cb_wrt.c,110,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_findfile.c,140,conv num,bool ternary
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,220,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,413,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,415,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,428,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,494,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,499,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,502,conv num,branch coverage decision in macro
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,533,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,556,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,583,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_formparse.c,605,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,1119,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,1430,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,1466,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,1632,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,2235,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,2255,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,2409,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,2560,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,398,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,803,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_main.c,101,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_msgs.c,62,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1198,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_operate.c,2686,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_operate.c,408,conv num,"branch coverage multiline misalignment,ternary function call"
+curl,curl-7.88.1/debian/build/src/tool_operate.c,471,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_operate.c,477,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_operate.c,485,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_operate.c,882,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_operhlp.c,71,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_paramhlp.c,390,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_paramhlp.c,405,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,143,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,163,conv num,branch coverage macro in decision
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,175,conv num,branch coverage macro in decision
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,193,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,202,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,261,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_parsecfg.c,304,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_setopt.c,233,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+curl,curl-7.88.1/debian/build/src/tool_setopt.c,245,conv num,branch coverage macro in decision
+curl,curl-7.88.1/debian/build/src/tool_urlglob.c,269,conv num,branch coverage macro in decision
+curl,curl-7.88.1/debian/build/src/tool_urlglob.c,301,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_urlglob.c,303,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_urlglob.c,414,conv num,branch coverage switch-case
+curl,curl-7.88.1/debian/build/src/tool_urlglob.c,630,conv num,branch coverage decision in macro
+curl,curl-7.88.1/debian/build/src/tool_writeout.c,248,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_writeout.c,413,conv num,branch coverage multiline misalignment
+curl,curl-7.88.1/debian/build/src/tool_writeout_json.c,88,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,107,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,108,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,110,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,117,conv num,C_ASSERT
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,174,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,180,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,186,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,191,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,203,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,209,conv num,branch coverage multiline misalignment
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,312,conv num,C_ASSERT
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,57,conv num,C_ASSERT
+grep,grep-3.8/lib/basename-lgpl.c,59,conv num,branch coverage decision in macro
+grep,grep-3.8/lib/closeout.c,134,conv num,branch coverage constant condition
+grep,grep-3.8/lib/cycle-check.c,60,conv num,C_ASSERT
+grep,grep-3.8/lib/cycle-check.c,65,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+grep,grep-3.8/lib/dfa.c,1010,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,1076,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,1552,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,1553,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,1965,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,1966,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,2006,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,2007,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,2142,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/dfa.c,3281,conv num,C_ASSERT
+grep,grep-3.8/lib/dfa.c,3667,conv num,branch coverage switch-case
+grep,grep-3.8/lib/dfa.c,4224,conv num,C_ASSERT
+grep,grep-3.8/lib/dfa.c,4401,conv num,branch coverage switch-case
+grep,grep-3.8/lib/exclude.c,147,conv num,branch coverage switch-case
+grep,grep-3.8/lib/exclude.c,260,conv num,branch coverage switch-case
+grep,grep-3.8/lib/exclude.c,284,conv num,branch coverage switch-case
+grep,grep-3.8/lib/exclude.c,549,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts-cycle.c,37,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/fts.c,1071,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/fts.c,1098,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/fts.c,1099,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/fts.c,1305,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+grep,grep-3.8/lib/fts.c,1386,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,1436,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+grep,grep-3.8/lib/fts.c,1501,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,1587,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/fts.c,1588,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/fts.c,1770,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,2007,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,2016,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,2021,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,2053,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,309,conv num,"branch coverage decision in macro,branch coverage constant condition"
+grep,grep-3.8/lib/fts.c,440,conv num,"system header,branch coverage decision in macro,branch coverage integer compared with type min max"
+grep,grep-3.8/lib/fts.c,462,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,844,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,885,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/fts.c,898,conv num,branch coverage macro in decision
+grep,grep-3.8/lib/hash.c,1011,conv num,multiline ternary
+grep,grep-3.8/lib/localeinfo.c,70,conv num,branch coverage constant condition
+grep,grep-3.8/lib/mbchar.h,245,conv num,C_TERNARY_0_1
+grep,grep-3.8/lib/mbuiter.h,143,conv num,C_ASSERT
+grep,grep-3.8/lib/mbuiter.h,171,conv num,C_ASSERT
+grep,grep-3.8/lib/mbuiter.h,172,conv num,C_ASSERT
+grep,grep-3.8/lib/quotearg.c,405,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/quotearg.c,647,conv num,branch coverage constant condition
+grep,grep-3.8/lib/sigsegv.c,1070,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/stackvma.c,359,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/version-etc.c,208,conv num,branch coverage multiline misalignment
+grep,grep-3.8/lib/xmalloc.c,256,conv num,"branch coverage integer compared with type min max,branch coverage constant condition,branch coverage macro in decision,system header"
+grep,grep-3.8/lib/xstrtol.c,153,conv num,branch coverage switch-case
+grep,grep-3.8/lib/xstrtol.c,85,conv num,C_ASSERT
+grep,grep-3.8/src/dfasearch.c,410,conv num,branch coverage integer compared with type min max
+grep,grep-3.8/src/dfasearch.c,415,conv num,branch coverage integer compared with type min max
+grep,grep-3.8/src/grep.c,1026,conv num,branch coverage constant condition
+grep,grep-3.8/src/grep.c,1219,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1312,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1430,conv num,branch coverage integer compared with type min max
+grep,grep-3.8/src/grep.c,1603,conv num,branch coverage integer compared with type min max
+grep,grep-3.8/src/grep.c,1666,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1667,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1677,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1805,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1811,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1812,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1813,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,1906,conv num,branch coverage macro in decision
+grep,grep-3.8/src/grep.c,2400,conv num,branch coverage switch-case
+grep,grep-3.8/src/grep.c,2857,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,2960,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,2985,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,621,conv num,branch coverage multiline misalignment
+grep,grep-3.8/src/grep.c,796,conv num,branch coverage constant condition
+grep,grep-3.8/src/grep.c,800,conv num,branch coverage constant condition
+grep,grep-3.8/src/kwset.c,677,conv num,branch coverage macro in decision
+gzip,gzip-1.12/deflate.c,470,conv num,branch coverage multiline misalignment
+gzip,gzip-1.12/deflate.c,473,conv num,branch coverage multiline misalignment
+gzip,gzip-1.12/deflate.c,493,conv num,branch coverage multiline misalignment
+gzip,gzip-1.12/deflate.c,609,conv num,branch coverage macro in decision
+gzip,gzip-1.12/deflate.c,704,conv num,branch coverage macro in decision
+gzip,gzip-1.12/deflate.c,798,conv num,branch coverage macro in decision
+gzip,gzip-1.12/deflate.c,810,conv num,branch coverage macro in decision
+gzip,gzip-1.12/gzip.c,1191,conv num,branch coverage macro in decision
+gzip,gzip-1.12/gzip.c,1707,conv num,branch coverage macro in decision
+gzip,gzip-1.12/gzip.c,1842,conv num,branch coverage macro in decision
+gzip,gzip-1.12/gzip.c,1935,conv num,branch coverage multiline misalignment
+gzip,gzip-1.12/gzip.c,1936,conv num,branch coverage multiline misalignment
+gzip,gzip-1.12/gzip.c,437,conv num,branch coverage macro in decision
+gzip,gzip-1.12/gzip.c,473,conv num,branch coverage macro in decision
+gzip,gzip-1.12/gzip.c,658,conv num,C_EMPTY_THEN_CLAUSE
+gzip,gzip-1.12/gzip.c,734,conv num,C_TERNARY_0_1
+gzip,gzip-1.12/gzip.c,759,conv num,C_EMPTY_THEN_CLAUSE
+gzip,gzip-1.12/gzip.c,762,conv num,C_EMPTY_THEN_CLAUSE
+gzip,gzip-1.12/gzip.c,854,conv num,branch coverage constant condition
+gzip,gzip-1.12/lib/basename-lgpl.c,59,conv num,branch coverage macro in decision
+gzip,gzip-1.12/lib/utimens.c,394,conv num,"branch coverage constant condition,branch coverage macro in decision"
+gzip,gzip-1.12/lib/xmalloc.c,256,conv num,"branch coverage integer compared with type min max,branch coverage constant condition,branch coverage macro in decision,system header"
+gzip,gzip-1.12/trees.c,468,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+iproute2,iproute2-6.1.0/ip/ip6tunnel.c,335,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
+iproute2,iproute2-6.1.0/ip/ip6tunnel.c,337,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
+iproute2,iproute2-6.1.0/ip/ip6tunnel.c,338,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
+iproute2,iproute2-6.1.0/ip/ip6tunnel.c,339,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
+iproute2,iproute2-6.1.0/ip/ip6tunnel.c,340,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
+iproute2,iproute2-6.1.0/ip/ip6tunnel.c,347,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
+iproute2,iproute2-6.1.0/ip/ipfou.c,242,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipioam6.c,116,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/ipioam6.c,139,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/ipl2tp.c,247,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/iplink.c,1107,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_bridge.c,887,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,145,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,202,conv num,branch coverage macro in decision
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,230,conv num,branch coverage macro in decision
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,232,conv num,branch coverage macro in decision
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,234,conv num,branch coverage macro in decision
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,281,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+iproute2,iproute2-6.1.0/ip/iplink_geneve.c,292,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_hsr.c,65,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_hsr.c,72,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_ipoib.c,112,conv num,multiline ternary
+iproute2,iproute2-6.1.0/ip/iplink_ipvlan.c,89,conv num,multiline ternary
+iproute2,iproute2-6.1.0/ip/iplink_macvlan.c,132,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_macvlan.c,190,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_macvlan.c,222,conv num,"multiline ternary,C_TERNARY_AS_ARG"
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,200,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,360,conv num,branch coverage macro in decision
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,416,conv num,branch coverage macro in decision
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,434,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,439,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,468,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,498,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,565,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,604,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,648,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_vxlan.c,652,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iplink_xstats.c,59,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmacsec.c,344,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmacsec.c,544,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmacsec.c,626,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmacsec.c,628,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmacsec.c,644,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmonitor.c,326,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipmonitor.c,332,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipneigh.c,193,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipnetns.c,1045,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipnetns.c,1046,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipnexthop.c,614,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/ipnexthop.c,886,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/iproute.c,1515,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,1762,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,2256,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,2259,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,280,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,283,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,287,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,291,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute.c,343,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,1234,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,321,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,717,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,719,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,721,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,792,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,794,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,796,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iproute_lwtunnel.c,851,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/iprule.c,104,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iprule.c,105,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iprule.c,310,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipseg6.c,121,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/ipseg6.c,152,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/ipstats.c,249,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/ip/ipstats.c,82,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/ip/ipstats.c,83,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/ip/ipstats.c,85,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/ip/ipstats.c,990,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/ip/iptunnel.c,208,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/iptunnel.c,242,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/iptunnel.c,399,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iptunnel.c,402,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/iptuntap.c,501,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipvrf.c,168,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipvrf.c,169,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipxfrm.c,89,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/ipxfrm.c,95,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/link_gre.c,491,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre.c,496,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre.c,501,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre.c,503,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre.c,505,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre.c,507,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre6.c,538,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre6.c,543,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre6.c,548,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre6.c,550,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre6.c,552,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_gre6.c,554,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/link_ip6tnl.c,356,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/link_iptnl.c,374,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/link_iptnl.c,430,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/tcp_metrics.c,203,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/tcp_metrics.c,229,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/ip/tunnel.c,309,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/tunnel.c,313,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/tunnel.c,315,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/tunnel.c,323,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/tunnel.c,329,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/tunnel.c,335,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/tunnel.c,341,conv num,"branch coverage constant condition,system header"
+iproute2,iproute2-6.1.0/ip/xfrm_state.c,541,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/ip/xfrm_state.c,670,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,106,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,113,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,1798,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,1799,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,1892,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,1893,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,1973,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,1974,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/bpf_legacy.c,679,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/lib/json_writer.c,107,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/lib/json_writer.c,130,conv num,C_ASSERT
+iproute2,iproute2-6.1.0/lib/libnetlink.c,1090,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/ll_addr.c,35,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/ll_addr.c,36,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/utils.c,1104,conv num,branch coverage multiline misalignment
+iproute2,iproute2-6.1.0/lib/utils.c,518,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/lib/utils.c,528,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+iproute2,iproute2-6.1.0/lib/utils.c,634,conv num,branch coverage switch-case
+iproute2,iproute2-6.1.0/lib/utils.c,985,conv num,branch coverage switch-case
+lz4,lz4-1.9.4/lib/lz4.c,450,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4.c,665,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4.c,673,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4.c,678,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4.c,679,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4.c,680,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4frame.c,1587,conv num,branch coverage switch-case
+lz4,lz4-1.9.4/lib/lz4frame.c,729,conv num,branch coverage multiline misalignment
+lz4,lz4-1.9.4/lib/lz4hc.c,1295,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,131,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,1320,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,1321,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,1322,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,134,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,155,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,1560,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,278,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,282,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,284,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,288,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,289,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,290,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,293,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,302,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,305,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,307,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,309,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,311,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,317,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,319,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,326,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,329,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,334,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,335,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,341,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,344,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,352,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,353,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,355,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,356,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,357,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,359,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,363,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,366,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,367,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,368,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,377,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,378,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,380,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,389,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,394,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,396,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,398,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,405,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,417,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,418,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,419,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,424,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,427,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,431,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,433,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,435,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,504,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,509,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,512,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,529,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,533,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,536,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,537,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,589,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,592,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,594,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,600,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,608,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,610,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,614,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,615,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,620,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,631,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,634,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,635,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,637,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,645,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,653,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,655,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,658,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,661,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,669,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,670,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,671,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,676,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,684,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,706,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,707,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,709,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,710,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,712,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,722,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,739,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,740,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,741,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,750,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,753,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,767,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,775,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,780,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,781,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,836,conv num,branch coverage GCC inline_WITH_DIFFERENT_RATIO
+lz4,lz4-1.9.4/lib/lz4hc.c,837,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,840,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,846,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/lz4hc.c,858,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,236,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,237,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,239,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,306,conv num,branch coverage switch-case
+lz4,lz4-1.9.4/lib/xxhash.c,310,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,312,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,315,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,317,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,319,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,323,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,325,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,327,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,332,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,334,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,336,conv val,BranchCoverageConventionDifference.C_LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,366,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,378,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,454,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,467,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,473,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,485,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,497,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,505,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,531,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,647,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,648,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,650,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,723,conv num,branch coverage switch-case
+lz4,lz4-1.9.4/lib/xxhash.c,825,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,837,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,914,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,926,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,932,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,942,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,954,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,962,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/lib/xxhash.c,985,conv num,branch coverage GCC inline
+lz4,lz4-1.9.4/programs/bench.c,473,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/bench.c,476,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/bench.c,534,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/bench.c,537,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/bench.c,674,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,681,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,688,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,701,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,705,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,715,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,743,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/bench.c,818,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/datagen.c,83,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4cli.c,508,conv num,branch coverage switch-case
+lz4,lz4-1.9.4/programs/lz4cli.c,635,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4cli.c,644,conv num,branch coverage macro in decision
+lz4,lz4-1.9.4/programs/lz4cli.c,668,conv num,branch coverage macro in decision
+lz4,lz4-1.9.4/programs/lz4cli.c,711,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4cli.c,721,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4cli.c,752,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4cli.c,771,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,1032,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1042,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1049,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1060,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1077,conv num,branch coverage multiline misalignment
+lz4,lz4-1.9.4/programs/lz4io.c,1129,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1132,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1163,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1183,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,1285,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,1377,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1394,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1480,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,151,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1537,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,1597,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1604,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,1726,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,330,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,343,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,372,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,454,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,459,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,465,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,466,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/lz4io.c,471,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,566,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,567,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,570,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,599,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,618,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,630,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,637,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,653,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,701,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,725,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,747,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,893,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,900,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,917,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,923,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,937,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,940,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,970,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,979,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,990,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,994,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/lz4io.c,999,conv num,branch coverage decision in macro
+lz4,lz4-1.9.4/programs/util.h,204,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/util.h,650,conv num,C_ASSERT
+lz4,lz4-1.9.4/programs/util.h,658,conv num,C_ASSERT
+lzma,lzma-9.22/C/CpuArch.c,136,conv num,branch coverage switch-case
+lzma,lzma-9.22/C/CpuArch.c,138,conv num,branch coverage switch-case
+lzma,lzma-9.22/C/CpuArch.c,139,conv num,branch coverage switch-case
+lzma,lzma-9.22/C/CpuArch.c,140,conv num,branch coverage switch-case
+lzma,lzma-9.22/C/LzmaDec.c,174,conv num,branch coverage decision in macro
+lzma,lzma-9.22/C/LzmaDec.c,519,conv num,branch coverage decision in macro
+lzma,lzma-9.22/C/LzmaEnc.c,1584,conv num,branch coverage macro in decision
+lzma,lzma-9.22/C/LzmaEnc.c,72,conv num,C_TERNARY_0_1
+lzma,lzma-9.22/C/LzmaEnc.c,74,conv num,C_TERNARY_0_1
+lzma,lzma-9.22/C/LzmaEnc.c,76,conv num,C_TERNARY_0_1
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,399,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,416,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,440,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,444,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,451,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,459,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Common/CWrappers.cpp,33,conv num,branch coverage switch-case
+lzma,lzma-9.22/CPP/7zip/Common/CWrappers.cpp,87,conv num,branch coverage switch-case
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,13,conv num,branch coverage switch-case
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaEncoder.cpp,150,conv num,C_CPP_EXCEPTION
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaEncoder.cpp,99,conv num,branch coverage switch-case
+lzma,lzma-9.22/CPP/Common/MyString.h,115,conv num,C_CPP_TEMPLATE
+lzma,lzma-9.22/CPP/Common/MyString.h,123,conv num,C_CPP_TEMPLATE
+lzma,lzma-9.22/CPP/Common/MyString.h,125,conv num,C_CPP_TEMPLATE
+lzma,lzma-9.22/CPP/Common/MyString.h,137,conv num,C_CPP_TEMPLATE
+lzma,lzma-9.22/CPP/Common/MyString.h,140,conv num,C_CPP_TEMPLATE
+lzma,lzma-9.22/CPP/Common/MyString.h,142,conv num,C_CPP_TEMPLATE
+lzma,lzma-9.22/CPP/Common/MyString.h,146,conv num,C_CPP_TEMPLATE
+lzo2,lzo2-2.10/src/lzo1b_9x.c,173,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1b_9x.c,174,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1c_9x.c,175,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1c_9x.c,176,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1f_9x.c,186,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1f_9x.c,187,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1f_9x.c,221,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1f_9x.c,228,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1x_9x.c,621,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo1x_9x.c,623,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo_init.c,221,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo_init.c,222,conv num,branch coverage multiline misalignment
+lzo2,lzo2-2.10/src/lzo_swd.ch,399,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/array.c,297,conv num,C_ASSERT
+mawk,mawk-1.3.4.20200120/array.c,318,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/fcall.c,116,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/fcall.c,194,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/fcall.c,202,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/fcall.c,340,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/fcall.c,341,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/fcall.c,85,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/field.c,312,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/field.c,313,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/field.c,662,conv num,C_ASSERT
+mawk,mawk-1.3.4.20200120/files.c,125,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/files.c,226,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/fin.c,559,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/hash.c,257,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/init.c,348,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/parse.c,3296,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/parse.c,3310,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/print.c,473,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/print.c,474,conv num,branch coverage multiline misalignment
+mawk,mawk-1.3.4.20200120/rexp0.c,121,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/rexp0.c,466,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/rexpdb.c,65,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/scan.c,1040,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/scan.c,1066,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,209,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,228,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,258,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,298,conv num,branch coverage switch-case
+mawk,mawk-1.3.4.20200120/scan.c,315,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,393,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,439,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,452,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,469,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,484,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,501,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,570,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,620,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,682,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,726,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,734,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,748,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,758,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,774,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,98,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/scan.c,994,conv num,branch coverage decision in macro
+mawk,mawk-1.3.4.20200120/zmalloc.c,291,conv num,branch coverage multiline misalignment
+net-tools,net-tools-2.10/lib/econet.c,62,conv num,branch coverage switch-case
+net-tools,net-tools-2.10/lib/inet.c,100,conv num,branch coverage multiline misalignment
+net-tools,net-tools-2.10/lib/inet6.c,104,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+net-tools,net-tools-2.10/lib/inet6.c,49,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
+net-tools,net-tools-2.10/netstat.c,1236,conv num,branch coverage multiline misalignment
+net-tools,net-tools-2.10/netstat.c,2076,conv num,branch coverage switch-case
+net-tools,net-tools-2.10/netstat.c,974,conv num,branch coverage multiline misalignment
+net-tools,net-tools-2.10/netstat.c,975,conv num,branch coverage multiline misalignment
+sl,sl-5.02/sl.c,63,conv val,BranchCoverageConventionDifference.C_SL_1
+util-linux,util-linux-2.38.1/include/optutils.h,14,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/include/xalloc.h,74,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/monotonic.c,34,conv num,branch coverage constant condition
+util-linux,util-linux-2.38.1/lib/monotonic.c,56,conv num,branch coverage multiline misalignment
+util-linux,util-linux-2.38.1/lib/strutils.c,1077,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/strutils.c,923,conv num,branch coverage multiline misalignment
+util-linux,util-linux-2.38.1/lib/strutils.c,924,conv num,branch coverage multiline misalignment
+util-linux,util-linux-2.38.1/lib/strutils.c,952,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/strutils.c,953,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/timeutils.c,197,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/timeutils.c,198,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/timeutils.c,522,conv num,branch coverage multiline misalignment
+util-linux,util-linux-2.38.1/lib/timeutils.c,78,conv num,C_ASSERT
+util-linux,util-linux-2.38.1/lib/timeutils.c,79,conv num,C_ASSERT
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,374,conv num,branch coverage multiline misalignment
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,433,conv num,branch coverage multiline misalignment
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,492,conv num,branch coverage multiline misalignment
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,516,conv num,branch coverage switch-case
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,570,conv num,branch coverage switch-case
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,606,conv num,branch coverage switch-case
+xz-utils,xz-utils-5.4.1/src/xz/list.c,505,conv num,branch coverage multiline misalignment
+xz-utils,xz-utils-5.4.1/src/xz/message.c,811,conv num,branch coverage switch-case
+xz-utils,xz-utils-5.4.1/src/xz/options.c,256,conv num,branch coverage switch-case
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,520,bug num,GCC-bug-string-vector
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,529,bug num,GCC-bug-string-vector
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,720,bug num,"bug-string-vector,GCC-bug-string-vector"
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,721,bug num,"bug-string-vector,GCC-bug-string-vector"
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,733,bug num,"bug-string-vector,GCC-bug-string-vector"
+mawk,mawk-1.3.4.20200120/parse.c,2005,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2013,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2023,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2111,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2297,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2306,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2314,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2350,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2377,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2533,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2603,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2664,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2679,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2694,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2712,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2782,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2881,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,2912,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,3030,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,3111,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,3137,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,3162,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+mawk,mawk-1.3.4.20200120/parse.c,3208,bug val,"BranchCoverageBug.MAWK_1,branch coverage switch-case"
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,783,bug num,IdTbdCppSplitLine
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,791,bug num,IdTbdCppSplitLine
+net-tools,net-tools-2.10/lib/ash.c,43,bug num,llvm101241
+debianutils,debianutils-5.7/ischroot.c,48,conv num,branch coverage multiline misalignment,
+debianutils,debianutils-5.7/ischroot.c,50,conv val,branch coverage multiline misalignment,in this case GCC reorders conditions in a whole expression whereas the more common conv2 behavior is associate a condition to off-by-one line
+inetutils,inetutils-2.4/lib/argp-parse.c,752,bug val,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/argp-parse.c,861,bug val,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/argp-parse.c,926,bug val,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/telnet/main.c,370,bug val,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/telnet/main.c,376,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,296,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,302,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,305,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,309,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,322,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,362,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,366,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,373,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,380,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,386,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,394,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,410,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,416,bug val,LineCoverageBug.MAWK_1
+liblockfile,liblockfile-1.17/dotlockfile.c,451,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1179,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1191,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1195,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1199,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1201,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1203,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1205,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1207,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1209,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1211,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1213,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1221,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1223,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1231,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1239,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1264,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1272,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1312,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1321,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1332,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1352,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1513,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1583,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1585,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1592,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1605,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1618,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1659,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1701,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1712,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1726,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1742,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1751,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1765,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1797,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1814,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1826,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1844,bug val,LineCoverageBug.MAWK_1
+lsof,lsof-4.95.0/main.c,1846,bug val,LineCoverageBug.MAWK_1
+man-db,man-db-2.11.2/src/man.c,4292,bug val,LineCoverageBug.MAWK_1
+man-db,man-db-2.11.2/src/man.c,4302,bug val,LineCoverageBug.MAWK_1
+man-db,man-db-2.11.2/src/man.c,4316,bug val,LineCoverageBug.MAWK_1
+man-db,man-db-2.11.2/src/man.c,4325,bug val,LineCoverageBug.MAWK_1
+man-db,man-db-2.11.2/src/man.c,4462,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1001,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1007,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1012,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1017,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1021,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1024,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1029,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1033,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1035,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1041,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1048,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1055,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1059,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1064,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1069,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1072,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1087,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1091,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1107,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1130,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1438,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1446,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1457,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1472,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1476,bug val,LineCoverageBug.MAWK_1
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,1484,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1461,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1468,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1471,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1478,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1489,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1492,bug val,LineCoverageBug.MAWK_1
+ifupdown,ifupdown-0.8.41/main.c,1495,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,155,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,169,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,176,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,185,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,187,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,220,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,237,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,247,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,274,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,281,bug val,LineCoverageBug.MAWK_1
+less,less-590/main.c,290,bug val,LineCoverageBug.MAWK_1
+less,less-590/option.c,111,bug val,LineCoverageBug.MAWK_1
+less,less-590/option.c,290,bug val,LineCoverageBug.MAWK_1
+wget,wget-1.21.3/src/main.c,1216,other val,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1221,other val,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1223,other val,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1230,other val,inherent compiler difference,wget --version contains compiler name and flags
+newt,newt-0.52.23/whiptail.c,492,bug val,LineCoverageBug.MAWK_1
+newt,newt-0.52.23/whiptail.c,495,bug val,LineCoverageBug.MAWK_1
+newt,newt-0.52.23/whiptail.c,501,bug val,LineCoverageBug.MAWK_1
+newt,newt-0.52.23/whiptail.c,503,bug val,LineCoverageBug.MAWK_1
+newt,newt-0.52.23/whiptail.c,505,bug val,LineCoverageBug.MAWK_1
+newt,newt-0.52.23/whiptail.c,507,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,625,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,631,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,634,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,636,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,638,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,640,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,643,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,645,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,647,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,649,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,652,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,656,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,661,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,679,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,686,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,690,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,697,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,700,bug val,LineCoverageBug.MAWK_1
+traceroute,traceroute-2.1.2/traceroute/traceroute.c,706,bug val,LineCoverageBug.MAWK_1
+lz4,lz4-1.9.4/lib/xxhash.c,308,conv val,branch coverage switch-case,in this case GCC additionally indentifies branches in macro but LLVM does't so they are basically talking about different things
+lz4,lz4-1.9.4/programs/util.h,205,other val,gcov overwrite
+lz4,lz4-1.9.4/programs/util.h,206,other val,gcov overwrite
+grep,grep-3.8/lib/stackvma.c,268,other val,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,281,other val,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,363,other val,inherent compiler difference,stackvma.c reading /proc/self/maps
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,269,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1026,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1155,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1182,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1311,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1346,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1350,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1514,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1524,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1534,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1558,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1565,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1580,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1762,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,1875,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/journal.c,750,conv num,branch coverage decision in macro
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,237,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,338,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,489,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,583,conv num,branch coverage decision in macro
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,629,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,679,conv num,branch coverage macro in decision
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,730,conv num,branch coverage decision in macro
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,732,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,756,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1001,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1042,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1339,conv num,branch coverage decision in macro
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1369,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1396,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1435,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1479,conv num,"branch coverage multiline misalignment,branch coverage decision in macro"
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1495,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1517,conv num,branch coverage decision in macro
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1522,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1536,conv num,branch coverage macro in decision
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1669,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1741,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1754,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1766,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1768,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1781,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1794,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1807,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1817,conv num,branch coverage decision in macro
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1877,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1879,conv num,branch coverage macro in decision
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1881,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1885,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1921,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1971,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,1992,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,2103,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,2456,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,2537,conv num,branch coverage multiline misalignment
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1.c,2599,conv num,branch coverage multiline misalignment
+procps,procps-4.0.2/src/ps/display.c,636,bug val,goto-label-after-if
+procps,procps-4.0.2/src/ps/display.c,639,bug val,goto-label-after-if
+procps,procps-4.0.2/src/ps/display.c,671,bug val,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/parser.c,1197,bug val,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/parser.c,1199,bug val,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/parser.c,1201,bug val,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/parser.c,1203,bug val,LineCoverageBug.MAWK_1
+procps,procps-4.0.2/src/ps/display.c,315,conv num,branch coverage switch-case
+procps,procps-4.0.2/src/ps/stacktrace.c,155,conv num,branch coverage switch-case
+procps,procps-4.0.2/src/ps/stacktrace.c,89,conv num,branch coverage constant condition,we should have filter constant fold out in branch coverage as well
+procps,procps-4.0.2/src/ps/select.c,99,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,100,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,101,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,102,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,104,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,105,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,106,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,107,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,109,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,110,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,111,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,112,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,113,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,114,conv num,"branch coverage switch-case,branch coverage decision in macro"
+procps,procps-4.0.2/src/ps/select.c,156,conv num,"branch coverage decision in macro,branch coverage macro in decision"
+procps,procps-4.0.2/src/ps/output.c,353,conv num,branch coverage switch-case
+procps,procps-4.0.2/src/ps/output.c,368,conv num,branch coverage switch-case
+apache2,apache2-2.4.62/server/mpm_unix.c,901,bug,LineCoverageBug.APACHE2_2
+apache2,apache2-2.4.62/server/util_filter.c,138,bug,LineCoverageBug.APACHE2_1
+bzip2,bzip2-1.0.8/bzip2.c,1863,conv,line coverage multi-line logical expression that still makes sense
+coreutils,coreutils-9.1/src/seq.c,425,conv,line coverage do-while
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,707,bug,LineCoverageBug.CURL_1
+curl,curl-7.88.1/debian/build/src/tool_main.c,100,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+curl,curl-7.88.1/debian/build/src/tool_main.c,101,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1198,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1754,bug,LineCoverageBug.LZMA_2
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1771,bug,LineCoverageBug.LZMA_2
+curl,curl-7.88.1/debian/build/src/tool_operate.c,2163,bug,LineCoverageBug.LZMA_2
+curl,curl-7.88.1/debian/build/src/tool_operate.c,2687,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/debian-distro-info.c,29,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/debian-distro-info.c,30,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,108,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,173,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,174,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,175,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,180,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,185,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,186,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,187,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,191,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,192,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,203,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,204,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/dfa.c,1965,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,1966,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,2006,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,2007,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,3792,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/dfa.c,4322,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/dfa.c,4323,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/src/grep.c,1552,bug,LineCoverageBug.GREP_3
+grep,grep-3.8/src/grep.c,2510,bug,LineCoverageBug.GREP_1
+grep,grep-3.8/src/grep.c,2987,bug,LineCoverageBug.LZMA_2
+gzip,gzip-1.12/gzip.c,467,bug,LineCoverageBug.LZMA_1
+gzip,gzip-1.12/inflate.c,530,conv,line coverage loop in macro
+gzip,gzip-1.12/inflate.c,913,conv,line coverage loop in macro
+gzip,gzip-1.12/trees.c,724,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
+gzip,gzip-1.12/trees.c,726,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
+hostname,hostname-3.23+nmu1/hostname.c,133,conv,line coverage do-while
+hostname,hostname-3.23+nmu1/hostname.c,134,conv,line coverage do-while
+iproute2,iproute2-6.1.0/ip/ipaddress.c,1733,conv,line coverage multi-line logical expression that still makes sense
+iproute2,iproute2-6.1.0/ip/ipaddress.c,1937,conv,line coverage multi-line logical expression that still makes sense
+iproute2,iproute2-6.1.0/lib/libnetlink.c,872,bug,LineCoverageBug.LZMA_1
+iproute2,iproute2-6.1.0/lib/utils.c,970,conv,LineCoverageConventionDifference.C_IPROUTE2_1
+less,less-590/charset.c,166,conv,LineCoverageConventionDifference.C_IPROUTE2_1
+less,less-590/main.c,145,bug,LineCoverageBug.MAWK_1
+less,less-590/option.c,111,bug,LineCoverageBug.MAWK_1
+lz4,lz4-1.9.4/lib/lz4frame.c,1001,bug,LineCoverageBug.APACHE2_1
+lz4,lz4-1.9.4/lib/lz4frame.c,1623,bug,LineCoverageBug.LZMA_2
+lz4,lz4-1.9.4/lib/lz4frame.c,2026,conv,line coverage multi-line logical expression that still makes sense
+lz4,lz4-1.9.4/lib/lz4frame.c,834,bug,LineCoverageBug.APACHE2_1
+lz4,lz4-1.9.4/lib/xxhash.c,236,bug,line coverage inline function superimpose direct or indirect invocations
+lz4,lz4-1.9.4/lib/xxhash.c,332,bug,LineCoverageBug.LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,334,bug,LineCoverageBug.LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,336,bug,LineCoverageBug.LZ4_1
+lz4,lz4-1.9.4/programs/lz4cli.c,365,bug,LineCoverageBug.LZ4_2
+lz4,lz4-1.9.4/programs/lz4io.c,1288,bug,LineCoverageBug.LZMA_1
+lz4,lz4-1.9.4/lib/lz4.c,778,bug,line coverage inline function superimpose direct or indirect invocations
+lz4,lz4-1.9.4/lib/lz4.c,779,bug,line coverage inline function superimpose direct or indirect invocations
+lz4,lz4-1.9.4/lib/lz4.c,985,bug,LineCoverageBug.LZO2_1
+lz4,lz4-1.9.4/lib/lz4.c,1019,conv,line coverage do-while
+lzma,lzma-9.22/C/LzFind.c,73,bug,LineCoverageBug.LZMA_1
+lzma,lzma-9.22/C/LzmaDec.c,167,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaDec.c,290,conv,line coverage loop in macro
+lzma,lzma-9.22/C/LzmaDec.c,411,conv,line coverage do-while
+lzma,lzma-9.22/C/LzmaDec.c,513,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaDec.c,523,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaDec.c,627,conv,line coverage loop in macro
+lzma,lzma-9.22/C/LzmaDec.c,628,bug,LineCoverageBug.LZMA_4
+lzma,lzma-9.22/C/LzmaDec.c,637,conv,line coverage loop in macro
+lzma,lzma-9.22/C/LzmaEnc.c,1021,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaEnc.c,1774,bug,LineCoverageBug.LZMA_1
+lzma,lzma-9.22/C/LzmaEnc.c,867,bug,LineCoverageBug.DISTRO_INFO_1(bug),arithmetic binary opeartor
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,657,bug,LineCoverageBug.LZMA_5
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,790,bug,IdTbdCppSplitLine
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,101,bug,cpp-extern-pass-pointer
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,27,bug,LineCoverageBug.LZMA_6
+lzo2,lzo2-2.10/src/lzo1x_c.ch,176,bug,LineCoverageBug.LZO2_1,not shown in text coverage report due to gcov overwrite
+lzo2,lzo2-2.10/src/lzo1x_c.ch,180,bug,LineCoverageBug.LZO2_1,disappear due to gcov overwrite
+lzo2,lzo2-2.10/src/lzo1x_c.ch,183,conv,line coverage do-while
+lzo2,lzo2-2.10/src/lzo_init.c,221,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+mawk,mawk-1.3.4.20200120/bi_funct.c,814,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
+mawk,mawk-1.3.4.20200120/bi_funct.c,816,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
+mawk,mawk-1.3.4.20200120/parse.c,3296,bug,LineCoverageBug.INETUTILS_1,TODO (1) all others are reporducible except this line... (2) how to find source code online https://sources.debian.org/src/mawk/1.3.4.20200120-3.1/parse.c/
+mawk,mawk-1.3.4.20200120/parse.c,3297,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
+mawk,mawk-1.3.4.20200120/parse.c,3298,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
+sl,sl-5.02/sl.c,112,bug,LineCoverageBug.SL_1
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,181,bug,LineCoverageBug.LZMA_2
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,641,bug,LineCoverageBug.LZMA_2
+xz-utils,xz-utils-5.4.1/src/xz/main.c,258,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
+lzo2,lzo2-2.10/src/lzo1x_d.ch,166,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1x_d.ch,98,bug,LineCoverageBug.LZMA_1
+inetutils,inetutils-2.4/lib/argp-parse.c,234,bug,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/argp-parse.c,235,bug,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/argp-parse.c,325,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/lib/argp-parse.c,331,conv,line coverage multi-line ternary
+inetutils,inetutils-2.4/lib/argp-parse.c,334,bug,LineCoverageBug.INETUTILS_1
+inetutils,inetutils-2.4/lib/argp-parse.c,343,bug,LineCoverageBug.DISTRO_INFO_1(bug),arithmetic binary operator with crazy triggering conditions: pointer arithmetic etc
+inetutils,inetutils-2.4/lib/argp-parse.c,926,bug,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/getopt.c,214,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/sys_bsd.c,131,conv,line coverage loop in macro
+inetutils,inetutils-2.4/telnet/sys_bsd.c,132,conv,line coverage loop in macro
+inetutils,inetutils-2.4/telnet/sys_bsd.c,133,conv,line coverage loop in macro
+inetutils,inetutils-2.4/telnet/telnet.c,1801,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/telnet.c,1802,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/telnet.c,1803,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/telnet.c,1804,conv,line coverage multi-line logical expression that still makes sense
+traceroute,traceroute-2.1.2/libsupp/clif.c,311,conv,line coverage multi-line logical expression that still makes sense
+traceroute,traceroute-2.1.2/libsupp/clif.c,401,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+man-db,man-db-2.11.2/src/man.c,562,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+lsof,lsof-4.95.0/main.c,1887,conv,line coverage multi-line logical expression that still makes sense
+lsof,lsof-4.95.0/main.c,1888,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/stackvma.c,268,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,273,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,280,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,281,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,282,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,283,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,293,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,294,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,295,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,303,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,304,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,354,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,359,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,363,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+wget,wget-1.21.3/src/main.c,1216,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1221,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1223,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1228,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1230,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1235,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1236,other,inherent compiler difference,wget --version contains compiler name and flags
+man-db,man-db-2.11.2/src/manp.c,147,conv,line coverage meta programming craziness,if we are treating it as a bug I don't know how to report
+man-db,man-db-2.11.2/src/manp.c,148,bug,LineCoverageBug.LZMA_4
+procps,procps-4.0.2/src/ps/display.c,639,bug,goto-label-after-if
+apache2,apache2-2.4.62/server/request.c,1020,conv num,mcdc ternary
+apache2,apache2-2.4.62/server/util_expr_parse.c,1120,conv num,mcdc integer compared with type min max
+apache2,apache2-2.4.62/server/util_expr_parse.c,1144,conv num,mcdc integer compared with type min max
+apache2,apache2-2.4.62/server/util_expr_parse.c,1151,conv num,mcdc integer compared with type min max
+base-passwd,base-passwd-3.6.1/update-passwd.c,1105,conv num,mcdc integer compared with type min max
+base-passwd,base-passwd-3.6.1/update-passwd.c,884,conv num,mcdc integer compared with type min max
+base-passwd,base-passwd-3.6.1/update-passwd.c,944,conv num,mcdc integer compared with type min max
+coreutils,coreutils-9.1/src/seq.c,192,conv num,mcdc ternary
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1104,conv num,mcdc empty then clause
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1245,conv num,mcdc empty then clause
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,103,conv val,mcdc definition
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/pass1b.c,600,conv num,mcdc ternary
+e2fsprogs,e2fsprogs-1.47.0/e2fsck/super.c,1433,conv num,mcdc ternary
+grep,grep-3.8/lib/fts.c,1587,conv num,mcdc ternary
+gzip,gzip-1.12/gzip.c,658,conv num,mcdc empty then clause
+gzip,gzip-1.12/gzip.c,759,conv num,mcdc empty then clause
+gzip,gzip-1.12/gzip.c,762,conv num,mcdc empty then clause
+inetutils,inetutils-2.4/lib/argp-fmtstream.c,274,conv num,mcdc ternary
+inetutils,inetutils-2.4/lib/argp-help.c,487,conv num,mcdc ternary
+inetutils,inetutils-2.4/lib/argp-help.c,848,conv num,mcdc ternary
+inetutils,inetutils-2.4/lib/argp-help.c,850,conv num,mcdc ternary
+less,less-590/cmdbuf.c,1002,conv num,mcdc empty then clause
+lsof,lsof-4.95.0/dproc.c,516,conv num,mcdc constant condition
+hostname,hostname-3.23+nmu1/hostname.c,312,bug num,"McdcBug.HOSTNAME_1,llvm105341"
+wget,wget-1.21.3/src/progress.c,971,conv num,mcdc constant condition,true after comma
+wget,wget-1.21.3/src/netrc.c,296,conv num,mcdc ternary
+mawk,mawk-1.3.4.20200120/fcall.c,340,conv num,mcdc ternary
+net-tools,net-tools-2.10/lib/ash.c,43,bug num,llvm101241,NOTE application itself is written in unusual way: (uchar) x != 0xc9 && (uchar) x != 0xff
+gzip,gzip-1.12/lib/utimens.c,396,conv num,mcdc ternary
+lz4,lz4-1.9.4/lib/lz4hc.c,282,conv num,mcdc inline and const
