@@ -552,6 +552,9 @@ e2fsprogs,e2fsprogs-1.47.0/lib/support/mkquota.c,511,Inconsistency.BRANCH_COV_NU
 e2fsprogs,e2fsprogs-1.47.0/lib/support/quotaio.c,248,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 e2fsprogs,e2fsprogs-1.47.0/lib/support/quotaio.c,89,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 e2fsprogs,e2fsprogs-1.47.0/lib/support/quotaio.c,98,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+file,file-5.44/src/file.c,593,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+file,file-5.44/src/file.c,674,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+file,file-5.44/src/file.c,683,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 grep,grep-3.8/lib/basename-lgpl.c,59,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 grep,grep-3.8/lib/closeout.c,134,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 grep,grep-3.8/lib/cycle-check.c,60,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
