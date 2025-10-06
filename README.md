@@ -10,7 +10,7 @@ Containers, other Linux distributions or operating systems or other architecture
 are never guaranteed to work.
 
 > [!WARNING]
-> `sudo` are used in setup and test scripts. It is recommended to use
+> `sudo` is used in setup and test scripts. It is recommended to use
 > one-off machines like CloudLab or virtual machines.
 
 ## Setup
@@ -20,7 +20,7 @@ wget 'https://github.com/xlab-uiuc/DebCovDiff/blob/main/diff/scripts/setup.sh?ra
 ```
 
 As prompted, log out the current shell and log back in again, to make sure
-you are correctly in `sbuild` group.
+you are correctly in `sbuild` group (check via `id -nG | grep sbuild`).
 
 [This script](./diff/scripts/setup.sh) notably does the following:
 
