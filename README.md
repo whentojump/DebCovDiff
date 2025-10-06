@@ -206,7 +206,14 @@ Inside the container
 
 ```shell
 bash bugs/setup-links.sh
+gcc --version
+clang --version
+```
+
+```shell
 bash bugs/run.sh |& tee log.txt
+grep 'NOT REPRODUCING' log.txt
+grep ' OK' log.txt
 ```
 
 ## Generate Figure 4, 7, and 8 and Table 1, 2, and 3

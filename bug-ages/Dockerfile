@@ -1,41 +1,42 @@
-# Use Ubuntu 18.04 as the base image
 FROM ubuntu:18.04
 
-# Avoid interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update package lists and install compilers and build tools
-# Added gfortran-8 to the list of packages
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
-    software-properties-common \
-    gcc-8 \
-    g++-8 \
-    gfortran-8 \
+    wget \
+    bzip2 \
+    gcc \
+    g++ \
+    git \
+    flex \
+    bison \
+    file \
     clang-7 \
     clang++-7 \
     lld-7 \
-    make \
-    vim \
     && apt-get clean
 
-# --- Configure Alternatives ---
-# Set priorities to easily switch between compilers.
-# Priority 80 for GCC 8 and 70 for Clang 7. The highest priority is the default.
-RUN update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-8 80
-RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-8 80
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 80
-RUN update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 80
+WORKDIR /usr/src
 
-RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-7 70
-RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-7 70
-RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-7 70
-RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-7 70
+RUN git clone --depth 10 --branch releases/gcc-8.1.0 git://gcc.gnu.org/git/gcc.git gcc-source && \
+    cd gcc-source && \
+    git checkout 9b646cb298fa7159c600f040daa7dbc2ea96504d
 
-# Create a directory for source code inside the container
+WORKDIR /usr/src/gcc-source
+
+RUN ./contrib/download_prerequisites
+
+WORKDIR /usr/src
+RUN mkdir gcc-build && \
+    cd gcc-build && \
+    ../gcc-source/configure \
+      --enable-languages=c,c++ \
+      --disable-multilib \
+      --disable-bootstrap && \
+    make -j$(nproc) && \
+    make install
+
+RUN rm -rf /usr/src/gcc-source /usr/src/gcc-build
+
 WORKDIR /usr/src/app
-
-# Set the default command to bash
-CMD ["/bin/bash"]
