@@ -22,6 +22,18 @@ wget 'https://github.com/xlab-uiuc/DebCovDiff/blob/main/diff/scripts/setup.sh?ra
 As prompted, log out the current shell and log back in again, to make sure
 you are correctly in `sbuild` group.
 
+[This script](./diff/scripts/setup.sh) notably does the following:
+
+1. Build GCC (`c1fb78fb` + [changes](https://github.com/xlab-uiuc/gcc-DebCovDiff/compare/base...xlab-uiuc:gcc-DebCovDiff:DebCovDiff))
+   and LLVM (`ce9a2c65` + [changes](https://github.com/xlab-uiuc/llvm-project-DebCovDiff/compare/base...xlab-uiuc:llvm-project-DebCovDiff:DebCovDiff))
+2. Run [`sbuild-createchroot`](https://manpages.debian.org/bookworm/sbuild/sbuild-createchroot.8.en.html)
+   for each toolchain which (1) sets up an isolated `chroot` and (2) runs
+   [`debootstrap`](https://manpages.debian.org/bookworm/debootstrap/debootstrap.8.en.html)
+   in it. This step creates the environment for general Debian package build.
+3. Copy custom toolchains (step 1) into the `chroot`s and rewire GCC invocations
+   to the desired toolchain with appropriate flags, via hook scripts embedded in
+   [`configure-all-chroot.sh`](debian/scripts/configure-all-chroot.sh).
+
 ## Test with Debian packages
 
 ```shell
