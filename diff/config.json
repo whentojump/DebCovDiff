@@ -1,3 +1,4 @@
 {
-    "repeat": 6
+    "repeat": 6,
+    "debian_archive": "https://snapshot.debian.org/archive/debian/20241201T025825Z/"
 }

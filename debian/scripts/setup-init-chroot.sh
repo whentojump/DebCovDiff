@@ -18,10 +18,21 @@ if [ -d /srv/chroot/$SBUILD_DISTRO-amd64-sbuild-$INSTR_OPTION/ ]; then
     exit 0
 fi
 
-sudo sbuild-createchroot                                   \
-     --chroot-suffix="-sbuild-$INSTR_OPTION"               \
-     $SBUILD_DISTRO                                        \
-     /srv/chroot/$SBUILD_DISTRO-amd64-sbuild-$INSTR_OPTION/
+DEBIAN_ARCHIVE=$(jq -r .debian_archive $THIS_DIR/../../diff/config.json)
+
+echo > /tmp/sources.list << EOF
+deb $DEBIAN_ARCHIVE bookworm main
+deb-src $DEBIAN_ARCHIVE bookworm main
+EOF
+
+sudo sbuild-createchroot                                    \
+     --chroot-suffix="-sbuild-$INSTR_OPTION"                \
+     --source-template=/tmp/sources.list                    \
+     $SBUILD_DISTRO                                         \
+     /srv/chroot/$SBUILD_DISTRO-amd64-sbuild-$INSTR_OPTION/ \
+     $DEBIAN_ARCHIVE
+
+rm -f /tmp/sources.list
 
 sudo mv /etc/schroot/chroot.d/$SBUILD_DISTRO-amd64-sbuild-$INSTR_OPTION* \
         /etc/schroot/chroot.d/$SBUILD_DISTRO-amd64-sbuild-$INSTR_OPTION
