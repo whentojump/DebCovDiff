@@ -30,6 +30,11 @@ you are correctly in `sbuild` group.
    for each toolchain which (1) sets up an isolated `chroot` and (2) runs
    [`debootstrap`](https://manpages.debian.org/bookworm/debootstrap/debootstrap.8.en.html)
    in it. This step creates the environment for general Debian package build.
+
+   For reproducibility, all Debian binaries and source files are [pinned](./diff/config.json)
+   to snapshots in December 2024 (Debian 12.8) via `https://snapshot.debian.org/`
+   instead of the regular `http://deb.debian.org/debian`.
+
 3. Copy custom toolchains (step 1) into the `chroot`s and rewire GCC invocations
    to the desired toolchain with appropriate flags, via hook scripts embedded in
    [`configure-all-chroot.sh`](debian/scripts/configure-all-chroot.sh).
