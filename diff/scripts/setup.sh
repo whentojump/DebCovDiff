@@ -15,36 +15,8 @@ you are not the authors please unset your DEV variable and rerun.
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 EOF
-    if [[ ! -f $HOME/.ssh/id_ecdsa_ase25 ]]; then
-        cat << 'EOF'
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Please prepare the SSH key for anonymous identity to $HOME/.ssh/id_ecdsa_ase25
-following the below steps.
-
-mkdir -p $HOME/.ssh
-touch $HOME/.ssh/id_ecdsa_ase25
-chmod 600 $HOME/.ssh/id_ecdsa_ase25
-vim $HOME/.ssh/id_ecdsa_ase25 # Populate the file content
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-EOF
-        exit 1
-    fi
-
-    if ! grep 'github.com-anonymous' $HOME/.ssh/config >& /dev/null; then
-        cat << EOF >> $HOME/.ssh/config
-Host github.com-anonymous
-    HostName github.com
-    User git
-    IdentityFile $HOME/.ssh/id_ecdsa_ase25
-    IdentitiesOnly yes
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
-EOF
-    fi
+    read -n 1 -r -p "Press any key to continue..."
 
 fi
 
@@ -122,19 +94,9 @@ if [[ ! -d $DIFF_WORKDIR/.build-llvm/install/ ]]; then
         git checkout -b DebCovDiff
     fi
 
-    if [[ $DEV == "1" ]]; then
-        git remote add origin git@github.com-anonymous:shock-hamburger/llvm-project.git
-    else
-        git remote add origin https://github.com/shock-hamburger/llvm-project
-    fi
+    git remote add origin https://github.com/xlab-uiuc/llvm-project-DebCovDiff
+    git pull origin DebCovDiff --depth=10
 
-    if [[ $DEV == "1" ]]; then
-        git pull origin DebCovDiff-next --depth=10
-        git config user.name shock-hamburger
-        git config user.email shock.hamburger@gmail.com
-    else
-        git pull origin DebCovDiff --depth=10
-    fi
 
     cd $DIFF_WORKDIR/.build-llvm/build/
 
@@ -190,7 +152,7 @@ if [[ ! -d $DIFF_WORKDIR/.build-gcc/install/ ]]; then
     cd $DIFF_WORKDIR/.build-gcc/src/
     git init
     git checkout -b DebCovDiff
-    git remote add origin https://github.com/shock-hamburger/gcc
+    git remote add origin https://github.com/xlab-uiuc/gcc-DebCovDiff
     git pull origin DebCovDiff --depth=10
     cd $DIFF_WORKDIR/.build-gcc/build/
     # Always use GCC under /usr/bin/
@@ -214,13 +176,9 @@ fi
 
 if [[ ! -d $DIFF_WORKDIR/$REPO_NAME ]]; then
     if [[ $DEV == "1" ]]; then
-        git clone git@github.com-anonymous:shock-hamburger/ase25-next.git $DIFF_WORKDIR/$REPO_NAME
-        pushd $DIFF_WORKDIR/$REPO_NAME
-        git config user.name shock-hamburger
-        git config user.email shock.hamburger@gmail.com
-        popd
+        git clone git@github.com:xlab-uiuc/DebCovDiff.git $DIFF_WORKDIR/$REPO_NAME
     else
-        git clone https://github.com/shock-hamburger/ase25 $DIFF_WORKDIR/$REPO_NAME
+        git clone https://github.com/xlab-uiuc/DebCovDiff.git $DIFF_WORKDIR/$REPO_NAME
     fi
 fi
 

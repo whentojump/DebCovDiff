@@ -16,7 +16,7 @@ are never guaranteed to work.
 ## Setup
 
 ```shell
-wget 'https://github.com/shock-hamburger/ase25/blob/main/diff/scripts/setup.sh?raw=true' -O- | bash
+wget 'https://github.com/xlab-uiuc/DebCovDiff/blob/main/diff/scripts/setup.sh?raw=true' -O- | bash
 ```
 
 As prompted, log out the current shell and log back in again, to make sure
