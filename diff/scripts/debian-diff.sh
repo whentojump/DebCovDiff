@@ -37,7 +37,7 @@ if [[ $START_WITH != "diff" ]]; then
     INSTR_OPTION=gcc-mcdc \
     DEB_BUILD_OPTIONS="nocheck nostrip" \
     DEB_BUILD_PROFILES="nocheck nostrip" \
-    $DIFF_WORKDIR/ase25/debian/scripts/build-package.sh $1 |& tee $1-log/$THIS_LOG_ID.gcc_build_log.txt
+    $REPO_DIR/debian/scripts/build-package.sh $1 |& tee $1-log/$THIS_LOG_ID.gcc_build_log.txt
     RET=$?
     if [[ $RET -ne 0 ]]; then
         echo "GCC build-package.sh: $RET"
@@ -48,7 +48,7 @@ if [[ $START_WITH != "diff" ]]; then
     INSTR_OPTION=clang-mcdc \
     DEB_BUILD_OPTIONS="nocheck nostrip" \
     DEB_BUILD_PROFILES="nocheck nostrip" \
-    $DIFF_WORKDIR/ase25/debian/scripts/build-package.sh $1 |& tee $1-log/$THIS_LOG_ID.clang_build_log.txt
+    $REPO_DIR/debian/scripts/build-package.sh $1 |& tee $1-log/$THIS_LOG_ID.clang_build_log.txt
     RET=$?
     if [[ $RET -ne 0 ]]; then
         echo "Clang build-package.sh: $RET"

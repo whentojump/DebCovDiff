@@ -2,8 +2,6 @@
 
 set -ex
 
-REPO_NAME="ase25"
-
 if [[ $DEV == "1" ]]; then
     cat << 'EOF'
 
@@ -31,23 +29,27 @@ if ! grep '### DebCovDiff' ~/.bashrc >& /dev/null; then
 
 ### DebCovDiff
 
-export DIFF_WORKDIR="$HOME/DebCovDiff"
+export DIFF_WORKDIR="$HOME/DebCovDiff-workdir"
 
 export PATH="$DIFF_WORKDIR/.build-gcc/install/bin:$PATH"
 export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
 
 export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
 
-export REPO_NAME="ase25"
+export REPO_NAME="DebCovDiff"
+export REPO_DIR="$DIFF_WORKDIR/$REPO_NAME"
 EOF
 fi
 
-export DIFF_WORKDIR="$HOME/DebCovDiff"
+export DIFF_WORKDIR="$HOME/DebCovDiff-workdir"
 
 export PATH="$DIFF_WORKDIR/.build-gcc/install/bin:$PATH"
 export PATH="$DIFF_WORKDIR/.build-llvm/install/bin:$PATH"
 
 export SBUILD_WORKDIR="$HOME/.sbuild-artifacts"
+
+export REPO_NAME="DebCovDiff"
+export REPO_DIR="$DIFF_WORKDIR/$REPO_NAME"
 
 ### Dependency
 
@@ -174,19 +176,19 @@ fi
 
 ### Pull scripts
 
-if [[ ! -d $DIFF_WORKDIR/$REPO_NAME ]]; then
+if [[ ! -d $REPO_DIR ]]; then
     if [[ $DEV == "1" ]]; then
-        git clone git@github.com:xlab-uiuc/DebCovDiff.git $DIFF_WORKDIR/$REPO_NAME
+        git clone git@github.com:xlab-uiuc/DebCovDiff.git $REPO_DIR
     else
-        git clone https://github.com/xlab-uiuc/DebCovDiff.git $DIFF_WORKDIR/$REPO_NAME
+        git clone https://github.com/xlab-uiuc/DebCovDiff.git $REPO_DIR
     fi
 fi
 
 ### Debian
 
-$DIFF_WORKDIR/$REPO_NAME/debian/scripts/setup-all-init-chroot.sh
+$REPO_DIR/debian/scripts/setup-all-init-chroot.sh
 sudo sbuild-adduser $USER
-newgrp sbuild <<< $DIFF_WORKDIR/$REPO_NAME/debian/scripts/configure-all-chroot.sh
+newgrp sbuild <<< $REPO_DIR/debian/scripts/configure-all-chroot.sh
 
 mkdir -p $SBUILD_WORKDIR
 

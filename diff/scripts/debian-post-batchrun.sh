@@ -7,7 +7,7 @@
 # - Generate per-package summary to /var/lib/sbuild/build-latest/log/per-package-failures.txt
 # - Generate the CSV of all failures to /var/lib/sbuild/build-latest/log/all-failures.csv
 
-mapfile -t PACKAGE_LIST < $DIFF_WORKDIR/ase25/tables-and-figures/scripts/data/select/selection_7_success.txt
+mapfile -t PACKAGE_LIST < $REPO_DIR/tables-and-figures/scripts/data/select/selection_7_success.txt
 
 REPEAT=$(jq -r .repeat config.json)
 

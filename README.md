@@ -42,7 +42,7 @@ ALL_METRICS=1 \
 LOG_LEVEL=warning \
 SHOW_SOURCE=1 \
 START_WITH="download_source" \
-$DIFF_WORKDIR/ase25/diff/scripts/debian-diff.sh procps
+$REPO_DIR/diff/scripts/debian-diff.sh procps
 ```
 
 Options:
@@ -70,7 +70,7 @@ Run all packages
 
 ```shell
 # Optionally: export AUTO_TESTS=1
-$DIFF_WORKDIR/ase25/diff/scripts/debian-batch.sh
+$REPO_DIR/diff/scripts/debian-batch.sh
 ```
 
 The results are generated under `/var/lib/sbuild/build` with the following structure:
@@ -180,7 +180,7 @@ popd
 ```
 
 ```shell
-cd $DIFF_WORKDIR/ase25/csmith
+cd $REPO_DIR/csmith
 
 python gen.py
 
@@ -192,7 +192,7 @@ python run-csmith-parallel.py --csmith-programs-dir cpp |& tee cpp.log
 ## Bug age study
 
 ```shell
-cd $DIFF_WORKDIR/ase25/bug-ages
+cd $REPO_DIR/bug-ages
 docker build -t old-compilers-env .
 docker run -it --rm -v $PWD:/usr/src/app old-compilers-env
 ```
@@ -207,6 +207,6 @@ bash bugs/run.sh |& tee log.txt
 ## Generate Figure 4, 7, and 8 and Table 1, 2, and 3
 
 ```shell
-cd $DIFF_WORKDIR/ase25/tables-and-figures/scripts
+cd $REPO_DIR/tables-and-figures/scripts
 python run.py
 ```

@@ -68,7 +68,7 @@ abort() {
     exit 1
 }
 
-mapfile -t PACKAGE_LIST < $DIFF_WORKDIR/ase25/tables-and-figures/scripts/data/select/selection_7_success.txt
+mapfile -t PACKAGE_LIST < $REPO_DIR/tables-and-figures/scripts/data/select/selection_7_success.txt
 
 REPEAT=$(jq -r .repeat $THIS_DIR/../config.json)
 
@@ -117,7 +117,7 @@ if [[ " ${PACKAGE_LIST[@]} " =~ " sl " ]]; then
     echo
     echo "Building sl package separately"
     echo
-    INSTR_OPTION=clang-mcdc START_WITH="download_source" DEB_BUILD_OPTIONS="nocheck" $DIFF_WORKDIR/$REPO_NAME/debian/scripts/build-package.sh sl >& /dev/null < /dev/null
+    INSTR_OPTION=clang-mcdc START_WITH="download_source" DEB_BUILD_OPTIONS="nocheck" $REPO_DIR/debian/scripts/build-package.sh sl >& /dev/null < /dev/null
     # Handling Ctrl + C:
     #
     # - For builds ("download_source" mode), *sbuild(1)* intercepts signals.
@@ -132,7 +132,7 @@ if [[ " ${PACKAGE_LIST[@]} " =~ " sl " ]]; then
         echo "build-package.sh: $ret"
         abort
     fi
-    INSTR_OPTION=gcc-mcdc START_WITH="download_source" DEB_BUILD_OPTIONS="nocheck" $DIFF_WORKDIR/$REPO_NAME/debian/scripts/build-package.sh sl >& /dev/null < /dev/null
+    INSTR_OPTION=gcc-mcdc START_WITH="download_source" DEB_BUILD_OPTIONS="nocheck" $REPO_DIR/debian/scripts/build-package.sh sl >& /dev/null < /dev/null
     ret=$?
     if [[ $ret -ne 0 ]]; then
         echo "build-package.sh: $ret"
@@ -144,7 +144,7 @@ for p in "${PACKAGE_LIST[@]}"; do
     if [[ $p == "sl" ]]; then
         continue
     fi
-    START_WITH="download_source" $DIFF_WORKDIR/$REPO_NAME/diff/scripts/debian-diff.sh $p
+    START_WITH="download_source" $REPO_DIR/diff/scripts/debian-diff.sh $p
     ret=$?
     if [[ $ret -ne 0 ]]; then
         echo "debian-diff.sh: $ret"
@@ -163,7 +163,7 @@ trap 'abort' SIGINT
 
 for i in `seq 1 $REPEAT`; do
     for p in "${PACKAGE_LIST[@]}"; do
-        START_WITH="test" $DIFF_WORKDIR/$REPO_NAME/diff/scripts/debian-diff.sh $p
+        START_WITH="test" $REPO_DIR/diff/scripts/debian-diff.sh $p
         ret=$?
         if [[ $ret -ne 0 ]]; then
             echo "debian-diff.sh: $ret"
