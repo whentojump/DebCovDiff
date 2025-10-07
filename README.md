@@ -13,7 +13,7 @@ are never guaranteed to work.
 > `sudo` is used in setup and test scripts. It is recommended to use
 > one-off machines like CloudLab or virtual machines.
 
-## Setup
+## 1. Setup
 
 ```shell
 wget 'https://github.com/xlab-uiuc/DebCovDiff/blob/main/diff/scripts/setup.sh?raw=true' -O- | bash
@@ -39,7 +39,7 @@ you are correctly in `sbuild` group (check via `id -nG | grep sbuild`).
    to the desired toolchain with appropriate flags, via hook scripts embedded in
    [`configure-all-chroot.sh`](debian/scripts/configure-all-chroot.sh).
 
-## Test with Debian packages
+## 2. Test with One Debian Package
 
 ```shell
 AUTO_TESTS=1 \
@@ -53,10 +53,10 @@ $REPO_DIR/diff/scripts/debian-diff.sh procps
 Options:
 
 - `procps`: Debian [source package](https://www.debian.org/doc/debian-policy/ch-source.html)
-  <sup>not [binary package](https://www.debian.org/doc/debian-policy/ch-binary.html)</sup> name
+  <sup>(not [binary package](https://www.debian.org/doc/debian-policy/ch-binary.html))</sup> name
 - `LOG_LEVEL=<level>`: one of `error`, `warning`, `info`, `debug`
-- `SHOW_SOURCE=1`: show problematic source code snippet
-- `ALL_METRICS=1`: warn of inconsistency for all metrics. Otherwise this is
+- `SHOW_SOURCE=1`: show the inconsistent source code snippet
+- `ALL_METRICS=1`: warn of inconsistencies for all metrics. Otherwise this is
   configurable in [`inconsistency.py`](./diff/oracles/inconsistency.py).
 - `START_WITH=<mode>`
     - `"download_source"`: run everything (starting with pulling the source from
@@ -70,45 +70,79 @@ Options:
       under `/var/lib/sbuild/build/<package>-<toolchain>-<old_id>`
 - `AUTO_TESTS=1`: measure coverage of
   [`dh_auto_test`](https://manpages.debian.org/bookworm/debhelper/dh_auto_test.1.en.html)
-  if available. Otherwise invoke simple commands as specified in [`./debian/scripts/chroot/`](./debian/scripts/chroot/).
+  if available. Otherwise invoke simple commands as specified in
+  [`./debian/scripts/chroot/`](./debian/scripts/chroot/).
 
-Run all packages
+Back up and clean build directory before moving on to next sections
 
 ```shell
-# Optionally: export AUTO_TESTS=1
+cp -r /var/lib/sbuild/build/ /var/lib/sbuild/build-individual-packages
+rm -rf /var/lib/sbuild/build/*
+```
+
+## 3. Test with All Debian Packages
+
+### Run with Existing Tests (ET) and 9 Debian Packages
+
+```shell
+export AUTO_TESTS=1
 $REPO_DIR/diff/scripts/debian-batch.sh
 ```
 
-The results are generated under `/var/lib/sbuild/build` with the following structure:
+Back up and clean build directory
 
-For each package there are four directories
+```shell
+mv $(ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-ET
+rm -rf /var/lib/sbuild/build/*
+```
+
+### Run with Simple Commands (SC) and 41 Debian Packages
+
+```shell
+export AUTO_TESTS=0
+$REPO_DIR/diff/scripts/debian-batch.sh
+```
+
+Back up and clean build directory
+
+```shell
+mv $(ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-SC
+rm -rf /var/lib/sbuild/build/*
+```
+
+## 4. Inspect Raw DebCovDiff Results
+
+The results (with one package or all packages) are generated under
+`/var/lib/sbuild/build*` directories:
+
+- `build`: the most recent run, where all actual builds happen
+- `build-<date>-<random>`: a copy of `build` after batch run
+- `build-{individual-packages,ET,SC}`: renamed to more recognizable names
+  in previous sections.
+
+These directories have the following structure:
+
+For each package there are two or four directories
 
 ```text
 <package>-gcc-1   // build and measure coverage using GCC
 <package>-clang-1 // build and measure coverage using Clang/LLVM
+                  // (The below two only exist for batch runs)
 <package>-log     // various logs
 <package>         // historic inconsistencies
 ```
 
 Take package `grep` for example
 
-(`+` means stuffs created by our tool in addition to a regular Debian package build)
+(`+` means files created by our tool in addition to a regular Debian package build)
 
 ```text
-grep-clang-1
+/var/lib/sbuild/build-SC/grep-clang-1/
 ├── grep-3.8/
 │   ├── Makefile, configure, ... // The upstream source code, e.g. by GNU developers
 │   ├── debian/                  // Configuration, patches etc by downstream Debian developers
 │   ├── dh_auto_test.log         // + Log of running dh_auto_test
 │   └── llvm-cov-profraw/        // + *.profraw files generated during test
-│
-├── // Various Debian build artifacts
-├── grep_3.8-5.debian.tar.xz
-├── grep_3.8-5.disc
-├── grep_3.8-5_amd64.buildinfo
-├── grep_3.8-5_amd64.changes
-├── grep_3.8-5_amd64.deb
-├── ...
 │
 ├── llvm-cov-executables.txt // + List of instrumented executables and libraries,
 │                            //   which is passed as argument to llvm-cov
@@ -116,22 +150,30 @@ grep-clang-1
 ├── default.json             // + JSON coverage report
 ├── default.lcov.txt         // + LCOV coverage report
 ├── text-coverage-report/    // + Text coverage report organized by source structure
-└── text-coverage-report.txt // + Text coverage report concatenated in one file
+├── text-coverage-report.txt // + Text coverage report concatenated in one file
+│
+├── // Various Debian build artifacts
+├── grep_3.8-5.debian.tar.xz
+├── grep_3.8-5.disc
+├── grep_3.8-5_amd64.buildinfo
+├── grep_3.8-5_amd64.changes
+├── grep_3.8-5_amd64.deb
+└── ...
 ```
 
 Due to the tools' nature, coverage related files are found at different places
 for GCC.
 
 ```text
-grep-gcc-1
+/var/lib/sbuild/build-SC/grep-gcc-1/
 ├── grep-3.8/
 │   ├── Makefile, configure, ... // The upstream source code, e.g. by GNU developers
 │   ├── src/                     // The upstream source code, e.g. by GNU developers
 │   │   ├── grep.c               // The upstream source code, e.g. by GNU developers
 │   │   ├── grep.o               // Build files
-│   │   ├── grep.{gcda,gcno}     // + gcov note and data file that spread across the
+│   │   ├── grep.{gcda,gcno}     // + gcov note and data files that spread across the
 │   │   │                        //   whole build directory, usually found next to
-│   │   │                        //   the corresponding .o file
+│   │   │                        //   the corresponding *.o file
 │   │   ├── lib/                                 // The upstream source code, e.g. by GNU developers
 │   │   │   ├── fcntl.c                          // The upstream source code, e.g. by GNU developers
 │   │   │   ├── libgreputils_a-fcntl.o           // Build files
@@ -148,7 +190,7 @@ grep-gcc-1
 │   │                                   //   the source structure
 │   └── ...
 │
-├── // Various Debian build artifacts, not important for our purposes
+├── // Various Debian build artifacts
 ├── grep_3.8-5.debian.tar.xz
 ├── grep_3.8-5.disc
 ├── grep_3.8-5_amd64.buildinfo
@@ -158,21 +200,27 @@ grep-gcc-1
 ```
 
 ```text
-grep-log/
+/var/lib/sbuild/build-SC/grep-log/
 ├── 1.clang_build_log.txt
 ├── 1.gcc_build_log.txt
 ├── 1.compared.csv        // Total compared lines, branches and MC/DC decisions
 ├── 1.inconsistent.csv    // Inconsistent lines, branches and MC/DC decisions
 ├── 1.diff_log.txt        // Verbose log of inconsistencies
 ├── ...
-├── T.clang_build_log.txt // T means repeated runs. Let's focus on the last one
+├── T.clang_build_log.txt // T means repeated runs
 ├── T.gcc_build_log.txt
 ├── T.compared.csv
 ├── T.inconsistent.csv
 └── T.diff_log.txt
 ```
 
-## Csmith experiments
+$T$ is configurable via [`config.json`](./diff/config.json).
+
+## 5. Bug Reproduction
+
+TODO
+
+## 6. Csmith Experiments
 
 ```shell
 pushd /tmp/
@@ -195,7 +243,7 @@ python run-csmith-parallel.py --csmith-programs-dir inline |& tee inline.log
 python run-csmith-parallel.py --csmith-programs-dir cpp |& tee cpp.log
 ```
 
-## Bug age study
+## 7. Bug Age Study
 
 ```shell
 cd $REPO_DIR/bug-ages
@@ -217,7 +265,7 @@ grep 'NOT REPRODUCING' log.txt
 grep ' OK' log.txt
 ```
 
-## Generate Figure 4, 7, and 8 and Table 1, 2, and 3
+## 8. Generate Figure 4, 7, and 8 and Table 1, 2, and 3
 
 ```shell
 cd $REPO_DIR/tables-and-figures/scripts
