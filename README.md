@@ -276,6 +276,9 @@ Example occurrence in Debian packages:
       315|                   0|				}
     ```
 
+    (We [patched LLVM](https://github.com/xlab-uiuc/llvm-project-DebCovDiff/commit/201222abab7d4d1eed1125520699d8bcce8d18a2)
+    in our experiments for debugging purposes, so that it expands "18.4E" into full digits)
+
 ### More bugs WIP...
 
 ## 6. Csmith Experiments
