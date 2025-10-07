@@ -218,7 +218,65 @@ $T$ is configurable via [`config.json`](./diff/config.json).
 
 ## 5. Bug Reproduction
 
-TODO
+### GCC#120321
+
+Bug report: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=120321
+
+Example occurrence in Debian packages:
+
+- Code location: `/var/lib/sbuild/build-SC/gzip-gcc-1/gzip-1.12/gzip.c:467`
+- Coverage report location: `/var/lib/sbuild/build-SC/gzip-gcc-1/gzip-1.12/builddir/gzip.c.gcov:507`
+
+    ```c
+           10:  464:    z_suffix = Z_SUFFIX;
+           10:  465:    z_len = strlen(z_suffix);
+            -:  466:
+            6:  467:    while (true) {
+            -:  468:        int optc;
+           16:  469:        int longind = -1;
+            -:  470:
+           16:  471:        if (env_argv)
+    ```
+
+### LLVM#131505 (Listing 1)
+
+Bug report: https://github.com/llvm/llvm-project/issues/131505
+
+Example occurrence in Debian packages:
+
+- Code location: `/var/lib/sbuild/build-SC/hostname-clang-1/hostname-3.23+nmu1/hostname.c:312`
+- Coverage report location: `/var/lib/sbuild/build-SC/hostname-clang-1/text-coverage-report/coverage/build/hostname-clang-1/hostname-3.23+nmu1/hostname.c.txt:611`
+
+    ```c
+      311|                   0|					sin6 = (struct sockaddr_in6 *)ifap->ifa_addr;
+      312|                   0|					if (IN6_IS_ADDR_LINKLOCAL(&sin6->sin6_addr) ||
+      -------------------------------
+      |  Branch (312:10): [True: 0, False: 0]
+      -------------------------------
+      313|                   0|							IN6_IS_ADDR_MC_LINKLOCAL(&sin6->sin6_addr))
+      -------------------------------
+      |  Branch (313:8): [True: 18446744073709551615, False: 1]
+      -------------------------------
+      |---> MC/DC Decision Region (312:10) to (313:32)
+      |
+      |  Number of Conditions: 2
+      |     Condition C1 --> (312:10)
+      |     Condition C2 --> (313:8)
+      |
+      |  Executed MC/DC Test Vectors:
+      |
+      |     None.
+      |
+      |  C1-Pair: not covered
+      |  C2-Pair: not covered
+      |  MC/DC Coverage for Decision: 0.00%
+      |
+      -------------------------------
+      314|                   0|						continue;
+      315|                   0|				}
+    ```
+
+### More bugs WIP...
 
 ## 6. Csmith Experiments
 
