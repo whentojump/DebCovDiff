@@ -52,7 +52,8 @@ $REPO_DIR/diff/scripts/debian-diff.sh procps
 
 Options:
 
-- `procps`: Debian package name
+- `procps`: Debian [source package](https://www.debian.org/doc/debian-policy/ch-source.html)
+  <sup>not [binary package](https://www.debian.org/doc/debian-policy/ch-binary.html)</sup> name
 - `LOG_LEVEL=<level>`: one of `error`, `warning`, `info`, `debug`
 - `SHOW_SOURCE=1`: show problematic source code snippet
 - `ALL_METRICS=1`: warn of inconsistency for all metrics. Otherwise this is
