@@ -68,10 +68,13 @@ Options:
     - `"diff"`: if the package has been run before, skip everything but the
       final differential testing step, based on the existing coverage reports
       under `/var/lib/sbuild/build/<package>-<toolchain>-<old_id>`
-- `AUTO_TESTS=1`: measure coverage of
-  [`dh_auto_test`](https://manpages.debian.org/bookworm/debhelper/dh_auto_test.1.en.html)
-  if available. Otherwise invoke simple commands as specified in
+- `AUTO_TESTS=1`: measure coverage of existing tests (ET, namely
+  [`dh_auto_test`](https://manpages.debian.org/bookworm/debhelper/dh_auto_test.1.en.html))
+  if available. Otherwise invoke simple commands (SC) as specified in
   [`./debian/scripts/chroot/`](./debian/scripts/chroot/).
+
+Interpretation of the output is deferred in
+["4. Inspect Raw DebCovDiff Results"](#4-inspect-raw-debcovdiff-results).
 
 Back up and clean build directory before moving on to next sections
 
@@ -115,10 +118,10 @@ rm -rf /var/lib/sbuild/build/*
 The results (with one package or all packages) are generated under
 `/var/lib/sbuild/build*` directories:
 
-- `build`: the most recent run, where all actual builds happen
-- `build-<date>-<random>`: a copy of `build` after batch run
-- `build-{individual-packages,ET,SC}`: renamed to more recognizable names
-  in previous sections.
+- `build`: the most recent run, where all actual builds happen.
+- `build-<date>-<random>`: a copy of `build` after batch run.
+- `build-{individual-packages,ET,SC}`: we've just renamed them to these more
+  recognizable names in previous sections.
 
 These directories have the following structure:
 
@@ -139,7 +142,7 @@ Take package `grep` for example
 ```text
 /var/lib/sbuild/build-SC/grep-clang-1/
 ├── grep-3.8/
-│   ├── Makefile, configure, ... // The upstream source code, e.g. by GNU developers
+│   ├── Makefile, configure, ... // The upstream source code, e.g., by GNU developers
 │   ├── debian/                  // Configuration, patches etc by downstream Debian developers
 │   ├── dh_auto_test.log         // + Log of running dh_auto_test
 │   └── llvm-cov-profraw/        // + *.profraw files generated during test
@@ -167,15 +170,15 @@ for GCC.
 ```text
 /var/lib/sbuild/build-SC/grep-gcc-1/
 ├── grep-3.8/
-│   ├── Makefile, configure, ... // The upstream source code, e.g. by GNU developers
-│   ├── src/                     // The upstream source code, e.g. by GNU developers
-│   │   ├── grep.c               // The upstream source code, e.g. by GNU developers
+│   ├── Makefile, configure, ... // The upstream source code, e.g., by GNU developers
+│   ├── src/                     // The upstream source code, e.g., by GNU developers
+│   │   ├── grep.c               // The upstream source code, e.g., by GNU developers
 │   │   ├── grep.o               // Build files
 │   │   ├── grep.{gcda,gcno}     // + gcov note and data files that spread across the
 │   │   │                        //   whole build directory, usually found next to
 │   │   │                        //   the corresponding *.o file
-│   │   ├── lib/                                 // The upstream source code, e.g. by GNU developers
-│   │   │   ├── fcntl.c                          // The upstream source code, e.g. by GNU developers
+│   │   ├── lib/                                 // The upstream source code, e.g., by GNU developers
+│   │   │   ├── fcntl.c                          // The upstream source code, e.g., by GNU developers
 │   │   │   ├── libgreputils_a-fcntl.o           // Build files
 │   │   │   └── libgreputils_a-fcntl.{gcda,gcno} // + Another example of gcov note and data files
 │   │   └── ...
@@ -187,7 +190,7 @@ for GCC.
 │   │
 │   ├── fcntl.c.gcov                    // + Another example of coverage reports.
 │   ├── libgreputils_a-fcntl.gcov.json  //   Note they are no longer reflecting
-│   │                                   //   the source structure
+│   │                                   //   the source structure.
 │   └── ...
 │
 ├── // Various Debian build artifacts
@@ -207,7 +210,7 @@ for GCC.
 ├── 1.inconsistent.csv    // Inconsistent lines, branches and MC/DC decisions
 ├── 1.diff_log.txt        // Verbose log of inconsistencies
 ├── ...
-├── T.clang_build_log.txt // T means repeated runs
+├── T.clang_build_log.txt // T means number of repeated runs
 ├── T.gcc_build_log.txt
 ├── T.compared.csv
 ├── T.inconsistent.csv
@@ -238,7 +241,7 @@ Example occurrence in Debian packages:
            16:  471:        if (env_argv)
     ```
 
-### LLVM#131505 (Listing 1)
+### LLVM#131505 (Listings 1 and 2)
 
 Bug report: https://github.com/llvm/llvm-project/issues/131505
 
@@ -277,11 +280,13 @@ Example occurrence in Debian packages:
     ```
 
     (We [patched LLVM](https://github.com/xlab-uiuc/llvm-project-DebCovDiff/commit/201222abab7d4d1eed1125520699d8bcce8d18a2)
-    in our experiments for debugging purposes, so that it expands "18.4E" into full digits)
+    in our experiments for debugging purposes, so that it expands "18.4E" into full digits.)
 
-### More bugs WIP...
+### The Rest of Bugs WIP...
 
 ## 6. Csmith Experiments
+
+<!-- FIXME move this to setup.sh -->
 
 Build Csmith
 
@@ -371,7 +376,11 @@ For each Csmith configuration (default, `--inline-function`, and `--lang-cpp`),
     llvm140427  0/100000       0/100000       0/100000
     ```
 
+<!-- FIXME describe checker criteria with an example; explain 100% hit -->
+
 ## 7. Bug Age Study
+
+<!-- FIXME move this and Docker installation to setup.sh -->
 
 ```shell
 cd $REPO_DIR/bug-ages
@@ -380,6 +389,8 @@ docker run -it --rm -v $PWD:/usr/src/app old-compilers-env
 ```
 
 Inside the container
+
+<!-- FIXME move "bash bugs/setup-links.sh" to Dockerfile -->
 
 ```shell
 bash bugs/setup-links.sh
