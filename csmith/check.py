@@ -62,7 +62,8 @@ def main():
     Main function to orchestrate the parallel checking.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--csmith-programs-dir", type=str, default='inline')
+    parser.add_argument("--nproc", type=int, default=cpu_count())
+    parser.add_argument("--csmith-programs-dir", type=str, default='default-1k')
     args = parser.parse_args()
 
     csmith_programs_dir = args.csmith_programs_dir
@@ -74,7 +75,7 @@ def main():
 
     # Use a pool of workers to run checks in parallel.
     # The number of workers will be the number of CPU cores available.
-    num_workers = cpu_count()
+    num_workers = args.nproc
     print(f"Running checks in parallel with {num_workers} workers...")
 
     # Prepare arguments for the pool

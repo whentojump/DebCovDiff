@@ -19,34 +19,43 @@ from functools import partial
 import signal
 import subprocess
 import sys
+import argparse
 
-serial = False
+argparser = argparse.ArgumentParser()
+argparser.add_argument("--nproc", type=int, default=10)
+argparser.add_argument("--first-1k", action="store_true")
+argparser.add_argument("--start-seed", type=int)
+argparser.add_argument("--end-seed", type=int)
 
-nproc = 30 # os.cpu_count() or 1
+args = argparser.parse_args()
 
-configs: list[tuple[str, str, int]] = [
-    ("default", "", 100000),
-    ("inline", "--inline-function", 100000),
-    ("cpp", "--lang-cpp", 100000),
-]
+nproc = args.nproc
 
-if len(sys.argv) == 3:
-    start_seed = int(sys.argv[1])
-    end_seed = int(sys.argv[2])
-    program_range = range(start_seed, end_seed + 1)
-elif len(sys.argv) > 1:
-    print(f"Usage: {sys.argv[0]} [start_seed end_seed]", file=sys.stderr)
+if args.first_1k and (args.start_seed is not None or args.end_seed is not None):
+    print("Error: --first-1k cannot be used with --start-seed or --end-seed")
     sys.exit(1)
-else:
-    program_range = None
 
-def generate_with_seed(seed, config_name, csmith_options):
+if args.start_seed is not None and args.end_seed is None:
+    print("Error: --end-seed is required when --start-seed is provided")
+    sys.exit(1)
+elif args.start_seed is None and args.end_seed is not None:
+    print("Error: --start-seed is required when --end-seed is provided")
+    sys.exit(1)
+
+if args.start_seed is not None and args.end_seed is not None:
+    dir_suffix = f"{args.start_seed}-{args.end_seed}"
+    program_range = range(args.start_seed, args.end_seed + 1)
+else:
+    dir_suffix = "1k" if args.first_1k else "100k"
+    program_range = range(1_000) if args.first_1k else range(100_000)
+
+def generate_with_seed(seed, dir_name, csmith_options):
 
     command_parts = ["csmith", "-s", str(seed)]
     if csmith_options:
         command_parts.extend(csmith_options.split())
 
-    output_file_path = f"{config_name}/{seed}.c"
+    output_file_path = f"{dir_name}/{seed}.c"
 
     with open(output_file_path, "w") as f_out:
         result = subprocess.run(command_parts, stdout=f_out)
@@ -55,28 +64,37 @@ def generate_with_seed(seed, config_name, csmith_options):
         return seed
     return None
 
-for config in configs:
-    config_name, csmith_options, program_num = config
-    os.makedirs(config_name, exist_ok=False)
+for csmith_options in [ "", "--inline-function", "--lang-cpp" ]:
 
-    seeds = program_range if program_range is not None else range(program_num)
+    match csmith_options:
+        case "":
+            dir_name = "default"
+        case "--inline-function":
+            dir_name = "inline"
+        case "--lang-cpp":
+            dir_name = "cpp"
 
-    if serial:
-        for seed in seeds:
+    dir_name += f"-{dir_suffix}"
+
+    os.makedirs(dir_name, exist_ok=False)
+
+    if nproc == 1:
+        results = []
+        for seed in program_range:
             print("Generating with seed", seed)
-            os.system(f"csmith -s {seed} {csmith_options} > {config_name}/{seed}.c")
+            results.append(generate_with_seed(seed, dir_name, csmith_options))
 
     else:
-        print(f"Generating {len(seeds)} programs using {nproc} processes for config '{config_name}'...")
+        print(f"Generating {len(program_range)} programs using {nproc} processes for config '{dir_name}'...")
         with multiprocessing.Pool(processes=nproc) as pool:
-            worker = partial(generate_with_seed, config_name=config_name, csmith_options=csmith_options)
-            results = pool.map(worker, seeds)
+            worker = partial(generate_with_seed, dir_name=dir_name, csmith_options=csmith_options)
+            results = pool.map(worker, program_range)
 
-        segfaulting_seeds = sorted([seed for seed in results if seed is not None])
+    segfaulting_seeds = sorted([seed for seed in results if seed is not None])
 
-        if segfaulting_seeds:
-            print("\n--- Csmith Segfault Report ---")
-            print(f"Found {len(segfaulting_seeds)} seeds that caused segmentation faults:")
-            print(", ".join(map(str, segfaulting_seeds)))
-        else:
-            print("\n--- No csmith segmentation faults detected. ---")
+    if segfaulting_seeds:
+        print("\n--- Csmith Segfault Report ---")
+        print(f"Found {len(segfaulting_seeds)} seeds that caused segmentation faults:")
+        print(", ".join(map(str, segfaulting_seeds)))
+    else:
+        print("\n--- No csmith segmentation faults detected. ---")
