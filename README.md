@@ -283,6 +283,8 @@ Example occurrence in Debian packages:
 
 ## 6. Csmith Experiments
 
+Build Csmith
+
 ```shell
 pushd /tmp/
 git clone https://github.com/csmith-project/csmith.git
@@ -296,13 +298,78 @@ popd
 
 ```shell
 cd $REPO_DIR/csmith
-
-python gen.py
-
-python run-csmith-parallel.py --csmith-programs-dir default |& tee default.log
-python run-csmith-parallel.py --csmith-programs-dir inline |& tee inline.log
-python run-csmith-parallel.py --csmith-programs-dir cpp |& tee cpp.log
 ```
+
+For each Csmith configuration (default, `--inline-function`, and `--lang-cpp`),
+
+1. Generate **(~21min)** and check **(~3min)** 1,000 programs
+
+    <!--
+      Measurement: 20:31.18 and 2:58.01
+
+      FIXME Certain seeds take exceptionally longer time to generate and
+      stall the whole process.
+    -->
+
+    ```shell
+    python gen.py --first-1k --nproc=40
+    bash check-1k.sh
+    ```
+
+    Expected output:
+
+    ```text
+    gcc117412   0/1000     0/1000     0/1000
+    gcc117415   0/1000     0/1000     0/1000
+    gcc120319   0/1000     0/1000     0/1000
+    gcc120321   0/1000     0/1000     0/1000
+    gcc120332   769/1000   765/1000   772/1000
+    gcc120348   0/1000     0/1000     0/1000
+    gcc120478   0/1000     0/1000     0/1000
+    gcc120482   0/1000     0/1000     0/1000
+    gcc120484   841/1000   841/1000   855/1000
+    gcc120486   0/1000     0/1000     0/1000
+    gcc120489   798/1000   803/1000   818/1000
+    gcc120490   0/1000     0/1000     0/1000
+    gcc120491   0/1000     0/1000     0/1000
+    gcc120492   0/1000     0/1000     0/1000
+    llvm105341  0/1000     0/1000     0/1000
+    llvm114622  1000/1000  1000/1000  1000/1000
+    llvm116884  0/1000     0/1000     0/1000
+    llvm140427  0/1000     0/1000     0/1000
+    ```
+
+2. Generate **(~9.5h)** and check **(~5h)** 100,000 programs
+
+    <!-- Measurement 9:23:14 and 4:52:57 -->
+
+    ```shell
+    python gen.py --nproc=40
+    bash check-100k.sh
+    ```
+
+    Expected output:
+
+    ```text
+    gcc117412   0/100000       0/100000       0/100000
+    gcc117415   0/100000       0/100000       0/100000
+    gcc120319   0/100000       0/100000       0/100000
+    gcc120321   0/100000       0/100000       0/100000
+    gcc120332   75674/100000   75534/100000   76193/100000
+    gcc120348   0/100000       0/100000       0/100000
+    gcc120478   0/100000       0/100000       0/100000
+    gcc120482   0/100000       0/100000       0/100000
+    gcc120484   82831/100000   82838/100000   83121/100000
+    gcc120486   0/100000       0/100000       0/100000
+    gcc120489   79105/100000   79001/100000   79310/100000
+    gcc120490   0/100000       0/100000       0/100000
+    gcc120491   0/100000       0/100000       0/100000
+    gcc120492   0/100000       0/100000       0/100000
+    llvm105341  0/100000       0/100000       0/100000
+    llvm114622  100000/100000  100000/100000  100000/100000
+    llvm116884  0/100000       0/100000       0/100000
+    llvm140427  0/100000       0/100000       0/100000
+    ```
 
 ## 7. Bug Age Study
 
