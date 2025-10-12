@@ -421,6 +421,12 @@ Expected output:
 /usr/src/app/bugs/llvm105341.sh OK
 ```
 
+Exit the container
+
+```shell
+exit
+```
+
 ## 8. Generate Figure 4, 7, and 8 and Table 1, 2, and 3
 
 ```shell
