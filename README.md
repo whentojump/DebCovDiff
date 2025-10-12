@@ -286,21 +286,6 @@ Example occurrence in Debian packages:
 
 ## 6. Csmith Experiments
 
-<!-- FIXME move this to setup.sh -->
-
-Build Csmith
-
-```shell
-pushd /tmp/
-git clone https://github.com/csmith-project/csmith.git
-cd csmith
-git checkout 0ec6f1bad2df865beadf13c6e97ec6505887b0a5
-cmake -D CMAKE_C_COMPILER=/usr/bin/gcc -D CMAKE_CXX_COMPILER=/usr/bin/g++ .
-make -j10
-sudo make -j10 install
-popd
-```
-
 ```shell
 cd $REPO_DIR/csmith
 ```
@@ -380,28 +365,60 @@ For each Csmith configuration (default, `--inline-function`, and `--lang-cpp`),
 
 ## 7. Bug Age Study
 
-<!-- FIXME move this and Docker installation to setup.sh -->
-
 ```shell
 cd $REPO_DIR/bug-ages
-docker build -t old-compilers-env .
 docker run -it --rm -v $PWD:/usr/src/app old-compilers-env
 ```
 
 Inside the container
 
-<!-- FIXME move "bash bugs/setup-links.sh" to Dockerfile -->
-
 ```shell
-bash bugs/setup-links.sh
 gcc --version
 clang --version
+```
+
+Expected output:
+
+```text
+gcc (GCC) 8.0.1 20180502 (prerelease)
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+clang version 7.0.0-3~ubuntu0.18.04.1 (tags/RELEASE_700/final)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
 ```
 
 ```shell
 bash bugs/run.sh |& tee log.txt
 grep 'NOT REPRODUCING' log.txt
 grep ' OK' log.txt
+```
+
+Expected output:
+
+```text
+/usr/src/app/bugs/gcc120478.sh NOT REPRODUCING 1
+/usr/src/app/bugs/gcc120490.sh NOT REPRODUCING 1
+/usr/src/app/bugs/gcc120491.sh NOT REPRODUCING 1
+/usr/src/app/bugs/gcc120492.sh NOT REPRODUCING 1
+/usr/src/app/bugs/gcc120319.sh NOT REPRODUCING 1
+/usr/src/app/bugs/llvm114622.sh NOT REPRODUCING 1
+
+/usr/src/app/bugs/gcc120321.sh OK
+/usr/src/app/bugs/gcc117412.sh OK
+/usr/src/app/bugs/gcc120482.sh OK
+/usr/src/app/bugs/gcc117415.sh OK
+/usr/src/app/bugs/gcc120348.sh OK
+/usr/src/app/bugs/gcc120484.sh OK
+/usr/src/app/bugs/gcc120489.sh OK
+/usr/src/app/bugs/gcc120486.sh OK
+/usr/src/app/bugs/gcc120332.sh OK
+/usr/src/app/bugs/llvm140427.sh OK
+/usr/src/app/bugs/llvm116884.sh OK
+/usr/src/app/bugs/llvm105341.sh OK
 ```
 
 ## 8. Generate Figure 4, 7, and 8 and Table 1, 2, and 3

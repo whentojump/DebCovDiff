@@ -17,7 +17,16 @@ RUN apt-get update && apt-get install -y \
     lld-7 \
     && apt-get clean
 
+RUN ln -sf /usr/bin/clang-7 /usr/bin/clang && \
+    ln -sf /usr/bin/clang++-7 /usr/bin/clang++ && \
+    ln -sf /usr/bin/llvm-profdata-7 /usr/bin/llvm-profdata && \
+    ln -sf /usr/bin/llvm-cov-7 /usr/bin/llvm-cov
+
 WORKDIR /usr/src
+
+# Ubuntu 18.04 distribution only has GCC 7.5.0 or 8.4.0 but we want 8.0.
+# Thus build from source. We checkout a few commits before releases/gcc-8.1.0
+# where gcc/BASE-VER lastly stayed 8.0.1.
 
 RUN git clone --depth 10 --branch releases/gcc-8.1.0 git://gcc.gnu.org/git/gcc.git gcc-source && \
     cd gcc-source && \

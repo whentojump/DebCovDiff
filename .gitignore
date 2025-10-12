@@ -22,3 +22,5 @@ main
 # clangd
 compile_commands.json
 **/.cache/clangd
+# Csmith
+platform.info

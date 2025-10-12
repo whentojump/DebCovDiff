@@ -56,7 +56,7 @@ export REPO_DIR="$DIFF_WORKDIR/$REPO_NAME"
 # apt
 
 sudo apt -yq update
-sudo apt -yq install flex cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild csmith
+sudo apt -yq install flex cmake ninja-build mold git bc wget build-essential python3-pip bear unzip python-is-python3 jq libxml2-utils libmpc-dev sbuild
 # for figures
 sudo apt -yq install texlive dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 
@@ -191,6 +191,53 @@ sudo sbuild-adduser $USER
 newgrp sbuild <<< $REPO_DIR/debian/scripts/configure-all-chroot.sh
 
 mkdir -p $SBUILD_WORKDIR
+
+### Docker and image for old toolchain evaluation
+
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+    sudo apt -yq remove $pkg
+done
+
+sudo apt -yq update
+sudo apt -yq install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt -yq update
+
+sudo apt -yq install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo usermod -aG docker $USER
+
+newgrp docker << 'SCRIPT'
+    if ! grep 'old-compilers-env' <<< `docker images`; then
+        docker build -t old-compilers-env $REPO_DIR/bug-ages
+    fi
+    docker run --rm old-compilers-env bash -c "gcc --version && clang --version"
+SCRIPT
+
+## Csmith
+
+if command -v csmith >/dev/null 2>&1 && \
+   grep 'Git version: 0ec6f1b' <<< `csmith`; then
+    echo "Csmith of correct version is already installed."
+else
+    CSMITH_BUILD_DIR=`mktemp -d`
+    pushd $CSMITH_BUILD_DIR
+    git clone https://github.com/csmith-project/csmith.git
+    cd csmith
+    git checkout 0ec6f1bad2df865beadf13c6e97ec6505887b0a5
+    cmake -D CMAKE_C_COMPILER=/usr/bin/gcc -D CMAKE_CXX_COMPILER=/usr/bin/g++ .
+    make -j10
+    sudo make -j10 install
+    popd
+    rm -rf $CSMITH_BUILD_DIR
+fi
 
 cat << EOF
 
