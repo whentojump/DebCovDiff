@@ -13,7 +13,7 @@ are never guaranteed to work.
 > `sudo` is used in setup and test scripts. It is recommended to use
 > one-off machines like CloudLab or virtual machines.
 
-## 1. Setup
+## 1. Setup (~1h)
 
 ```shell
 wget 'https://github.com/xlab-uiuc/DebCovDiff/blob/main/diff/scripts/setup.sh?raw=true' -O- | bash
@@ -39,7 +39,7 @@ you are correctly in `sbuild` group (check via `id -nG | grep sbuild`).
    to the desired toolchain with appropriate flags, via hook scripts embedded in
    [`configure-all-chroot.sh`](debian/scripts/configure-all-chroot.sh).
 
-## 2. Test with One Debian Package
+## 2. Test with One Debian Package (~3min)
 
 ```shell
 AUTO_TESTS=1 \
@@ -85,7 +85,7 @@ rm -rf /var/lib/sbuild/build/*
 
 ## 3. Test with All Debian Packages
 
-### Run with Existing Tests (ET) and 9 Debian Packages
+### Run with Existing Tests (ET) and 9 Debian Packages (~50min)
 
 ```shell
 export AUTO_TESTS=1
@@ -99,7 +99,7 @@ mv $(ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-E
 rm -rf /var/lib/sbuild/build/*
 ```
 
-### Run with Simple Commands (SC) and 41 Debian Packages
+### Run with Simple Commands (SC) and 41 Debian Packages (~3h)
 
 ```shell
 export AUTO_TESTS=0
