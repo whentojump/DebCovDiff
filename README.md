@@ -95,7 +95,7 @@ $REPO_DIR/diff/scripts/debian-batch.sh
 Back up and clean build directory
 
 ```shell
-mv $(ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-ET
+mv $(/usr/bin/ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-ET
 rm -rf /var/lib/sbuild/build/*
 ```
 
@@ -109,7 +109,7 @@ $REPO_DIR/diff/scripts/debian-batch.sh
 Back up and clean build directory
 
 ```shell
-mv $(ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-SC
+mv $(/usr/bin/ls -dt /var/lib/sbuild/build-* | head -2 | tail -1) /var/lib/sbuild/build-SC
 rm -rf /var/lib/sbuild/build/*
 ```
 
