@@ -5,7 +5,7 @@ configurations using real-world software (Debian packages) as input.
 
 For **coverage tool differential testing**, refer to our
 [paper](https://mir.cs.illinois.edu/marinov/publications/ZhangETAL25DebCovDiff.pdf) (ASE '25),
-[talk](./TODO) (ASE '25),
+[talk](./docs/ase25-slides.pdf) (ASE '25),
 [extended talk](./TODO) (at [UIUC SysNet Seminar](https://systems-seminar-uiuc.github.io/fall25/)),
 and the rest of this document on evaluation.
 
