@@ -14,6 +14,8 @@ For **program reduction** and **bug deduplication** research, see
 
 ## ASE '25 Evaluation
 
+![diagram](./docs/diagram.png)
+
 The experiments are mainly run on a CloudLab c6420 physical server (amd64, see
 detailed specs in [CloudLab documentation](https://docs.cloudlab.us/hardware.html)),
 with an Ubuntu 22.04 image.
