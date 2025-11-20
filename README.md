@@ -1,5 +1,19 @@
 # DebCovDiff
 
+DebCovDiff is a framework for testing compiler toolchains of diverse
+configurations using real-world software (Debian packages) as input.
+
+For **coverage tool differential testing**, refer to our
+[paper](https://mir.cs.illinois.edu/marinov/publications/ZhangETAL25DebCovDiff.pdf) (ASE '25),
+[talk](./TODO) (ASE '25),
+[extended talk](./TODO) (at [UIUC SysNet Seminar](https://systems-seminar-uiuc.github.io/fall25/)),
+and the rest of this document on evaluation.
+
+For **program reduction** and **bug deduplication** research, see
+[README-reduce.md](./README-reduce.md).
+
+## ASE '25 Evaluation
+
 The experiments are mainly run on a CloudLab c6420 physical server (amd64, see
 detailed specs in [CloudLab documentation](https://docs.cloudlab.us/hardware.html)),
 with an Ubuntu 22.04 image.
