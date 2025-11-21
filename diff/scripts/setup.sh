@@ -196,9 +196,13 @@ fi
 
 ### Docker and image for old toolchain evaluation
 
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
-    sudo apt -yq remove $pkg
-done
+if lsb_release -a | grep 'Distributor ID:	Debian' >& /dev/null; then
+    sudo apt -yq remove $(dpkg --get-selections docker.io docker-compose docker-doc podman-docker containerd runc | cut -f1)
+else
+    for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+        sudo apt -yq remove $pkg
+    done
+fi
 
 sudo apt -yq update
 sudo apt -yq install ca-certificates curl
