@@ -255,8 +255,13 @@ with open('data/convs.csv', mode='r', newline='', encoding='utf-8') as f:
         if len(affected_proj):
             max_occurrence_per_project = max(affected_proj.values())
             max_occurring_project = { k for k, v in affected_proj.items() if v == max_occurrence_per_project }
-            max_occurring_project = ','.join(sorted(list(max_occurring_project)))
-            affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{max_occurring_project}}})"
+            if (len(max_occurring_project) == 1):
+                affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{list(max_occurring_project)[0]}}})"
+            else:
+                affected_proj_field_in_table = ', '.join(
+                    f'\\package{{{x}}}' for x in sorted(list(max_occurring_project))
+                )
+                affected_proj_field_in_table = f"{len(affected_proj)} ({affected_proj_field_in_table})"
         else:
             assert False
 
@@ -562,8 +567,13 @@ with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
 
             max_occurrence_per_project = max(affected_proj.values())
             max_occurring_project = { k for k, v in affected_proj.items() if v == max_occurrence_per_project }
-            max_occurring_project = ','.join(sorted(list(max_occurring_project)))
-            affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{max_occurring_project}}})"
+            if (len(max_occurring_project) == 1):
+                affected_proj_field_in_table = f"{len(affected_proj)} (\\package{{{list(max_occurring_project)[0]}}})"
+            else:
+                affected_proj_field_in_table = ', '.join(
+                    f'\\package{{{x}}}' for x in sorted(list(max_occurring_project))
+                )
+                affected_proj_field_in_table = f"{len(affected_proj)} ({affected_proj_field_in_table})"
             if (len(affected_proj) > num_proj_mostly_recurring):
                 num_proj_mostly_recurring = len(affected_proj)
         else:
@@ -820,6 +830,10 @@ with open('../tables/inconsistencies.tex', 'w') as out:
         f"{func(all_package_mcdc_total)} "
         "\\\\ \\hline", file=out
     )
+    crazylatexA = func(all_package_line_coverage_total)
+    crazylatexB = func(all_package_branch_coverage_total)
+    crazylatexC = func(all_package_mcdc_total)
+
     # func = lambda x : my_format(np.mean(x))
     # print(
     #     f"Mean compared & "
@@ -836,15 +850,24 @@ with open('../tables/inconsistencies.tex', 'w') as out:
         f"{func(all_package_mcdc_total)} "
         "\\\\ \\hhline{|=|=|=|=|}", file=out
     )
+    crazylatexD = func(all_package_line_coverage_total)
+    crazylatexE = func(all_package_branch_coverage_total)
+    crazylatexF = func(all_package_mcdc_total)
 
     func = lambda x : my_format(np.sum(x))
     print(
-        f"\\makecell{{Total inconsistent\\\\(*\\_num + *\\_val)}} & "
+        f"\\makecell[l]{{Total inconsistent\\\\(*\\_num + *\\_val)}} & "
         f"{func(all_package_line_coverage_failure)} & "
         f"\\makecell{{{func(all_package_branch_coverage_failure)}\\\\({func(all_package_branch_coverage_failure_num)} + {func(all_package_branch_coverage_failure_val)})}} & "
         f"\\makecell{{{func(all_package_mcdc_failure)}\\\\({func(all_package_mcdc_failure_num)} + {func(all_package_mcdc_failure_val)})}} "
         "\\\\ \\hline", file=out
     )
+    crazylatexG = func(all_package_line_coverage_failure)
+    crazylatexH = func(all_package_branch_coverage_failure)
+    crazylatexI = func(all_package_mcdc_failure)
+    crazylatexJ = f"({func(all_package_branch_coverage_failure_num)} + {func(all_package_branch_coverage_failure_val)})"
+    crazylatexK = f"({func(all_package_mcdc_failure_num)} + {func(all_package_mcdc_failure_val)})"
+
     # func = lambda x : my_format(np.mean(x))
     # print(
     #     f"Mean inconsistent & "
@@ -855,12 +878,17 @@ with open('../tables/inconsistencies.tex', 'w') as out:
     # )
     func = lambda x : my_format(np.median(x))
     print(
-        f"\\makecell{{Median inconsistent\\\\(*\\_num, *\\_val)}} & "
+        f"\\makecell[l]{{Median inconsistent\\\\(*\\_num, *\\_val)}} & "
         f"{func(all_package_line_coverage_failure)} & "
         f"\\makecell{{{func(all_package_branch_coverage_failure)}\\\\({func(all_package_branch_coverage_failure_num)}, {func(all_package_branch_coverage_failure_val)})}} & "
         f"\\makecell{{{func(all_package_mcdc_failure)}\\\\({func(all_package_mcdc_failure_num)}, {func(all_package_mcdc_failure_val)})}} "
         "\\\\ \\hline", file=out
     )
+    crazylatexL = func(all_package_line_coverage_failure)
+    crazylatexM = func(all_package_branch_coverage_failure)
+    crazylatexN = func(all_package_mcdc_failure)
+    crazylatexO = f"({func(all_package_branch_coverage_failure_num)}, {func(all_package_branch_coverage_failure_val)})"
+    crazylatexP = f"({func(all_package_mcdc_failure_num)}, {func(all_package_mcdc_failure_val)})"
 
     # my_format2 = lambda x : "{:.2f}".format(x)
     # func = lambda x, y : my_format2(np.sum(x)/np.sum(y)*1000)
@@ -873,6 +901,24 @@ with open('../tables/inconsistencies.tex', 'w') as out:
     # )
 
     # } // LaTeX schema
+
+# with open('../tables/inconsistencies_workaround.tex', 'w') as out:
+#     print(f"\\newcommand{{\\crazylatexA}}{{{crazylatexA}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexB}}{{{crazylatexB}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexC}}{{{crazylatexC}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexD}}{{{crazylatexD}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexE}}{{{crazylatexE}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexF}}{{{crazylatexF}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexG}}{{{crazylatexG}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexH}}{{{crazylatexH}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexI}}{{{crazylatexI}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexJ}}{{{crazylatexJ}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexK}}{{{crazylatexK}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexL}}{{{crazylatexL}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexM}}{{{crazylatexM}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexN}}{{{crazylatexN}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexO}}{{{crazylatexO}}}", file=out)
+#     print(f"\\newcommand{{\\crazylatexP}}{{{crazylatexP}}}", file=out)
 
 num_package_at_least_one_inconsistency = sum(
     (all_package_line_coverage_failure > 0) |
@@ -948,9 +994,13 @@ import matplotlib.colors as mcolors
 from PIL import ImageColor
 
 def matplotlib_color_name_to_RGB(name):
-    return ImageColor.getcolor(mcolors.TABLEAU_COLORS[name], 'RGB')
+    if name in mcolors.TABLEAU_COLORS:
+        return ImageColor.getcolor(mcolors.TABLEAU_COLORS[name], 'RGB')
+    if name in mcolors.CSS4_COLORS:
+        return ImageColor.getcolor(mcolors.CSS4_COLORS[name], 'RGB')
 
 print(matplotlib_color_name_to_RGB(bug_color))
+print(matplotlib_color_name_to_RGB(llvm_bug_color))
 print(matplotlib_color_name_to_RGB(conv_color))
 
 # In[9]:
@@ -1001,14 +1051,14 @@ package_names = np.array(package_names)
 sorted_indices = np.argsort(data[:, 0])
 
 labels1 = [
-    'Compared lines',
-    'Compared branches',
-    'Compared decisions',
+    'Compared Lines',
+    'Compared Branches',
+    'Compared Decisions',
 ]
 labels2 = [
-    'Inconsistent lines',
-    'Inconsistent branches',
-    'Inconsistent decisions',
+    'Inconsistent Lines',
+    'Inconsistent Branches',
+    'Inconsistent Decisions',
 ]
 data = data[sorted_indices]
 data1 = data[:, [0,2,4]]
@@ -1055,7 +1105,7 @@ padding = 0.02 * (max_x - min_x)
 ax.set_xlim(min_x - padding, max_x + padding)
 
 plt.xticks(x, package_names)
-plt.ylabel('Number of instance(s)')
+plt.ylabel('Number of Instance(s)')
 plt.legend()
 plt.setp(ax.get_xticklabels(), rotation=50, horizontalalignment='right')
 
@@ -1339,14 +1389,14 @@ plt.rcParams.update({
     "font.family": "Computer Modern Roman"
 })
 
-fig, ax = plt.subplots(figsize=(6.4, 4.8*0.7))
+fig, ax = plt.subplots(figsize=(6.4, 4.8*0.65))
 
 bar_width = 0.8
 
 ax.bar(all_triggering_conditions, bug_nums_by_this_condition, width=bar_width, facecolor=bug_color, bottom=0)
-conv_bars = ax.bar(all_triggering_conditions, conv_nums_by_this_condition, width=bar_width, label='Convention differences', facecolor=conv_color, bottom=bug_nums_by_this_condition)
-llvm_bars = ax.bar(all_triggering_conditions, llvm_bug_nums_by_this_condition, width=bar_width, label='LLVM Bugs', facecolor=llvm_bug_color, alpha=0.99, bottom=gcc_bug_nums_by_this_condition)
-gcc_bars = ax.bar(all_triggering_conditions, gcc_bug_nums_by_this_condition, width=bar_width, label='GCC Bugs', facecolor=gcc_bug_color, alpha=0.99, bottom=0)
+conv_bars = ax.bar(all_triggering_conditions, conv_nums_by_this_condition, width=bar_width, label='Convention Differences', facecolor=conv_color, bottom=bug_nums_by_this_condition)
+llvm_bars = ax.bar(all_triggering_conditions, llvm_bug_nums_by_this_condition, width=bar_width, label='LLVM-cov Bugs', facecolor=llvm_bug_color, alpha=0.99, bottom=gcc_bug_nums_by_this_condition)
+gcc_bars = ax.bar(all_triggering_conditions, gcc_bug_nums_by_this_condition, width=bar_width, label='Gcov Bugs', facecolor=gcc_bug_color, alpha=0.99, bottom=0)
 
 # for llvm_bar, gcc_bar in zip(llvm_bars, gcc_bars):
 #     x0 = gcc_bar.get_x()
@@ -1357,6 +1407,9 @@ gcc_bars = ax.bar(all_triggering_conditions, gcc_bug_nums_by_this_condition, wid
 #         ax.plot([x0 + shrink, x0 + width - shrink], [height, height], color='black', linewidth=1)
 
 ax.legend(loc='upper right')
+
+plt.ylim(0, 12.5)
+plt.yticks([0, 2, 4, 6, 8, 10, 12])
 
 # ax.set_yscale("log") # TODO see if log scale is needed
 
@@ -1424,12 +1477,12 @@ causes, occurrences, project_nums = map(list, zip(*sorted_data))
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-fig, ax = plt.subplots(figsize=(6.4, 4.8*0.7))
+fig, ax = plt.subplots(figsize=(6.4, 4.8*0.65))
 ax1 = ax
 ax2 = ax1.twinx()
 
 label1 = 'Occurrences'
-label2 = 'Affected Packages'
+label2 = 'Affected Package(s)'
 
 p1, = ax1.plot(causes, occurrences, 'b--', label=label1)
 p2, = ax2.plot(causes, project_nums, 'r+:', label=label2)
@@ -1697,7 +1750,7 @@ latex_macros.append(m)
 assert num_inspection == num_inconsistency_caused_by_bug \
                        + num_inconsistency_caused_by_conv \
                        + num_inconsistency_caused_by_other
-m = f"\\newcommand{{\\numInspectedTotal}}{{{num_inspection}\\xspace}}"
+m = f"\\newcommand{{\\numInspectedTotal}}{{{'{:,}'.format(num_inspection)}\\xspace}}"
 print(m)
 latex_macros.append(m)
 
