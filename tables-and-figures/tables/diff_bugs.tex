@@ -1,6 +1,6 @@
 1 & \blackout{1203}21 & \gcov & L & 9 (\package{lzo2}) & 6 + \mr{11} & constant, loop, no code, variable scope\\
-2 & \blackout{1174}12 & \gcov & L & 4 (\package{lz4}) & 4 + \mr{1} & dereference, function, multiline, type conversion\\
-3 & \blackout{1204}78 & \gcov & L & 2 (\package{lzo2}) & 3 + \mr{2} & inline function, multistmt\\
+2 & \blackout{1204}78 & \gcov & L & 2 (\package{lzo2}) & 3 + \mr{2} & inline function, multistmt\\
+3 & \blackout{1174}12 & \gcov & L & 3 (\package{lz4}) & 3 + \mr{1} & dereference, function, multiline, type conversion\\
 4 & \blackout{1204}82 & \gcov & L & 1 (\package{lz4}) & 3 + n/a & \CodeIn{const} keyword, inline function\\
 5 & \blackout{1204}90 & \gcov & L & 1 (\package{lz4}) & 3 + n/a & inline function, \CodeIn{switch}-\CodeIn{case}\\
 6 & \blackout{1174}15 & \gcov & L & 1 (\package{apache2}) & 1 + n/a & dereference, function, \CodeIn{if}, loop, multiline\\
@@ -9,7 +9,7 @@
 9 & \blackout{1204}89 & \gcov & L & 1 (\package{lz4}) & 1 + n/a & \CodeIn{continue}, dereference, loop, variable scope\\
 10 & \blackout{1204}91 & \gcov & L & 1 (\package{lzma}) & 1 + n/a & C++, constructor, multiline\\
 11 & \blackout{1204}92 & \gcov & L & 1 (\package{lzma}) & 1 + n/a & C++ standard library, type conversion\\
-12 & \blackout{1204}86 & \gcov & L/BN & 5 (\package{distro-info}) & 6 + \mr{20} & multiline, ternary\\
+12 & \blackout{1204}86 & \gcov & L/BN & 5 (\package{distro-info}) & 6 + \mr{19} & multiline, ternary\\
 13 & \blackout{1203}19 & \gcov & L/BN & 1 (\package{lzma}) & 3 + n/a & C++, function, multiline, variable scope\\
 14 & \blackout{1203}32 & \gcov & L/BN/BV & 5 (\package{lzo2}) & 4 + \mr{16} & \CodeIn{if}, loop, no code, \CodeIn{switch}-\CodeIn{case}\\
 15 & \blackout{1204}85 & \gcov & BV & 1 (\package{mawk}) & 23 + \mr{0} & preprocessor directive, header\\
@@ -27,8 +27,8 @@
 26 & \mr{\blackout{1218}96} & \mr{\gcov} & \mr{L} & \mr{1 (\package{mawk})} & \mr{0 + 2} & \mr{function, \CodeIn{if}, pointer} \\
 27 & \mr{\blackout{1219}02} & \mr{\gcov} & \mr{L} & \mr{1 (\package{ifupdown})} & \mr{0 + 1} & \mr{\CodeIn{continue}} \\
 28 & \mr{\blackout{1580}03} & \mr{\llvmcov} & \mr{L} & \mr{1 (\package{mawk})} & \mr{0 + 4} & \mr{macro, \CodeIn{switch}-\CodeIn{case}} \\
-29 & \mr{\blackout{1580}80} & \mr{\llvmcov} & \mr{L} & \mr{2 (\package{distro-info,mawk})} & \mr{0 + 4} & \mr{\CodeIn{break}, \CodeIn{if}, \CodeIn{switch}-\CodeIn{case}} \\
-30 & \mr{\blackout{1579}59} & \mr{\llvmcov} & \mr{L} & \mr{2 (\package{lzo2,procps})} & \mr{0 + 2} & \mr{\CodeIn{goto}, \CodeIn{if}} \\
+29 & \mr{\blackout{1580}80} & \mr{\llvmcov} & \mr{L} & \mr{2 (\package{distro-info}, \package{mawk})} & \mr{0 + 4} & \mr{\CodeIn{break}, \CodeIn{if}, \CodeIn{switch}-\CodeIn{case}} \\
+30 & \mr{\blackout{1579}59} & \mr{\llvmcov} & \mr{L} & \mr{2 (\package{lzo2}, \package{procps})} & \mr{0 + 2} & \mr{\CodeIn{goto}, \CodeIn{if}} \\
 31 & \mr{\blackout{1579}46} & \mr{\llvmcov} & \mr{L} & \mr{1 (\package{distro-info})} & \mr{0 + 1} & \mr{preprocessor directive, header, macro} \\
 32 & \mr{\blackout{1579}81} & \mr{\llvmcov} & \mr{L} & \mr{1 (\package{psmisc})} & \mr{0 + 1} & \mr{loop, multiline} \\
 \hline
