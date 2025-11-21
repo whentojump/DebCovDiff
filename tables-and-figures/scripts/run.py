@@ -588,12 +588,12 @@ with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
         cause_to_occurrence[cause_name] = occurrence + unique_occurrence_in_big_tests
 
         if comment == 'BIG TESTS':
-            latex_line = f"\\mr{{{id_in_tracker_latex}}}" + " & " \
-                        + f"\\mr{{{tool}}}" + " & " \
-                        + f"\\mr{{{inconsistencies}}}" + " & " \
-                        + f"\\mr{{{affected_proj_field_in_table}}}" + " & " \
-                        + f"\\mr{{{occurrence} + {unique_occurrence_in_big_tests}}}" + " & " \
-                        + f"\\mr{{{triggering_conditions}}}" + " \\\\"
+            latex_line = f"{id_in_tracker_latex}" + " & " \
+                        + f"{tool}" + " & " \
+                        + f"{inconsistencies}" + " & " \
+                        + f"{affected_proj_field_in_table}" + " & " \
+                        + f"{occurrence} + {unique_occurrence_in_big_tests}" + " & " \
+                        + f"{triggering_conditions}" + " \\\\"
         else:
             # Old bugs: did it manifest in 9 packages for which we run big tests?
             packages_we_run_big_tests = set([
@@ -612,7 +612,7 @@ with open('data/bugs.csv', mode='r', newline='', encoding='utf-8') as f:
                         + f"{tool}" + " & " \
                         + f"{inconsistencies}" + " & " \
                         + f"{affected_proj_field_in_table}" + " & " \
-                        + f"{occurrence} + \\mr{{{unique_occurrence_in_big_tests}}}" + " & " \
+                        + f"{occurrence} + {unique_occurrence_in_big_tests}" + " & " \
                         + f"{triggering_conditions}" + "\\\\"
             else:
                 latex_line = f"{id_in_tracker_latex}" + " & " \
