@@ -733,7 +733,6 @@ lzo2,lzo2-2.10/src/lzo_init.c,222,conv num,branch coverage multiline misalignmen
 lzo2,lzo2-2.10/src/lzo_swd.ch,399,conv num,branch coverage decision in macro
 mawk,mawk-1.3.4.20200120/array.c,297,conv num,C_ASSERT
 mawk,mawk-1.3.4.20200120/array.c,318,conv num,branch coverage decision in macro
-mawk,mawk-1.3.4.20200120/execute.c,1351,conv val,BranchCoverageConventionDifference.C_MAWK_1
 mawk,mawk-1.3.4.20200120/fcall.c,116,conv num,branch coverage switch-case
 mawk,mawk-1.3.4.20200120/fcall.c,194,conv num,branch coverage multiline misalignment
 mawk,mawk-1.3.4.20200120/fcall.c,202,conv num,branch coverage switch-case
@@ -783,7 +782,6 @@ net-tools,net-tools-2.10/lib/econet.c,62,conv num,branch coverage switch-case
 net-tools,net-tools-2.10/lib/inet.c,100,conv num,branch coverage multiline misalignment
 net-tools,net-tools-2.10/lib/inet6.c,104,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
 net-tools,net-tools-2.10/lib/inet6.c,49,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
-net-tools,net-tools-2.10/lib/interface.c,254,conv num,branch coverage switch-case
 net-tools,net-tools-2.10/netstat.c,1236,conv num,branch coverage multiline misalignment
 net-tools,net-tools-2.10/netstat.c,2076,conv num,branch coverage switch-case
 net-tools,net-tools-2.10/netstat.c,974,conv num,branch coverage multiline misalignment

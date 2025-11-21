@@ -165,11 +165,22 @@ bzip2,bzip2-1.0.8/bzip2.c,1211,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 bzip2,bzip2-1.0.8/bzip2.c,1329,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 bzip2,bzip2-1.0.8/bzip2.c,1397,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 bzip2,bzip2-1.0.8/bzip2.c,1524,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+coreutils,coreutils-9.1/lib/closeout.c,119,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[0, 3]"
 coreutils,coreutils-9.1/lib/closeout.c,134,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+coreutils,coreutils-9.1/lib/close-stream.c,70,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 0, 0, 0, 0, 2, 2]","[0, 0, 0, 0, 0, 0, 8, 8]"
+coreutils,coreutils-9.1/lib/fclose.c,105,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 2]","[0, 8]"
+coreutils,coreutils-9.1/lib/fclose.c,66,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 2]","[0, 8]"
+coreutils,coreutils-9.1/lib/fclose.c,72,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 0, 2]","[0, 2, 2, 6]"
+coreutils,coreutils-9.1/lib/fclose.c,73,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 2]","[0, 6]"
+coreutils,coreutils-9.1/lib/fflush.c,148,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 2, 2]","[0, 0, 6, 6]"
+coreutils,coreutils-9.1/lib/progname.c,51,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[0, 3]"
+coreutils,coreutils-9.1/lib/progname.c,60,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[0, 3]"
+coreutils,coreutils-9.1/lib/progname.c,61,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 1, 1]","[0, 1, 1, 2]"
 coreutils,coreutils-9.1/lib/quotearg.c,405,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 coreutils,coreutils-9.1/lib/quotearg.c,647,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 coreutils,coreutils-9.1/lib/version-etc.c,208,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 coreutils,coreutils-9.1/lib/xmalloc.c,256,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+coreutils,coreutils-9.1/lib/xmalloc.c,34,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 3]","[0, 268]"
 coreutils,coreutils-9.1/src/seq.c,180,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 coreutils,coreutils-9.1/src/seq.c,193,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 coreutils,coreutils-9.1/src/seq.c,567,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
@@ -533,7 +544,7 @@ e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,689,Inconsistency.BRANCH_COV_NUM_OUTCOM
 e2fsprogs,e2fsprogs-1.47.0/e2fsck/unix.c,690,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 e2fsprogs,e2fsprogs-1.47.0/e2fsck/util.c,422,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 e2fsprogs,e2fsprogs-1.47.0/e2fsck/util.c,423,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-e2fsprogs,e2fsprogs-1.47.0/lib/ext2fs/ext2fs.h,2214,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+e2fsprogs,e2fsprogs-1.47.0/lib/ext2fs/ext2fs.h,726,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
 e2fsprogs,e2fsprogs-1.47.0/lib/support/dict.c,251,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 e2fsprogs,e2fsprogs-1.47.0/lib/support/dict.c,493,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 e2fsprogs,e2fsprogs-1.47.0/lib/support/mkquota.c,125,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
@@ -706,10 +717,17 @@ inetutils,inetutils-2.4/libtelnet/kerberos5.c,716,Inconsistency.BRANCH_COV_NUM_O
 inetutils,inetutils-2.4/libtelnet/kerberos5.c,768,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
 inetutils,inetutils-2.4/lib/version-etc.c,208,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 inetutils,inetutils-2.4/lib/xmalloc.c,257,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+inetutils,inetutils-2.4/lib/xmalloc.c,35,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 34]","[0, 35]"
 inetutils,inetutils-2.4/telnet/commands.c,1572,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 inetutils,inetutils-2.4/telnet/commands.c,1573,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
 inetutils,inetutils-2.4/telnet/commands.c,1630,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 inetutils,inetutils-2.4/telnet/commands.c,1631,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
+inetutils,inetutils-2.4/telnet/commands.c,1879,Inconsistency.BRANCH_COV_COUNT_STEADY,"[37, 674]","[38, 712]"
+inetutils,inetutils-2.4/telnet/commands.c,1881,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 673]","[1, 711]"
+inetutils,inetutils-2.4/telnet/commands.c,1897,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 34]","[1, 35]"
+inetutils,inetutils-2.4/telnet/commands.c,1900,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 34]","[0, 35]"
+inetutils,inetutils-2.4/telnet/commands.c,1946,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 34]","[0, 35]"
+inetutils,inetutils-2.4/telnet/commands.c,1957,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 33]","[1, 34]"
 inetutils,inetutils-2.4/telnet/commands.c,2325,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
 inetutils,inetutils-2.4/telnet/commands.c,2384,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 inetutils,inetutils-2.4/telnet/main.c,370,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 1]"
@@ -725,6 +743,11 @@ inetutils,inetutils-2.4/telnet/sys_bsd.c,1328,Inconsistency.BRANCH_COV_NUM_OUTCO
 inetutils,inetutils-2.4/telnet/sys_bsd.c,132,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 inetutils,inetutils-2.4/telnet/sys_bsd.c,133,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 inetutils,inetutils-2.4/telnet/telnet.c,1766,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+inetutils,inetutils-2.4/telnet/telnet.c,1800,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 33]","[1, 34]"
+inetutils,inetutils-2.4/telnet/telnet.c,1801,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 33]","[0, 34]"
+inetutils,inetutils-2.4/telnet/telnet.c,1802,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 33]","[0, 34]"
+inetutils,inetutils-2.4/telnet/telnet.c,1803,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 33]","[0, 34]"
+inetutils,inetutils-2.4/telnet/telnet.c,1804,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 33, 33]","[0, 0, 34, 34]"
 inetutils,inetutils-2.4/telnet/telnet.c,1876,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
 inetutils,inetutils-2.4/telnet/telnet.c,1885,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 inetutils,inetutils-2.4/telnet/telnet.c,1928,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
@@ -1215,15 +1238,16 @@ lz4,lz4-1.9.4/lib/lz4.c,2317,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
 lz4,lz4-1.9.4/lib/lz4.c,2318,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
 lz4,lz4-1.9.4/lib/lz4.c,2323,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
 lz4,lz4-1.9.4/lib/lz4.c,2326,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
-lz4,lz4-1.9.4/lib/lz4.c,450,Inconsistency.BRANCH_COV_NUM_OUTCOME,112,4
+lz4,lz4-1.9.4/lib/lz4.c,423,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lz4,lz4-1.9.4/lib/lz4.c,450,Inconsistency.BRANCH_COV_NUM_OUTCOME,142,4
 lz4,lz4-1.9.4/lib/lz4.c,507,Inconsistency.BRANCH_COV_NUM_OUTCOME,36,2
 lz4,lz4-1.9.4/lib/lz4.c,540,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
 lz4,lz4-1.9.4/lib/lz4.c,547,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
-lz4,lz4-1.9.4/lib/lz4.c,665,Inconsistency.BRANCH_COV_NUM_OUTCOME,120,4
-lz4,lz4-1.9.4/lib/lz4.c,673,Inconsistency.BRANCH_COV_NUM_OUTCOME,120,4
-lz4,lz4-1.9.4/lib/lz4.c,678,Inconsistency.BRANCH_COV_NUM_OUTCOME,240,12
-lz4,lz4-1.9.4/lib/lz4.c,679,Inconsistency.BRANCH_COV_NUM_OUTCOME,240,8
-lz4,lz4-1.9.4/lib/lz4.c,680,Inconsistency.BRANCH_COV_NUM_OUTCOME,240,8
+lz4,lz4-1.9.4/lib/lz4.c,665,Inconsistency.BRANCH_COV_NUM_OUTCOME,192,4
+lz4,lz4-1.9.4/lib/lz4.c,673,Inconsistency.BRANCH_COV_NUM_OUTCOME,192,4
+lz4,lz4-1.9.4/lib/lz4.c,678,Inconsistency.BRANCH_COV_NUM_OUTCOME,384,12
+lz4,lz4-1.9.4/lib/lz4.c,679,Inconsistency.BRANCH_COV_NUM_OUTCOME,384,8
+lz4,lz4-1.9.4/lib/lz4.c,680,Inconsistency.BRANCH_COV_NUM_OUTCOME,384,8
 lz4,lz4-1.9.4/lib/lz4.c,758,Inconsistency.BRANCH_COV_NUM_OUTCOME,402,2
 lz4,lz4-1.9.4/lib/lz4.c,766,Inconsistency.BRANCH_COV_NUM_OUTCOME,402,2
 lz4,lz4-1.9.4/lib/lz4.c,767,Inconsistency.BRANCH_COV_NUM_OUTCOME,402,2
@@ -1460,11 +1484,45 @@ lz4,lz4-1.9.4/programs/lz4io.c,979,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 lz4,lz4-1.9.4/programs/lz4io.c,990,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 lz4,lz4-1.9.4/programs/lz4io.c,994,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 lz4,lz4-1.9.4/programs/lz4io.c,999,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
-lz4,lz4-1.9.4/programs/util.h,204,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,8
-lz4,lz4-1.9.4/programs/util.h,205,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 37]"
-lz4,lz4-1.9.4/programs/util.h,206,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 37]"
-lz4,lz4-1.9.4/programs/util.h,650,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-lz4,lz4-1.9.4/programs/util.h,658,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lz4,lz4-1.9.4/programs/util.h,189,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,204,Inconsistency.BRANCH_COV_NUM_OUTCOME,16,8
+lz4,lz4-1.9.4/programs/util.h,205,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,206,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,274,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
+lz4,lz4-1.9.4/programs/util.h,281,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
+lz4,lz4-1.9.4/programs/util.h,336,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,360,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,397,Inconsistency.BRANCH_COV_NUM_OUTCOME,16,4
+lz4,lz4-1.9.4/programs/util.h,410,Inconsistency.BRANCH_COV_NUM_OUTCOME,16,4
+lz4,lz4-1.9.4/programs/util.h,443,Inconsistency.BRANCH_COV_NUM_OUTCOME,16,8
+lz4,lz4-1.9.4/programs/util.h,456,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,461,Inconsistency.BRANCH_COV_NUM_OUTCOME,16,4
+lz4,lz4-1.9.4/programs/util.h,472,Inconsistency.BRANCH_COV_NUM_OUTCOME,16,4
+lz4,lz4-1.9.4/programs/util.h,481,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,563,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,570,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,573,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,574,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,577,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,584,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,586,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,588,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,592,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,594,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,604,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,640,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,642,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,643,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,645,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,646,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,648,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,650,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
+lz4,lz4-1.9.4/programs/util.h,657,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,658,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
+lz4,lz4-1.9.4/programs/util.h,662,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,665,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,667,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lz4,lz4-1.9.4/programs/util.h,672,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 lzma,lzma-9.22/C/CpuArch.c,136,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 lzma,lzma-9.22/C/CpuArch.c,138,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,8
 lzma,lzma-9.22/C/CpuArch.c,139,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,10
@@ -1493,9 +1551,6 @@ lzma,lzma-9.22/CPP/7zip/Common/CWrappers.cpp,87,Inconsistency.BRANCH_COV_NUM_OUT
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,13,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaEncoder.cpp,150,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaEncoder.cpp,99,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-lzma,lzma-9.22/CPP/Common/MyCom.h,25,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-lzma,lzma-9.22/CPP/Common/MyCom.h,33,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-lzma,lzma-9.22/CPP/Common/MyCom.h,35,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 lzma,lzma-9.22/CPP/Common/MyString.h,115,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 lzma,lzma-9.22/CPP/Common/MyString.h,123,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 lzma,lzma-9.22/CPP/Common/MyString.h,125,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
@@ -1511,11 +1566,11 @@ lzo2,lzo2-2.10/src/lzo1f_9x.c,186,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 lzo2,lzo2-2.10/src/lzo1f_9x.c,187,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 lzo2,lzo2-2.10/src/lzo1f_9x.c,221,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 lzo2,lzo2-2.10/src/lzo1f_9x.c,228,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
-lzo2,lzo2-2.10/src/lzo1x_9x.c,621,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,12
-lzo2,lzo2-2.10/src/lzo1x_9x.c,623,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,12
+lzo2,lzo2-2.10/src/lzo1x_9x.c,621,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,12
+lzo2,lzo2-2.10/src/lzo1x_9x.c,623,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,12
 lzo2,lzo2-2.10/src/lzo_init.c,221,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 lzo2,lzo2-2.10/src/lzo_init.c,222,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-lzo2,lzo2-2.10/src/lzo_swd.ch,399,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,14
+lzo2,lzo2-2.10/src/lzo_swd.ch,399,Inconsistency.BRANCH_COV_NUM_OUTCOME,28,14
 man-db,man-db-2.11.2/src/decompress.c,210,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 man-db,man-db-2.11.2/src/decompress.c,287,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 man-db,man-db-2.11.2/src/decompress.c,293,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
@@ -1584,7 +1639,6 @@ man-db,man-db-2.11.2/src/zsoelim.c,1980,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 man-db,man-db-2.11.2/src/zsoelim.c,2022,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 mawk,mawk-1.3.4.20200120/array.c,297,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 mawk,mawk-1.3.4.20200120/array.c,318,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
-mawk,mawk-1.3.4.20200120/execute.c,1351,Inconsistency.BRANCH_COV_COUNT_STEADY,"[24, 49]","[24, 25]"
 mawk,mawk-1.3.4.20200120/fcall.c,116,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
 mawk,mawk-1.3.4.20200120/fcall.c,194,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 mawk,mawk-1.3.4.20200120/fcall.c,202,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
@@ -1818,7 +1872,7 @@ net-tools,net-tools-2.10/lib/econet.c,62,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,
 net-tools,net-tools-2.10/lib/inet6.c,104,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
 net-tools,net-tools-2.10/lib/inet6.c,49,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 net-tools,net-tools-2.10/lib/inet.c,100,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
-net-tools,net-tools-2.10/lib/interface.c,254,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+net-tools,net-tools-2.10/lib/interface.c,268,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 net-tools,net-tools-2.10/netstat.c,1236,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 net-tools,net-tools-2.10/netstat.c,2076,Inconsistency.BRANCH_COV_NUM_OUTCOME,39,2
 net-tools,net-tools-2.10/netstat.c,974,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,8
@@ -1831,24 +1885,6 @@ newt,newt-0.52.23/whiptail.c,503,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]",
 newt,newt-0.52.23/whiptail.c,505,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 1]"
 newt,newt-0.52.23/whiptail.c,507,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 1]"
 newt,newt-0.52.23/whiptail.c,509,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
-pam,pam-1.5.2/libpam/include/pam_inline.h,48,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,6
-pam,pam-1.5.2/modules/pam_unix/md5.c,133,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5.c,75,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5.c,83,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5.c,87,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5.c,99,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,111,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,113,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,118,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,121,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,124,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,25,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,55,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,59,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,63,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,12
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,86,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,93,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-pam,pam-1.5.2/modules/pam_unix/md5_crypt.c,94,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 pam,pam-1.5.2/modules/pam_unix/passverify.c,453,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 pciutils,pciutils-3.9.0/ls-caps.c,1138,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 pciutils,pciutils-3.9.0/ls-caps.c,1139,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
@@ -1918,7 +1954,7 @@ psmisc,psmisc-23.6/src/pstree.c,1391,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 psmisc,psmisc-23.6/src/pstree.c,813,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 psmisc,psmisc-23.6/src/pstree.c,822,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
 psmisc,psmisc-23.6/src/pstree.c,882,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
-sl,sl-5.02/sl.c,63,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 3105, 179217, 179217]","[3105, 3105, 179217, 179217]"
+sl,sl-5.02/sl.c,63,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 2013, 75954, 75954]","[2013, 2013, 75954, 75954]"
 sysvinit,sysvinit-3.06/src/last.c,422,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 sysvinit,sysvinit-3.06/src/last.c,846,Inconsistency.BRANCH_COV_NUM_OUTCOME,7,2
 sysvinit,sysvinit-3.06/src/last.c,917,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
@@ -2040,18 +2076,17 @@ wget,wget-1.21.3/src/res.c,287,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
 wget,wget-1.21.3/src/retr.c,1490,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
 wget,wget-1.21.3/src/retr.c,484,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 wget,wget-1.21.3/src/retr.c,799,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-wget,wget-1.21.3/src/url.c,2368,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
-wget,wget-1.21.3/src/url.c,2371,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
-wget,wget-1.21.3/src/url.c,323,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
-wget,wget-1.21.3/src/url.c,485,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
-wget,wget-1.21.3/src/url.c,489,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+wget,wget-1.21.3/src/url.c,2396,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+wget,wget-1.21.3/src/url.c,2399,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+wget,wget-1.21.3/src/url.c,324,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+wget,wget-1.21.3/src/url.c,486,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+wget,wget-1.21.3/src/url.c,490,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 wget,wget-1.21.3/src/utils.c,1063,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 wget,wget-1.21.3/src/utils.c,2289,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
 wget,wget-1.21.3/src/utils.c,2367,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 wget,wget-1.21.3/src/utils.c,2375,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
 wget,wget-1.21.3/src/warc.c,969,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 wget,wget-1.21.3/src/warc.c,988,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
-wget,wget-1.21.3/src/wget.h,185,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,16
 xz-utils,xz-utils-5.4.1/src/xz/coder.c,374,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 xz-utils,xz-utils-5.4.1/src/xz/coder.c,433,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
 xz-utils,xz-utils-5.4.1/src/xz/coder.c,492,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2

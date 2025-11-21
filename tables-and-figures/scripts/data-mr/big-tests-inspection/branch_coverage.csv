@@ -128,8 +128,8 @@ lsof,lsof-4.95.0/proc.c,1697,conv,switch case
 lsof,lsof-4.95.0/usage.c,946,conv,if statement with conditional expression
 lzo2,lzo2-2.10/lzotest/lzotest.c,1901,false positive,,main function looping over argv[0]
 lzo2,lzo2-2.10/lzotest/lzotest.c,1902,false positive,,main function looping over argv[0]
-lzo2,lzo2-2.10/examples/portab.h,128,not fully inspected,llvm extra branch reports in macro
-lzo2,lzo2-2.10/examples/portab.h,133,not fully inspected,llvm extra branch reports in macro
+lzo2,lzo2-2.10/examples/portab.h,128,false positive,llvm extra branch reports in macro
+lzo2,lzo2-2.10/examples/portab.h,133,false positive,llvm extra branch reports in macro
 lzo2,lzo2-2.10/lzotest/lzotest.c,615,conv,llvm assertion coverage got doubled and reversed
 lzo2,lzo2-2.10/lzotest/lzotest.c,641,conv,llvm assertion coverage got doubled and reversed
 lzo2,lzo2-2.10/lzotest/lzotest.c,1044,conv,llvm assertion coverage got doubled and reversed
@@ -279,12 +279,12 @@ procps,procps-4.0.2/library/stat.c,1396,conv,condition determined in compile tim
 procps,procps-4.0.2/library/tests/test_pids.c,59,bug,LineCoverageBug.INETUTILS_1
 procps,procps-4.0.2/library/version.c,65,conv,total branch outcomes match
 procps,procps-4.0.2/library/version.c,66,conv,total branch outcomes match
-procps,procps-4.0.2/local/tests.h,17,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/tests.h,20,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,26,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,35,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,52,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,55,not fully inspected,gcc missing never taken branch
+procps,procps-4.0.2/local/tests.h,17,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/tests.h,20,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,26,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,35,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,52,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,55,false positive,gcc missing never taken branch
 procps,procps-4.0.2/src/pgrep.c,151,conv,switch case
 procps,procps-4.0.2/src/pgrep.c,866,conv,switch case
 procps,procps-4.0.2/src/pgrep.c,1085,conv,switch case

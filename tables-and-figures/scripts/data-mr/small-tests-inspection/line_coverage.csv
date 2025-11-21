@@ -34,30 +34,11 @@ grep,grep-3.8/lib/dfa.c,4323,conv,line coverage multi-line logical expression th
 grep,grep-3.8/src/grep.c,1552,bug,LineCoverageBug.GREP_3
 grep,grep-3.8/src/grep.c,2510,bug,LineCoverageBug.GREP_1
 grep,grep-3.8/src/grep.c,2987,bug,LineCoverageBug.LZMA_2
-gzip,gzip-1.12/deflate.c,454,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,455,bug,LineCoverageBug.APACHE2_1,in fact at line 456
-gzip,gzip-1.12/deflate.c,470,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,471,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,472,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,473,bug,LineCoverageBug.DISTRO_INFO_1(bug)
-gzip,gzip-1.12/deflate.c,748,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,749,conv,line coverage multi-line logical expression that still makes sense
 gzip,gzip-1.12/gzip.c,467,bug,LineCoverageBug.LZMA_1
 gzip,gzip-1.12/inflate.c,530,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,562,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,572,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,756,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,759,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,773,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,799,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,834,conv,line coverage loop in macro
 gzip,gzip-1.12/inflate.c,913,conv,line coverage loop in macro
-gzip,gzip-1.12/trees.c,1034,conv,LineCoverageConventionDifference.C_GZIP_1
 gzip,gzip-1.12/trees.c,724,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
 gzip,gzip-1.12/trees.c,726,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-gzip,gzip-1.12/trees.c,768,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-gzip,gzip-1.12/trees.c,771,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-gzip,gzip-1.12/util.c,140,conv,LineCoverageConventionDifference.C_GZIP_1
 hostname,hostname-3.23+nmu1/hostname.c,133,conv,line coverage do-while
 hostname,hostname-3.23+nmu1/hostname.c,134,conv,line coverage do-while
 iproute2,iproute2-6.1.0/ip/ipaddress.c,1733,conv,line coverage multi-line logical expression that still makes sense
@@ -97,30 +78,19 @@ lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,657,bug,LineCoverageBug.LZMA_5
 lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,790,bug,IdTbdCppSplitLine
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,101,bug,cpp-extern-pass-pointer
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,27,bug,LineCoverageBug.LZMA_6
-lzma,lzma-9.22/CPP/Common/MyCom.h,27,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,30,other,gcov overwrite
 lzo2,lzo2-2.10/src/lzo1x_c.ch,176,bug,LineCoverageBug.LZO2_1,not shown in text coverage report due to gcov overwrite
 lzo2,lzo2-2.10/src/lzo1x_c.ch,180,bug,LineCoverageBug.LZO2_1,disappear due to gcov overwrite
 lzo2,lzo2-2.10/src/lzo1x_c.ch,183,conv,line coverage do-while
 lzo2,lzo2-2.10/src/lzo_init.c,221,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 mawk,mawk-1.3.4.20200120/bi_funct.c,814,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
 mawk,mawk-1.3.4.20200120/bi_funct.c,816,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
-mawk,mawk-1.3.4.20200120/execute.c,1174,bug,LineCoverageBug.MAWK_1
 mawk,mawk-1.3.4.20200120/parse.c,3296,bug,LineCoverageBug.INETUTILS_1,TODO (1) all others are reporducible except this line... (2) how to find source code online https://sources.debian.org/src/mawk/1.3.4.20200120-3.1/parse.c/
 mawk,mawk-1.3.4.20200120/parse.c,3297,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
 mawk,mawk-1.3.4.20200120/parse.c,3298,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
-mawk,mawk-1.3.4.20200120/print.c,43,conv,LineCoverageConventionDifference.C_IPROUTE2_1
 sl,sl-5.02/sl.c,112,bug,LineCoverageBug.SL_1
 xz-utils,xz-utils-5.4.1/src/xz/coder.c,181,bug,LineCoverageBug.LZMA_2
 xz-utils,xz-utils-5.4.1/src/xz/coder.c,641,bug,LineCoverageBug.LZMA_2
 xz-utils,xz-utils-5.4.1/src/xz/main.c,258,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-lzma,lzma-9.22/CPP/Common/MyCom.h,18,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,25,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,33,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,34,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,35,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,37,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,38,other,gcov overwrite
 lzo2,lzo2-2.10/src/lzo1x_d.ch,166,bug,goto-label-after-if
 lzo2,lzo2-2.10/src/lzo1x_d.ch,98,bug,LineCoverageBug.LZMA_1
 inetutils,inetutils-2.4/lib/argp-parse.c,234,bug,LineCoverageBug.MAWK_1
@@ -138,13 +108,8 @@ inetutils,inetutils-2.4/telnet/telnet.c,1801,conv,line coverage multi-line logic
 inetutils,inetutils-2.4/telnet/telnet.c,1802,conv,line coverage multi-line logical expression that still makes sense
 inetutils,inetutils-2.4/telnet/telnet.c,1803,conv,line coverage multi-line logical expression that still makes sense
 inetutils,inetutils-2.4/telnet/telnet.c,1804,conv,line coverage multi-line logical expression that still makes sense
-iproute2,iproute2-6.1.0/include/libnetlink.h,241,other,gcov overwrite
-iproute2,iproute2-6.1.0/include/libnetlink.h,279,other,gcov overwrite
 traceroute,traceroute-2.1.2/libsupp/clif.c,311,conv,line coverage multi-line logical expression that still makes sense
 traceroute,traceroute-2.1.2/libsupp/clif.c,401,bug,LineCoverageBug.DISTRO_INFO_1(bug)
-psmisc,psmisc-23.6/src/pstree.c,1389,bug,LineCoverageBug.DISTRO_INFO_1(bug)
-psmisc,psmisc-23.6/src/pstree.c,1390,bug,LineCoverageBug.DISTRO_INFO_1(bug)
-psmisc,psmisc-23.6/src/pstree.c,1391,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 man-db,man-db-2.11.2/src/man.c,562,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 lsof,lsof-4.95.0/main.c,1887,conv,line coverage multi-line logical expression that still makes sense
 lsof,lsof-4.95.0/main.c,1888,conv,line coverage multi-line logical expression that still makes sense

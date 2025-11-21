@@ -464,19 +464,11 @@ grep,grep-3.8/src/grep.c,621,conv num,branch coverage multiline misalignment
 grep,grep-3.8/src/grep.c,796,conv num,branch coverage constant condition
 grep,grep-3.8/src/grep.c,800,conv num,branch coverage constant condition
 grep,grep-3.8/src/kwset.c,677,conv num,branch coverage macro in decision
-gzip,gzip-1.12/deflate.c,454,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,455,bug,LineCoverageBug.APACHE2_1,in fact at line 456
-gzip,gzip-1.12/deflate.c,470,conv,line coverage multi-line logical expression that still makes sense
 gzip,gzip-1.12/deflate.c,470,conv num,branch coverage multiline misalignment
-gzip,gzip-1.12/deflate.c,471,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,472,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,473,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 gzip,gzip-1.12/deflate.c,473,conv num,branch coverage multiline misalignment
 gzip,gzip-1.12/deflate.c,493,conv num,branch coverage multiline misalignment
 gzip,gzip-1.12/deflate.c,609,conv num,branch coverage macro in decision
 gzip,gzip-1.12/deflate.c,704,conv num,branch coverage macro in decision
-gzip,gzip-1.12/deflate.c,748,conv,line coverage multi-line logical expression that still makes sense
-gzip,gzip-1.12/deflate.c,749,conv,line coverage multi-line logical expression that still makes sense
 gzip,gzip-1.12/deflate.c,798,conv num,branch coverage macro in decision
 gzip,gzip-1.12/deflate.c,810,conv num,branch coverage macro in decision
 gzip,gzip-1.12/gzip.c,1191,conv num,branch coverage macro in decision
@@ -496,25 +488,14 @@ gzip,gzip-1.12/gzip.c,762,conv num,C_EMPTY_THEN_CLAUSE
 gzip,gzip-1.12/gzip.c,762,conv num,mcdc empty then clause
 gzip,gzip-1.12/gzip.c,854,conv num,branch coverage constant condition
 gzip,gzip-1.12/inflate.c,530,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,562,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,572,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,756,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,759,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,773,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,799,conv,line coverage loop in macro
-gzip,gzip-1.12/inflate.c,834,conv,line coverage loop in macro
 gzip,gzip-1.12/inflate.c,913,conv,line coverage loop in macro
 gzip,gzip-1.12/lib/basename-lgpl.c,59,conv num,branch coverage macro in decision
 gzip,gzip-1.12/lib/utimens.c,394,conv num,"branch coverage constant condition,branch coverage macro in decision"
 gzip,gzip-1.12/lib/utimens.c,396,conv num,mcdc ternary
 gzip,gzip-1.12/lib/xmalloc.c,256,conv num,"branch coverage integer compared with type min max,branch coverage constant condition,branch coverage macro in decision,system header"
-gzip,gzip-1.12/trees.c,1034,conv,LineCoverageConventionDifference.C_GZIP_1
 gzip,gzip-1.12/trees.c,468,conv num,"branch coverage decision in macro,branch coverage macro in decision"
 gzip,gzip-1.12/trees.c,724,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
 gzip,gzip-1.12/trees.c,726,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-gzip,gzip-1.12/trees.c,768,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-gzip,gzip-1.12/trees.c,771,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
-gzip,gzip-1.12/util.c,140,conv,LineCoverageConventionDifference.C_GZIP_1
 hostname,hostname-3.23+nmu1/hostname.c,133,conv,line coverage do-while
 hostname,hostname-3.23+nmu1/hostname.c,134,conv,line coverage do-while
 hostname,hostname-3.23+nmu1/hostname.c,312,bug num,"McdcBug.HOSTNAME_1,llvm105341"
@@ -549,8 +530,6 @@ inetutils,inetutils-2.4/telnet/telnet.c,1801,conv,line coverage multi-line logic
 inetutils,inetutils-2.4/telnet/telnet.c,1802,conv,line coverage multi-line logical expression that still makes sense
 inetutils,inetutils-2.4/telnet/telnet.c,1803,conv,line coverage multi-line logical expression that still makes sense
 inetutils,inetutils-2.4/telnet/telnet.c,1804,conv,line coverage multi-line logical expression that still makes sense
-iproute2,iproute2-6.1.0/include/libnetlink.h,241,other,gcov overwrite
-iproute2,iproute2-6.1.0/include/libnetlink.h,279,other,gcov overwrite
 iproute2,iproute2-6.1.0/ip/ip6tunnel.c,335,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
 iproute2,iproute2-6.1.0/ip/ip6tunnel.c,337,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
 iproute2,iproute2-6.1.0/ip/ip6tunnel.c,338,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision,branch coverage multiline misalignment"
@@ -1043,15 +1022,6 @@ lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,13,conv num,branch coverage swi
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,27,bug,LineCoverageBug.LZMA_6
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaEncoder.cpp,150,conv num,C_CPP_EXCEPTION
 lzma,lzma-9.22/CPP/7zip/Compress/LzmaEncoder.cpp,99,conv num,branch coverage switch-case
-lzma,lzma-9.22/CPP/Common/MyCom.h,18,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,25,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,27,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,30,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,33,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,34,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,35,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,37,other,gcov overwrite
-lzma,lzma-9.22/CPP/Common/MyCom.h,38,other,gcov overwrite
 lzma,lzma-9.22/CPP/Common/MyString.h,115,conv num,C_CPP_TEMPLATE
 lzma,lzma-9.22/CPP/Common/MyString.h,123,conv num,C_CPP_TEMPLATE
 lzma,lzma-9.22/CPP/Common/MyString.h,125,conv num,C_CPP_TEMPLATE
@@ -1083,15 +1053,13 @@ man-db,man-db-2.11.2/src/man.c,4302,bug val,LineCoverageBug.MAWK_1
 man-db,man-db-2.11.2/src/man.c,4316,bug val,LineCoverageBug.MAWK_1
 man-db,man-db-2.11.2/src/man.c,4325,bug val,LineCoverageBug.MAWK_1
 man-db,man-db-2.11.2/src/man.c,4462,bug val,LineCoverageBug.MAWK_1
+man-db,man-db-2.11.2/src/man.c,562,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 man-db,man-db-2.11.2/src/manp.c,147,conv,line coverage meta programming craziness,if we are treating it as a bug I don't know how to report
 man-db,man-db-2.11.2/src/manp.c,148,bug,LineCoverageBug.LZMA_4
-man-db,man-db-2.11.2/src/man.c,562,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 mawk,mawk-1.3.4.20200120/array.c,297,conv num,C_ASSERT
 mawk,mawk-1.3.4.20200120/array.c,318,conv num,branch coverage decision in macro
 mawk,mawk-1.3.4.20200120/bi_funct.c,814,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
 mawk,mawk-1.3.4.20200120/bi_funct.c,816,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
-mawk,mawk-1.3.4.20200120/execute.c,1174,bug,LineCoverageBug.MAWK_1
-mawk,mawk-1.3.4.20200120/execute.c,1351,conv val,BranchCoverageConventionDifference.C_MAWK_1
 mawk,mawk-1.3.4.20200120/fcall.c,116,conv num,branch coverage switch-case
 mawk,mawk-1.3.4.20200120/fcall.c,194,conv num,branch coverage multiline misalignment
 mawk,mawk-1.3.4.20200120/fcall.c,202,conv num,branch coverage switch-case
@@ -1135,7 +1103,6 @@ mawk,mawk-1.3.4.20200120/parse.c,3296,conv num,branch coverage multiline misalig
 mawk,mawk-1.3.4.20200120/parse.c,3297,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
 mawk,mawk-1.3.4.20200120/parse.c,3298,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
 mawk,mawk-1.3.4.20200120/parse.c,3310,conv num,branch coverage decision in macro
-mawk,mawk-1.3.4.20200120/print.c,43,conv,LineCoverageConventionDifference.C_IPROUTE2_1
 mawk,mawk-1.3.4.20200120/print.c,473,conv num,branch coverage multiline misalignment
 mawk,mawk-1.3.4.20200120/print.c,474,conv num,branch coverage multiline misalignment
 mawk,mawk-1.3.4.20200120/rexp0.c,121,conv num,branch coverage switch-case
@@ -1171,7 +1138,6 @@ net-tools,net-tools-2.10/lib/econet.c,62,conv num,branch coverage switch-case
 net-tools,net-tools-2.10/lib/inet6.c,104,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
 net-tools,net-tools-2.10/lib/inet6.c,49,conv num,"system header,branch coverage decision in macro,branch coverage macro in decision"
 net-tools,net-tools-2.10/lib/inet.c,100,conv num,branch coverage multiline misalignment
-net-tools,net-tools-2.10/lib/interface.c,254,conv num,branch coverage switch-case
 net-tools,net-tools-2.10/netstat.c,1236,conv num,branch coverage multiline misalignment
 net-tools,net-tools-2.10/netstat.c,2076,conv num,branch coverage switch-case
 net-tools,net-tools-2.10/netstat.c,974,conv num,branch coverage multiline misalignment
@@ -1210,9 +1176,6 @@ procps,procps-4.0.2/src/ps/select.c,156,conv num,"branch coverage decision in ma
 procps,procps-4.0.2/src/ps/select.c,99,conv num,"branch coverage switch-case,branch coverage decision in macro"
 procps,procps-4.0.2/src/ps/stacktrace.c,155,conv num,branch coverage switch-case
 procps,procps-4.0.2/src/ps/stacktrace.c,89,conv num,branch coverage constant condition,we should have filter constant fold out in branch coverage as well
-psmisc,psmisc-23.6/src/pstree.c,1389,bug,LineCoverageBug.DISTRO_INFO_1(bug)
-psmisc,psmisc-23.6/src/pstree.c,1390,bug,LineCoverageBug.DISTRO_INFO_1(bug)
-psmisc,psmisc-23.6/src/pstree.c,1391,bug,LineCoverageBug.DISTRO_INFO_1(bug)
 sl,sl-5.02/sl.c,112,bug,LineCoverageBug.SL_1
 sl,sl-5.02/sl.c,63,conv val,BranchCoverageConventionDifference.C_SL_1
 traceroute,traceroute-2.1.2/libsupp/clif.c,311,conv,line coverage multi-line logical expression that still makes sense

@@ -26,8 +26,8 @@ distro-info,distro-info-1.5+deb12u1/distro-info-util.c,219,conv,total branch out
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,220,conv,total branch outcomes in multiline expression match
 lzo2,lzo2-2.10/lzotest/lzotest.c,1901,false positive,,main function looping over argv[0]
 lzo2,lzo2-2.10/lzotest/lzotest.c,1902,false positive,,main function looping over argv[0]
-lzo2,lzo2-2.10/examples/portab.h,128,not fully inspected,llvm extra branch reports in macro
-lzo2,lzo2-2.10/examples/portab.h,133,not fully inspected,llvm extra branch reports in macro
+lzo2,lzo2-2.10/examples/portab.h,128,false positive,llvm extra branch reports in macro
+lzo2,lzo2-2.10/examples/portab.h,133,false positive,llvm extra branch reports in macro
 lzo2,lzo2-2.10/lzotest/lzotest.c,615,conv,llvm assertion coverage got doubled and reversed
 lzo2,lzo2-2.10/lzotest/lzotest.c,641,conv,llvm assertion coverage got doubled and reversed
 lzo2,lzo2-2.10/lzotest/lzotest.c,1044,conv,llvm assertion coverage got doubled and reversed
@@ -49,6 +49,7 @@ lzo2,lzo2-2.10/tests/align.c,87,conv,llvm assertion coverage got doubled and rev
 lzo2,lzo2-2.10/tests/align.c,88,conv,llvm assertion coverage got doubled and reversed
 mawk,mawk-1.3.4.20200120/execute.c,1085,bug val,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/execute.c,1090,bug val,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1351,conv val,BranchCoverageConventionDifference.C_MAWK_1
 mawk,mawk-1.3.4.20200120/files.c,357,bug val,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/main.c,55,bug val,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/main.c,63,bug val,LineCoverageBug.MAWK_1,
@@ -90,12 +91,12 @@ procps,procps-4.0.2/library/stat.c,1396,conv,condition determined in compile tim
 procps,procps-4.0.2/library/tests/test_pids.c,59,bug,LineCoverageBug.INETUTILS_1
 procps,procps-4.0.2/library/version.c,65,conv,total branch outcomes match
 procps,procps-4.0.2/library/version.c,66,conv,total branch outcomes match
-procps,procps-4.0.2/local/tests.h,17,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/tests.h,20,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,26,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,35,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,52,not fully inspected,gcc missing never taken branch
-procps,procps-4.0.2/local/xalloc.h,55,not fully inspected,gcc missing never taken branch
+procps,procps-4.0.2/local/tests.h,17,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/tests.h,20,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,26,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,35,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,52,false positive,gcc missing never taken branch
+procps,procps-4.0.2/local/xalloc.h,55,false positive,gcc missing never taken branch
 procps,procps-4.0.2/src/pgrep.c,151,conv,switch case
 procps,procps-4.0.2/src/pgrep.c,866,conv,switch case
 procps,procps-4.0.2/src/pgrep.c,1085,conv,switch case

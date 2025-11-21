@@ -80,7 +80,6 @@ distro-info,distro-info-1.5+deb12u1/distro-info-util.c,195,bug,LineCoverageBug.I
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,209,bug,LineCoverageBug.INETUTILS_1
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,210,bug,LineCoverageBug.INETUTILS_1
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,270,bug,LineCoverageBug.INETUTILS_1
-distro-info,distro-info-1.5+deb12u1/distro-info-util.c,284,bug,LineCoverageBug.INETUTILS_1
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,759,bug,llvm case label line coverage reflecting the previous case
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,875,bug,llvm case label line coverage reflecting the previous case
 distro-info,distro-info-1.5+deb12u1/distro-info-util.c,879,bug,llvm merge coverage for the same function with different body due to ifdef's
@@ -237,6 +236,7 @@ mawk,mawk-1.3.4.20200120/execute.c,1145,bug,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/execute.c,1158,bug,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/execute.c,1159,bug,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/execute.c,1160,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/execute.c,1174,bug,LineCoverageBug.MAWK_1
 mawk,mawk-1.3.4.20200120/execute.c,1366,conv,,
 mawk,mawk-1.3.4.20200120/execute.c,1411,conv,,
 mawk,mawk-1.3.4.20200120/execute.c,1424,conv,,
@@ -271,6 +271,7 @@ mawk,mawk-1.3.4.20200120/main.c,68,bug,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/main.c,70,bug,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/main.c,71,bug,LineCoverageBug.MAWK_1,
 mawk,mawk-1.3.4.20200120/print.c,128,bug,LineCoverageBug.MAWK_1,
+mawk,mawk-1.3.4.20200120/print.c,43,conv,LineCoverageConventionDifference.C_IPROUTE2_1
 mawk,mawk-1.3.4.20200120/print.c,473,bug,LineCoverageBug.DISTRO_INFO_1(bug),
 mawk,mawk-1.3.4.20200120/print.c,474,bug,LineCoverageBug.DISTRO_INFO_1(bug),
 mawk,mawk-1.3.4.20200120/print.c,58,bug,llvm case label line coverage reflecting the previous case,
