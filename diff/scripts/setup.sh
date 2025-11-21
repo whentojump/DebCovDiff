@@ -245,7 +245,7 @@ SCRIPT
 ## Csmith
 
 if command -v csmith >/dev/null 2>&1 && \
-   grep 'Git version: 0ec6f1b' <<< `csmith`; then
+    grep 'Git version: 0ec6f1b' <<< `csmith`; then
     echo "Csmith of correct version is already installed."
 else
     CSMITH_BUILD_DIR=`mktemp -d`
