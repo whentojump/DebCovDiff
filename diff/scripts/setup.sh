@@ -186,11 +186,13 @@ fi
 
 ### Debian
 
-$REPO_DIR/debian/scripts/setup-all-init-chroot.sh
-sudo sbuild-adduser $USER
-newgrp sbuild <<< $REPO_DIR/debian/scripts/configure-all-chroot.sh
+if [[ ! -d $SBUILD_WORKDIR ]]; then
+    $REPO_DIR/debian/scripts/setup-all-init-chroot.sh
+    sudo sbuild-adduser $USER
+    newgrp sbuild <<< $REPO_DIR/debian/scripts/configure-all-chroot.sh
 
-mkdir -p $SBUILD_WORKDIR
+    mkdir -p $SBUILD_WORKDIR
+fi
 
 ### Docker and image for old toolchain evaluation
 
