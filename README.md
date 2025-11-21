@@ -443,9 +443,39 @@ Exit the container
 exit
 ```
 
-## 8. Generate Figure 4, 7, and 8 and Table 1, 2, and 3
+## 8. Reproducing Figures 4, 7, and 8, and Tables I, II, and III
+
+Remove the in-tree, pregenerated results
 
 ```shell
 cd $REPO_DIR/tables-and-figures/scripts
-python run.py
+rm -f $REPO_DIR/tables-and-figures/{tables/*,figures/*,*.tex}
+git status -s
 ```
+
+Expected output:
+
+```text
+ D ../figures/bug_conv_count_wrt_triggering_condition2.pdf
+ D ../figures/bug_conv_impact2.pdf
+ D ../figures/compared_and_inconsistent_num.pdf
+ D ../numbers_auto.tex
+ D ../numbers_auto_mr.tex
+ D ../tables/convs.tex
+ D ../tables/diff_bugs.tex
+ D ../tables/inconsistencies.tex
+```
+
+Regenerate them
+
+```shell
+bash generate.sh
+```
+
+Check if these files are bitwise identical to the pregenerated ones
+
+```shell
+git status -s
+```
+
+Expect empty output (no Git diff)
