@@ -20,9 +20,9 @@ bzip2,bzip2-1.0.8/bzlib.c,1263,conv,total branch outcomes in multiline expressio
 bzip2,bzip2-1.0.8/bzlib.c,1310,conv,total branch outcomes in multiline expression match
 bzip2,bzip2-1.0.8/bzlib.c,1313,conv,total branch outcomes in multiline expression match
 ifupdown,ifupdown-0.8.41/execute.c,63,false positive,,reading environment variables during program execution
-ifupdown,ifupdown-0.8.41/execute.c,64,false positive,,reading environment variables during program executionn
+ifupdown,ifupdown-0.8.41/execute.c,64,false positive,,reading environment variables during program execution
 ifupdown,ifupdown-0.8.41/execute.c,79,false positive,,reading environment variables during program execution
-ifupdown,ifupdown-0.8.41/execute.c,80,false positive,,reading environment variables during program executionn
+ifupdown,ifupdown-0.8.41/execute.c,80,false positive,,reading environment variables during program execution
 ifupdown,ifupdown-0.8.41/main.c,1489,bug,LineCoverageBug.MAWK_1
 ifupdown,ifupdown-0.8.41/main.c,1492,bug,LineCoverageBug.MAWK_1
 ifupdown,ifupdown-0.8.41/main.c,1495,bug,LineCoverageBug.MAWK_1
