@@ -1,0 +1,139 @@
+apache2,apache2-2.4.62/server/mpm_unix.c,901,bug,LineCoverageBug.APACHE2_2
+apache2,apache2-2.4.62/server/util_filter.c,138,bug,LineCoverageBug.APACHE2_1
+bzip2,bzip2-1.0.8/bzip2.c,1863,conv,line coverage multi-line logical expression that still makes sense
+coreutils,coreutils-9.1/src/seq.c,425,conv,line coverage do-while
+curl,curl-7.88.1/debian/build/src/tool_getparam.c,707,bug,LineCoverageBug.CURL_1
+curl,curl-7.88.1/debian/build/src/tool_main.c,100,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+curl,curl-7.88.1/debian/build/src/tool_main.c,101,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1198,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1754,bug,LineCoverageBug.LZMA_2
+curl,curl-7.88.1/debian/build/src/tool_operate.c,1771,bug,LineCoverageBug.LZMA_2
+curl,curl-7.88.1/debian/build/src/tool_operate.c,2163,bug,LineCoverageBug.LZMA_2
+curl,curl-7.88.1/debian/build/src/tool_operate.c,2687,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/debian-distro-info.c,29,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/debian-distro-info.c,30,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,108,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,173,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,174,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,175,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,180,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,185,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,186,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,187,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,191,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,192,conv,line coverage multi-line logical expression that still makes sense
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,203,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,204,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/dfa.c,1965,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,1966,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,2006,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,2007,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+grep,grep-3.8/lib/dfa.c,3792,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/dfa.c,4322,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/dfa.c,4323,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/src/grep.c,1552,bug,LineCoverageBug.GREP_3
+grep,grep-3.8/src/grep.c,2510,bug,LineCoverageBug.GREP_1
+grep,grep-3.8/src/grep.c,2987,bug,LineCoverageBug.LZMA_2
+gzip,gzip-1.12/gzip.c,467,bug,LineCoverageBug.LZMA_1
+gzip,gzip-1.12/inflate.c,530,conv,line coverage loop in macro
+gzip,gzip-1.12/inflate.c,913,conv,line coverage loop in macro
+gzip,gzip-1.12/trees.c,724,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
+gzip,gzip-1.12/trees.c,726,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
+hostname,hostname-3.23+nmu1/hostname.c,133,conv,line coverage do-while
+hostname,hostname-3.23+nmu1/hostname.c,134,conv,line coverage do-while
+iproute2,iproute2-6.1.0/ip/ipaddress.c,1733,conv,line coverage multi-line logical expression that still makes sense
+iproute2,iproute2-6.1.0/ip/ipaddress.c,1937,conv,line coverage multi-line logical expression that still makes sense
+iproute2,iproute2-6.1.0/lib/libnetlink.c,872,bug,LineCoverageBug.LZMA_1
+iproute2,iproute2-6.1.0/lib/utils.c,970,conv,LineCoverageConventionDifference.C_IPROUTE2_1
+less,less-590/charset.c,166,conv,LineCoverageConventionDifference.C_IPROUTE2_1
+less,less-590/main.c,145,bug,LineCoverageBug.MAWK_1
+less,less-590/option.c,111,bug,LineCoverageBug.MAWK_1
+lz4,lz4-1.9.4/lib/lz4frame.c,1001,bug,LineCoverageBug.APACHE2_1
+lz4,lz4-1.9.4/lib/lz4frame.c,1623,bug,LineCoverageBug.LZMA_2
+lz4,lz4-1.9.4/lib/lz4frame.c,2026,conv,line coverage multi-line logical expression that still makes sense
+lz4,lz4-1.9.4/lib/lz4frame.c,834,bug,LineCoverageBug.APACHE2_1
+lz4,lz4-1.9.4/lib/xxhash.c,236,bug,line coverage inline function superimpose direct or indirect invocations
+lz4,lz4-1.9.4/lib/xxhash.c,332,bug,LineCoverageBug.LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,334,bug,LineCoverageBug.LZ4_1
+lz4,lz4-1.9.4/lib/xxhash.c,336,bug,LineCoverageBug.LZ4_1
+lz4,lz4-1.9.4/programs/lz4cli.c,365,bug,LineCoverageBug.LZ4_2
+lz4,lz4-1.9.4/programs/lz4io.c,1288,bug,LineCoverageBug.LZMA_1
+lz4,lz4-1.9.4/lib/lz4.c,778,bug,line coverage inline function superimpose direct or indirect invocations
+lz4,lz4-1.9.4/lib/lz4.c,779,bug,line coverage inline function superimpose direct or indirect invocations
+lz4,lz4-1.9.4/lib/lz4.c,985,bug,LineCoverageBug.LZO2_1
+lz4,lz4-1.9.4/lib/lz4.c,1019,conv,line coverage do-while
+lzma,lzma-9.22/C/LzFind.c,73,bug,LineCoverageBug.LZMA_1
+lzma,lzma-9.22/C/LzmaDec.c,167,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaDec.c,290,conv,line coverage loop in macro
+lzma,lzma-9.22/C/LzmaDec.c,411,conv,line coverage do-while
+lzma,lzma-9.22/C/LzmaDec.c,513,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaDec.c,523,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaDec.c,627,conv,line coverage loop in macro
+lzma,lzma-9.22/C/LzmaDec.c,628,bug,LineCoverageBug.LZMA_4
+lzma,lzma-9.22/C/LzmaDec.c,637,conv,line coverage loop in macro
+lzma,lzma-9.22/C/LzmaEnc.c,1021,bug,LineCoverageBug.LZMA_2
+lzma,lzma-9.22/C/LzmaEnc.c,1774,bug,LineCoverageBug.LZMA_1
+lzma,lzma-9.22/C/LzmaEnc.c,867,bug,LineCoverageBug.DISTRO_INFO_1(bug),arithmetic binary opeartor
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,657,bug,LineCoverageBug.LZMA_5
+lzma,lzma-9.22/CPP/7zip/Bundles/LzmaCon/lzmp.cpp,790,bug,IdTbdCppSplitLine
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,101,bug,cpp-extern-pass-pointer
+lzma,lzma-9.22/CPP/7zip/Compress/LzmaDecoder.cpp,27,bug,LineCoverageBug.LZMA_6
+lzo2,lzo2-2.10/src/lzo1x_c.ch,176,bug,LineCoverageBug.LZO2_1,not shown in text coverage report due to gcov overwrite
+lzo2,lzo2-2.10/src/lzo1x_c.ch,180,bug,LineCoverageBug.LZO2_1,disappear due to gcov overwrite
+lzo2,lzo2-2.10/src/lzo1x_c.ch,183,conv,line coverage do-while
+lzo2,lzo2-2.10/src/lzo_init.c,221,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+mawk,mawk-1.3.4.20200120/bi_funct.c,814,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
+mawk,mawk-1.3.4.20200120/bi_funct.c,816,bug,LineCoverageBug.INETUTILS_1,FIXME looks closer to another ternary bug
+mawk,mawk-1.3.4.20200120/parse.c,3296,bug,LineCoverageBug.INETUTILS_1,TODO (1) all others are reporducible except this line... (2) how to find source code online https://sources.debian.org/src/mawk/1.3.4.20200120-3.1/parse.c/
+mawk,mawk-1.3.4.20200120/parse.c,3297,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
+mawk,mawk-1.3.4.20200120/parse.c,3298,bug,LineCoverageBug.INETUTILS_1,Note: subscript changes the behavior
+sl,sl-5.02/sl.c,112,bug,LineCoverageBug.SL_1
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,181,bug,LineCoverageBug.LZMA_2
+xz-utils,xz-utils-5.4.1/src/xz/coder.c,641,bug,LineCoverageBug.LZMA_2
+xz-utils,xz-utils-5.4.1/src/xz/main.c,258,conv,LineCoverageConventionDifference.C_XZ_UTILS_1
+lzo2,lzo2-2.10/src/lzo1x_d.ch,166,bug,goto-label-after-if
+lzo2,lzo2-2.10/src/lzo1x_d.ch,98,bug,LineCoverageBug.LZMA_1
+inetutils,inetutils-2.4/lib/argp-parse.c,234,bug,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/argp-parse.c,235,bug,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/argp-parse.c,325,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/lib/argp-parse.c,331,conv,line coverage multi-line ternary
+inetutils,inetutils-2.4/lib/argp-parse.c,334,bug,LineCoverageBug.INETUTILS_1
+inetutils,inetutils-2.4/lib/argp-parse.c,343,bug,LineCoverageBug.DISTRO_INFO_1(bug),arithmetic binary operator with crazy triggering conditions: pointer arithmetic etc
+inetutils,inetutils-2.4/lib/argp-parse.c,926,bug,LineCoverageBug.MAWK_1
+inetutils,inetutils-2.4/lib/getopt.c,214,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/sys_bsd.c,131,conv,line coverage loop in macro
+inetutils,inetutils-2.4/telnet/sys_bsd.c,132,conv,line coverage loop in macro
+inetutils,inetutils-2.4/telnet/sys_bsd.c,133,conv,line coverage loop in macro
+inetutils,inetutils-2.4/telnet/telnet.c,1801,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/telnet.c,1802,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/telnet.c,1803,conv,line coverage multi-line logical expression that still makes sense
+inetutils,inetutils-2.4/telnet/telnet.c,1804,conv,line coverage multi-line logical expression that still makes sense
+traceroute,traceroute-2.1.2/libsupp/clif.c,311,conv,line coverage multi-line logical expression that still makes sense
+traceroute,traceroute-2.1.2/libsupp/clif.c,401,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+man-db,man-db-2.11.2/src/man.c,562,bug,LineCoverageBug.DISTRO_INFO_1(bug)
+lsof,lsof-4.95.0/main.c,1887,conv,line coverage multi-line logical expression that still makes sense
+lsof,lsof-4.95.0/main.c,1888,conv,line coverage multi-line logical expression that still makes sense
+grep,grep-3.8/lib/stackvma.c,268,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,273,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,280,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,281,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,282,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,283,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,293,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,294,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,295,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,303,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,304,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,354,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,359,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+grep,grep-3.8/lib/stackvma.c,363,other,inherent compiler difference,stackvma.c reading /proc/self/maps
+wget,wget-1.21.3/src/main.c,1216,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1221,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1223,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1228,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1230,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1235,other,inherent compiler difference,wget --version contains compiler name and flags
+wget,wget-1.21.3/src/main.c,1236,other,inherent compiler difference,wget --version contains compiler name and flags
+man-db,man-db-2.11.2/src/manp.c,147,conv,line coverage meta programming craziness,if we are treating it as a bug I don't know how to report
+man-db,man-db-2.11.2/src/manp.c,148,bug,LineCoverageBug.LZMA_4
+procps,procps-4.0.2/src/ps/display.c,639,bug,goto-label-after-if

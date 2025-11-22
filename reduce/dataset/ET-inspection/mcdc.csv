@@ -1,0 +1,14 @@
+lsof,lsof-4.95.0/dproc.c,516,conv,gcc identifies constant assignments 
+mawk,mawk-1.3.4.20200120/fcall.c,340,conv num,mcdc ternary
+procps,procps-4.0.2/library/diskstats.c,823,conv,condition determined in compile time
+procps,procps-4.0.2/library/diskstats.c,941,conv,condition determined in compile time
+procps,procps-4.0.2/library/diskstats.c,988,conv,condition determined in compile time
+procps,procps-4.0.2/library/meminfo.c,892,conv,condition determined in compile time
+procps,procps-4.0.2/library/meminfo.c,977,conv,condition determined in compile time
+procps,procps-4.0.2/library/pids.c,1617,conv,condition determined in compile time
+procps,procps-4.0.2/library/slabinfo.c,848,conv,condition determined in compile time
+procps,procps-4.0.2/library/slabinfo.c,954,conv,condition determined in compile time
+procps,procps-4.0.2/library/slabinfo.c,1000,conv,condition determined in compile time
+procps,procps-4.0.2/library/stat.c,1202,conv,condition determined in compile time
+procps,procps-4.0.2/library/stat.c,1350,conv,condition determined in compile time
+procps,procps-4.0.2/library/stat.c,1396,conv,condition determined in compile time

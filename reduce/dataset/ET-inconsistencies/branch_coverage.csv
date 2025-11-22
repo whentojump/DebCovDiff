@@ -1,0 +1,342 @@
+bzip2,bzip2-1.0.8/blocksort.c,286,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/blocksort.c,649,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzip2.c,1145,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzip2.c,1211,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+bzip2,bzip2-1.0.8/bzip2.c,1329,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzip2.c,1397,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+bzip2,bzip2-1.0.8/bzip2.c,1524,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzlib.c,1100,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzlib.c,1101,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 1, 3]","[0, 1, 1, 2]"
+bzip2,bzip2-1.0.8/bzlib.c,1104,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
+bzip2,bzip2-1.0.8/bzlib.c,1259,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+bzip2,bzip2-1.0.8/bzlib.c,1263,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+bzip2,bzip2-1.0.8/bzlib.c,1310,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+bzip2,bzip2-1.0.8/bzlib.c,1313,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+bzip2,bzip2-1.0.8/bzlib.c,159,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzlib.c,161,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+bzip2,bzip2-1.0.8/bzlib.c,373,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzlib.c,378,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzlib.c,417,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
+bzip2,bzip2-1.0.8/bzlib.c,928,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+bzip2,bzip2-1.0.8/bzlib.c,931,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,107,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,8
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,108,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,4
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,110,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,117,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,8
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,174,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,8
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,180,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,4
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,186,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,4
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,191,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,194,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,195,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,203,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,209,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,219,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,220,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,312,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,16
+distro-info,distro-info-1.5+deb12u1/distro-info-util.c,57,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,8
+distro-info,distro-info-1.5+deb12u1/ubuntu-distro-info.c,33,Inconsistency.BRANCH_COV_COUNT_STEADY,"[216, 444]","[660, 2178]"
+distro-info,distro-info-1.5+deb12u1/ubuntu-distro-info.c,34,Inconsistency.BRANCH_COV_COUNT_STEADY,"[21, 195, 660, 2178]","[21, 195, 216, 444]"
+ifupdown,ifupdown-0.8.41/archcommon.c,179,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+ifupdown,ifupdown-0.8.41/execute.c,63,Inconsistency.BRANCH_COV_COUNT_STEADY,"[295, 15635]","[295, 15930]"
+ifupdown,ifupdown-0.8.41/execute.c,64,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 15635]","[0, 15930]"
+ifupdown,ifupdown-0.8.41/execute.c,79,Inconsistency.BRANCH_COV_COUNT_STEADY,"[295, 15635]","[295, 15930]"
+ifupdown,ifupdown-0.8.41/execute.c,80,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 15635]","[0, 15930]"
+ifupdown,ifupdown-0.8.41/inet6.c,183,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+ifupdown,ifupdown-0.8.41/inet.c,92,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+ifupdown,ifupdown-0.8.41/link.c,43,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+ifupdown,ifupdown-0.8.41/main.c,1489,Inconsistency.BRANCH_COV_COUNT_STEADY,"[6, 26]","[12, 26]"
+ifupdown,ifupdown-0.8.41/main.c,1492,Inconsistency.BRANCH_COV_COUNT_STEADY,"[32, 95]","[38, 95]"
+ifupdown,ifupdown-0.8.41/main.c,1495,Inconsistency.BRANCH_COV_COUNT_STEADY,"[6, 26]","[12, 26]"
+lsof,lsof-4.95.0/arg.c,1489,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/arg.c,1603,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+lsof,lsof-4.95.0/dfile.c,150,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/dfile.c,337,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/dnode.c,803,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+lsof,lsof-4.95.0/dnode.c,969,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+lsof,lsof-4.95.0/dproc.c,1164,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/dproc.c,1910,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lsof,lsof-4.95.0/dproc.c,1912,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/dproc.c,433,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,10
+lsof,lsof-4.95.0/dproc.c,547,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
+lsof,lsof-4.95.0/dsock.c,1175,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+lsof,lsof-4.95.0/dsock.c,1220,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+lsof,lsof-4.95.0/dsock.c,1221,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/dsock.c,1315,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/dsock.c,1582,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/dsock.c,1681,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lsof,lsof-4.95.0/dsock.c,1682,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lsof,lsof-4.95.0/dsock.c,1728,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/dsock.c,2498,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/dsock.c,2903,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/dsock.c,3284,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/dsock.c,4587,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,6
+lsof,lsof-4.95.0/dsock.c,4734,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,4
+lsof,lsof-4.95.0/dsock.c,4738,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,4
+lsof,lsof-4.95.0/dsock.c,4742,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,4
+lsof,lsof-4.95.0/dsock.c,4743,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,4
+lsof,lsof-4.95.0/dsock.c,5149,Inconsistency.BRANCH_COV_NUM_OUTCOME,23,2
+lsof,lsof-4.95.0/main.c,1179,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,0,0,70]","[0,0,0,0,0,72]"
+lsof,lsof-4.95.0/main.c,1191,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,8,8,62,62]","[0,0,8,8,62,64]"
+lsof,lsof-4.95.0/main.c,1195,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,70]","[0,72]"
+lsof,lsof-4.95.0/main.c,1199,Inconsistency.BRANCH_COV_COUNT_STEADY,"[12,58]","[12,60]"
+lsof,lsof-4.95.0/main.c,1201,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,70]","[0,72]"
+lsof,lsof-4.95.0/main.c,1203,Inconsistency.BRANCH_COV_COUNT_STEADY,"[2,68]","[2,70]"
+lsof,lsof-4.95.0/main.c,1205,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1,69]","[1,71]"
+lsof,lsof-4.95.0/main.c,1207,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,70]","[0,0,0,72]"
+lsof,lsof-4.95.0/main.c,1209,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,35,35,35]","[0,35,35,37]"
+lsof,lsof-4.95.0/main.c,1211,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,70]","[0,0,0,72]"
+lsof,lsof-4.95.0/main.c,1213,Inconsistency.BRANCH_COV_COUNT_STEADY,"[3,67]","[3,69]"
+lsof,lsof-4.95.0/main.c,1221,Inconsistency.BRANCH_COV_COUNT_STEADY,"[25,45]","[25,47]"
+lsof,lsof-4.95.0/main.c,1223,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,70]","[0,72]"
+lsof,lsof-4.95.0/main.c,1231,Inconsistency.BRANCH_COV_COUNT_STEADY,"[3,25,42,45]","[3,27,42,45]"
+lsof,lsof-4.95.0/main.c,1239,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,70]","[0,72]"
+lsof,lsof-4.95.0/main.c,1264,Inconsistency.BRANCH_COV_COUNT_STEADY,"[25,45]","[25,47]"
+lsof,lsof-4.95.0/main.c,1272,Inconsistency.BRANCH_COV_COUNT_STEADY,"[21,46]","[21,48]"
+lsof,lsof-4.95.0/main.c,1312,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1321,Inconsistency.BRANCH_COV_COUNT_STEADY,"[2,65]","[2,67]"
+lsof,lsof-4.95.0/main.c,1332,Inconsistency.BRANCH_COV_COUNT_STEADY,"[11,60]","[13,60]"
+lsof,lsof-4.95.0/main.c,1352,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,71]","[2,71]"
+lsof,lsof-4.95.0/main.c,1513,Inconsistency.BRANCH_COV_COUNT_STEADY,"[6,65]","[6,67]"
+lsof,lsof-4.95.0/main.c,1583,Inconsistency.BRANCH_COV_COUNT_STEADY,"[2,4,6,65]","[2,4,6,67]"
+lsof,lsof-4.95.0/main.c,1585,Inconsistency.BRANCH_COV_COUNT_STEADY,"[4,67]","[4,69]"
+lsof,lsof-4.95.0/main.c,1592,Inconsistency.BRANCH_COV_COUNT_STEADY,"[8,67]","[8,69]"
+lsof,lsof-4.95.0/main.c,1605,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1618,Inconsistency.BRANCH_COV_COUNT_STEADY,"[21,67]","[21,69]"
+lsof,lsof-4.95.0/main.c,1659,Inconsistency.BRANCH_COV_COUNT_STEADY,"[3,64]","[3,66]"
+lsof,lsof-4.95.0/main.c,1701,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,67]","[0,0,0,69]"
+lsof,lsof-4.95.0/main.c,1712,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1726,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1742,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,2,2,65]","[0,2,2,67]"
+lsof,lsof-4.95.0/main.c,1751,Inconsistency.BRANCH_COV_COUNT_STEADY,"[35,67]","[35,69]"
+lsof,lsof-4.95.0/main.c,1765,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,67]","[0,0,0,69]"
+lsof,lsof-4.95.0/main.c,1797,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1814,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1826,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[0,69]"
+lsof,lsof-4.95.0/main.c,1844,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,8,59,59]","[0,10,59,59]"
+lsof,lsof-4.95.0/main.c,1846,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,8,59,59]","[0,10,59,59]"
+lsof,lsof-4.95.0/main.c,377,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lsof,lsof-4.95.0/node.c,53,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lsof,lsof-4.95.0/print.c,1184,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lsof,lsof-4.95.0/print.c,1226,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lsof,lsof-4.95.0/print.c,1227,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lsof,lsof-4.95.0/proc.c,1026,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/proc.c,1131,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/proc.c,1237,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/proc.c,1697,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/proc.c,263,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+lsof,lsof-4.95.0/usage.c,946,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/examples/portab.h,128,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,12
+lzo2,lzo2-2.10/examples/portab.h,133,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,24
+lzo2,lzo2-2.10/lzotest/lzotest.c,1044,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/lzotest/lzotest.c,1045,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/lzotest/lzotest.c,1094,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lzo2,lzo2-2.10/lzotest/lzotest.c,1901,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 49]","[1, 51]"
+lzo2,lzo2-2.10/lzotest/lzotest.c,1902,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0, 6, 6, 43, 43]","[0, 0, 6, 6, 45, 45]"
+lzo2,lzo2-2.10/lzotest/lzotest.c,1970,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/lzotest/lzotest.c,2017,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/lzotest/lzotest.c,2038,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lzo2,lzo2-2.10/lzotest/lzotest.c,2041,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+lzo2,lzo2-2.10/lzotest/lzotest.c,615,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/lzotest/lzotest.c,641,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/minilzo/minilzo.c,4625,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+lzo2,lzo2-2.10/minilzo/minilzo.c,4626,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/src/lzo1b_9x.c,173,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lzo2,lzo2-2.10/src/lzo1b_9x.c,174,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/src/lzo1c_9x.c,175,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lzo2,lzo2-2.10/src/lzo1c_9x.c,176,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/src/lzo1f_9x.c,186,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lzo2,lzo2-2.10/src/lzo1f_9x.c,187,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/src/lzo1f_9x.c,221,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lzo2,lzo2-2.10/src/lzo1f_9x.c,228,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+lzo2,lzo2-2.10/src/lzo1x_9x.c,621,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,12
+lzo2,lzo2-2.10/src/lzo1x_9x.c,623,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,12
+lzo2,lzo2-2.10/src/lzo_init.c,221,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+lzo2,lzo2-2.10/src/lzo_init.c,222,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/src/lzo_supp.h,3115,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
+lzo2,lzo2-2.10/src/lzo_swd.ch,399,Inconsistency.BRANCH_COV_NUM_OUTCOME,28,14
+lzo2,lzo2-2.10/tests/align.c,58,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/tests/align.c,59,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/tests/align.c,60,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/tests/align.c,85,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/tests/align.c,86,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/tests/align.c,87,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+lzo2,lzo2-2.10/tests/align.c,88,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+mawk,mawk-1.3.4.20200120/array.c,297,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+mawk,mawk-1.3.4.20200120/array.c,318,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+mawk,mawk-1.3.4.20200120/execute.c,1085,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 25]"
+mawk,mawk-1.3.4.20200120/execute.c,1090,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 25]"
+mawk,mawk-1.3.4.20200120/execute.c,1351,Inconsistency.BRANCH_COV_COUNT_STEADY,"[704, 1401]","[392, 1009]"
+mawk,mawk-1.3.4.20200120/fcall.c,116,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+mawk,mawk-1.3.4.20200120/fcall.c,194,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/fcall.c,202,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
+mawk,mawk-1.3.4.20200120/fcall.c,340,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+mawk,mawk-1.3.4.20200120/fcall.c,341,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+mawk,mawk-1.3.4.20200120/fcall.c,85,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+mawk,mawk-1.3.4.20200120/field.c,312,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
+mawk,mawk-1.3.4.20200120/field.c,313,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,6
+mawk,mawk-1.3.4.20200120/field.c,662,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,12
+mawk,mawk-1.3.4.20200120/files.c,125,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
+mawk,mawk-1.3.4.20200120/files.c,226,Inconsistency.BRANCH_COV_NUM_OUTCOME,5,2
+mawk,mawk-1.3.4.20200120/files.c,357,Inconsistency.BRANCH_COV_COUNT_STEADY,"[50, 143]","[52, 143]"
+mawk,mawk-1.3.4.20200120/fin.c,559,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/hash.c,257,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+mawk,mawk-1.3.4.20200120/init.c,348,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+mawk,mawk-1.3.4.20200120/main.c,55,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 47]","[3, 47]"
+mawk,mawk-1.3.4.20200120/main.c,63,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 47]","[3, 47]"
+mawk,mawk-1.3.4.20200120/parse.c,2005,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 11]","[11, 3778]"
+mawk,mawk-1.3.4.20200120/parse.c,2013,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[1, 3788]"
+mawk,mawk-1.3.4.20200120/parse.c,2023,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[1, 3788]"
+mawk,mawk-1.3.4.20200120/parse.c,2111,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 8]","[9, 3780]"
+mawk,mawk-1.3.4.20200120/parse.c,2297,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[1, 3788]"
+mawk,mawk-1.3.4.20200120/parse.c,2306,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 3789]"
+mawk,mawk-1.3.4.20200120/parse.c,2314,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 3789]"
+mawk,mawk-1.3.4.20200120/parse.c,2350,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 2]","[2, 3787]"
+mawk,mawk-1.3.4.20200120/parse.c,2377,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 8]","[8, 3781]"
+mawk,mawk-1.3.4.20200120/parse.c,2533,Inconsistency.BRANCH_COV_COUNT_STEADY,"[2, 2]","[4, 3785]"
+mawk,mawk-1.3.4.20200120/parse.c,2603,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 4]","[4, 3785]"
+mawk,mawk-1.3.4.20200120/parse.c,2664,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 9]","[9, 3780]"
+mawk,mawk-1.3.4.20200120/parse.c,2679,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 17]","[17, 3772]"
+mawk,mawk-1.3.4.20200120/parse.c,2694,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[1, 3788]"
+mawk,mawk-1.3.4.20200120/parse.c,2712,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 2]","[2, 3787]"
+mawk,mawk-1.3.4.20200120/parse.c,2782,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 3789]"
+mawk,mawk-1.3.4.20200120/parse.c,2881,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 1]","[1, 3788]"
+mawk,mawk-1.3.4.20200120/parse.c,2912,Inconsistency.BRANCH_COV_COUNT_STEADY,"[2, 32]","[34, 3755]"
+mawk,mawk-1.3.4.20200120/parse.c,3030,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 28]","[28, 3761]"
+mawk,mawk-1.3.4.20200120/parse.c,3111,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 0]","[0, 3789]"
+mawk,mawk-1.3.4.20200120/parse.c,3137,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 6]","[6, 3783]"
+mawk,mawk-1.3.4.20200120/parse.c,3162,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0, 10]","[10, 3779]"
+mawk,mawk-1.3.4.20200120/parse.c,3208,Inconsistency.BRANCH_COV_COUNT_STEADY,"[5, 16]","[21, 3768]"
+mawk,mawk-1.3.4.20200120/parse.c,3296,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
+mawk,mawk-1.3.4.20200120/parse.c,3310,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+mawk,mawk-1.3.4.20200120/print.c,473,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
+mawk,mawk-1.3.4.20200120/print.c,474,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,6
+mawk,mawk-1.3.4.20200120/rexp0.c,121,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+mawk,mawk-1.3.4.20200120/rexp0.c,466,Inconsistency.BRANCH_COV_NUM_OUTCOME,14,2
+mawk,mawk-1.3.4.20200120/rexp0.c,626,Inconsistency.BRANCH_COV_COUNT_STEADY,"[14, 32]","[14, 33]"
+mawk,mawk-1.3.4.20200120/rexp0.c,634,Inconsistency.BRANCH_COV_COUNT_STEADY,"[46, 207]","[47, 207]"
+mawk,mawk-1.3.4.20200120/rexp0.c,690,Inconsistency.BRANCH_COV_COUNT_STEADY,"[14, 32]","[14, 33]"
+mawk,mawk-1.3.4.20200120/rexp.c,114,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1, 76]","[1, 75]"
+mawk,mawk-1.3.4.20200120/rexpdb.c,65,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,1040,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,2
+mawk,mawk-1.3.4.20200120/scan.c,1066,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,209,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,4
+mawk,mawk-1.3.4.20200120/scan.c,228,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,258,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,298,Inconsistency.BRANCH_COV_NUM_OUTCOME,36,2
+mawk,mawk-1.3.4.20200120/scan.c,315,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,393,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,439,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,452,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,469,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,484,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,501,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,570,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,620,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,682,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,726,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,734,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,748,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,758,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,774,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,98,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/scan.c,994,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+mawk,mawk-1.3.4.20200120/zmalloc.c,291,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/library/diskstats.c,823,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/diskstats.c,941,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/diskstats.c,988,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/meminfo.c,892,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/meminfo.c,977,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/pids.c,1617,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/readproc.c,1129,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,4
+procps,procps-4.0.2/library/readproc.c,781,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/library/readproc.c,783,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,6
+procps,procps-4.0.2/library/slabinfo.c,1000,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/slabinfo.c,848,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/slabinfo.c,954,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/stat.c,1202,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/stat.c,1350,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/stat.c,1396,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/library/tests/test_pids.c,59,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/library/version.c,65,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/library/version.c,66,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/local/tests.h,17,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,12
+procps,procps-4.0.2/local/tests.h,20,Inconsistency.BRANCH_COV_NUM_OUTCOME,10,12
+procps,procps-4.0.2/local/xalloc.h,26,Inconsistency.BRANCH_COV_NUM_OUTCOME,28,32
+procps,procps-4.0.2/local/xalloc.h,35,Inconsistency.BRANCH_COV_NUM_OUTCOME,12,24
+procps,procps-4.0.2/local/xalloc.h,52,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,8
+procps,procps-4.0.2/local/xalloc.h,55,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,8
+procps,procps-4.0.2/src/pgrep.c,1085,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/pgrep.c,151,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/pgrep.c,866,Inconsistency.BRANCH_COV_NUM_OUTCOME,32,2
+procps,procps-4.0.2/src/pmap.c,243,Inconsistency.BRANCH_COV_COUNT_STEADY,"[7,52]","[7,53]"
+procps,procps-4.0.2/src/pmap.c,358,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/src/pmap.c,364,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/src/pmap.c,829,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/display.c,315,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/display.c,636,Inconsistency.BRANCH_COV_COUNT_STEADY,"[154,294]","[14,448]"
+procps,procps-4.0.2/src/ps/display.c,639,Inconsistency.BRANCH_COV_COUNT_STEADY,"[14,448]","[14,434]"
+procps,procps-4.0.2/src/ps/display.c,671,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,11,11]","[0,3,11,11]"
+procps,procps-4.0.2/src/ps/output.c,353,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+procps,procps-4.0.2/src/ps/output.c,368,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+procps,procps-4.0.2/src/ps/select.c,100,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,101,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,102,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,104,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,105,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,106,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,107,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,109,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,110,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,111,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,112,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,113,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,114,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/select.c,156,Inconsistency.BRANCH_COV_NUM_OUTCOME,6,2
+procps,procps-4.0.2/src/ps/select.c,99,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+procps,procps-4.0.2/src/ps/stacktrace.c,155,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+procps,procps-4.0.2/src/ps/stacktrace.c,89,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/src/pwdx.c,104,Inconsistency.BRANCH_COV_COUNT_STEADY,"[1,2]","[2,2]"
+procps,procps-4.0.2/src/pwdx.c,120,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1]","[1,1]"
+procps,procps-4.0.2/src/pwdx.c,129,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1]","[0,2]"
+procps,procps-4.0.2/src/pwdx.c,135,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1]","[0,2]"
+procps,procps-4.0.2/src/slabtop.c,189,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,2]","[0,4]"
+procps,procps-4.0.2/src/slabtop.c,310,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,313,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,331,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,337,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,343,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,351,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,361,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,0]","[0,0,0,6]"
+procps,procps-4.0.2/src/slabtop.c,365,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/src/slabtop.c,369,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,377,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/slabtop.c,379,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,6]"
+procps,procps-4.0.2/src/sysctl.c,768,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+procps,procps-4.0.2/src/w.c,204,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+psmisc,psmisc-23.6/src/fuser.c,1075,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+psmisc,psmisc-23.6/src/fuser.c,1359,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,7]","[0,8]"
+psmisc,psmisc-23.6/src/fuser.c,1367,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,7]","[0,8]"
+psmisc,psmisc-23.6/src/fuser.c,1376,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,7]","[0,0,0,8]"
+psmisc,psmisc-23.6/src/fuser.c,1379,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,7]","[1,7]"
+psmisc,psmisc-23.6/src/fuser.c,1388,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,7]","[1,7]"
+psmisc,psmisc-23.6/src/fuser.c,418,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+psmisc,psmisc-23.6/src/fuser.c,581,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+psmisc,psmisc-23.6/src/fuser.c,582,Inconsistency.BRANCH_COV_NUM_OUTCOME,4,2
+psmisc,psmisc-23.6/src/fuser.c,694,Inconsistency.BRANCH_COV_NUM_OUTCOME,3,2
+psmisc,psmisc-23.6/src/killall.c,1053,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0,0,0,0,64]","[0,0,0,0,0,65]"
+psmisc,psmisc-23.6/src/killall.c,1056,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,64]","[0,65]"
+psmisc,psmisc-23.6/src/killall.c,1061,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,64]","[0,65]"
+psmisc,psmisc-23.6/src/killall.c,157,Inconsistency.BRANCH_COV_NUM_OUTCOME,2,4
+psmisc,psmisc-23.6/src/killall.c,179,Inconsistency.BRANCH_COV_NUM_OUTCOME,8,2
+psmisc,psmisc-23.6/src/killall.c,935,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,67]","[1,67]"
+psmisc,psmisc-23.6/src/killall.c,943,Inconsistency.BRANCH_COV_COUNT_STEADY,"[64,75]","[65,75]"
+psmisc,psmisc-23.6/src/killall.c,944,Inconsistency.BRANCH_COV_NUM_OUTCOME,18,2
+psmisc,psmisc-23.6/src/pslog.c,113,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1]","[0,2]"
+psmisc,psmisc-23.6/src/pslog.c,122,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1]","[1,1]"
+psmisc,psmisc-23.6/src/pslog.c,129,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,1]"
+psmisc,psmisc-23.6/src/pslog.c,137,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1]","[1,1]"
+psmisc,psmisc-23.6/src/pslog.c,146,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,1]"
+psmisc,psmisc-23.6/src/pslog.c,163,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,0]","[0,1]"
+psmisc,psmisc-23.6/src/pslog.c,92,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,2]","[0,3]"
+psmisc,psmisc-23.6/src/pslog.c,96,Inconsistency.BRANCH_COV_COUNT_STEADY,"[0,1,1,1]","[0,1,1,2]"
